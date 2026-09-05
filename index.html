@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="tr" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#11131b">
+  <meta name="description" content="Linguosphere — Elite Linguistic AI English Learning Platform">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237c5dfa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m4 6 8-4 8 4'/><path d='m18 10 4 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8l4-2'/><path d='M14 22v-4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v4'/><path d='M18 5v17'/><path d='M6 5v17'/><circle cx='12' cy='9' r='2'/></svg>">
+  <title>Linguosphere — Elite Linguistic AI</title>
+
+  <!-- Preconnect Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN & Custom Stitch Theme Config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tertiary-fixed": "#ffddb5",
+            "inverse-primary": "#613ede",
+            "on-error": "#690005",
+            "on-tertiary": "#452b00",
+            "outline": "#938ea1",
+            "on-secondary": "#00382a",
+            "tertiary-container": "#c58311",
+            "surface-container-highest": "#33343d",
+            "border-glass": "rgba(255, 255, 255, 0.12)",
+            "surface-variant": "#33343d",
+            "primary": "#cabeff",
+            "on-error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#481bc6",
+            "surface-container": "#1d1f28",
+            "soft-coral": "#F06A8E",
+            "on-tertiary-container": "#3d2500",
+            "mesh-glow-amber": "rgba(242, 169, 59, 0.18)",
+            "error-container": "#93000a",
+            "on-tertiary-fixed-variant": "#633f00",
+            "primary-fixed": "#e6deff",
+            "surface-tint": "#cabeff",
+            "surface-glass": "rgba(20, 24, 38, 0.65)",
+            "error": "#ffb4ab",
+            "on-surface": "#e2e1ed",
+            "surface": "#11131b",
+            "secondary": "#3edeb2",
+            "surface-bright": "#373942",
+            "background": "#11131b",
+            "surface-dim": "#11131b",
+            "on-primary-fixed": "#1c0062",
+            "on-tertiary-fixed": "#2a1800",
+            "on-primary": "#32009a",
+            "secondary-container": "#00c297",
+            "outline-variant": "#484555",
+            "secondary-fixed": "#63fbcd",
+            "primary-container": "#947dff",
+            "surface-container-low": "#191b24",
+            "surface-container-lowest": "#0c0e16",
+            "on-primary-container": "#2b0088",
+            "inverse-on-surface": "#2e3039",
+            "secondary-fixed-dim": "#3edeb2",
+            "surface-container-high": "#282a32",
+            "mesh-glow-indigo": "rgba(124, 93, 250, 0.28)",
+            "tertiary": "#ffb956",
+            "on-secondary-fixed": "#002117",
+            "mesh-glow-coral": "rgba(240, 106, 142, 0.2)",
+            "border-glass-highlight": "rgba(255, 255, 255, 0.24)",
+            "inverse-surface": "#e2e1ed",
+            "mesh-glow-emerald": "rgba(45, 212, 168, 0.22)",
+            "on-surface-variant": "#c9c4d7",
+            "on-secondary-container": "#004937",
+            "primary-fixed-dim": "#cabeff",
+            "on-secondary-fixed-variant": "#00513e",
+            "tertiary-fixed-dim": "#ffb956",
+            "on-background": "#e2e1ed",
+            "surface-glass-active": "rgba(30, 36, 56, 0.8)"
+          },
+          spacing: {
+            "space-2xl": "3rem",
+            "gutter-desktop": "1.5rem",
+            "space-4xl": "6rem",
+            "margin-mobile": "1.25rem",
+            "space-xl": "2rem",
+            "space-3xs": "0.125rem",
+            "space-sm": "0.75rem",
+            "margin-desktop": "3rem",
+            "space-3xl": "4rem",
+            "space-2xs": "0.25rem",
+            "space-md": "1rem",
+            "space-xs": "0.5rem",
+            "space-lg": "1.5rem",
+            "gutter-mobile": "1rem"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            "body-lg": ["Inter", "sans-serif"],
+            "label-md": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "body-xl": ["Inter", "sans-serif"],
+            "headline-md": ["Plus Jakarta Sans", "sans-serif"],
+            "label-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-display": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-lg-mobile": ["Plus Jakarta Sans", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "phonetic-ipa": ["Inter", "sans-serif"],
+            "headline-display-mobile": ["Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "label-lg": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          fontSize: {
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "700" }],
+            "headline-sm": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "body-xl": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" }],
+            "headline-display": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "800" }],
+            "headline-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "phonetic-ipa": ["15px", { "lineHeight": "22px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "headline-display-mobile": ["38px", { "lineHeight": "46px", "letterSpacing": "-0.025em", "fontWeight": "800" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "700" }]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+
+  <!-- Legacy & Component Styles -->
+  <link rel="stylesheet" href="css/main.css?v=v2-stitch-ultra-fixed">
+  <link rel="stylesheet" href="css/layout.css?v=v2-stitch-ultra-fixed">
+  <link rel="stylesheet" href="css/components.css?v=v2-stitch-ultra-fixed">
+  <link rel="stylesheet" href="css/animations.css?v=v2-stitch-ultra-fixed">
+  <link rel="stylesheet" href="css/screens.css?v=v2-stitch-ultra-fixed">
+  <link rel="stylesheet" href="css/responsive.css?v=v2-stitch-ultra-fixed">
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased min-h-screen relative selection:bg-primary selection:text-on-primary">
+  
+  <!-- Ambient Mesh Background Glows -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div class="absolute -top-[20%] left-[10%] w-[560px] h-[560px] rounded-full bg-mesh-glow-indigo blur-[120px]"></div>
+    <div class="absolute top-[40%] -right-[10%] w-[600px] h-[600px] rounded-full bg-mesh-glow-emerald blur-[130px]"></div>
+    <div class="absolute -bottom-[15%] left-[30%] w-[520px] h-[520px] rounded-full bg-mesh-glow-amber blur-[110px]"></div>
+  </div>
+
+  <!-- App Root Shell -->
+  <div id="app">
+    <!-- JavaScript Dynamic Navigation & Screens -->
+  </div>
+
+  <script type="module" src="js/app.js?v=v2-stitch-ultra-fixed"></script>
+</body>
+</html>

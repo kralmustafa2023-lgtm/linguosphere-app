@@ -1,0 +1,370 @@
+[
+  {
+    "id": 1,
+    "level": 1,
+    "title": "A Day at the Park",
+    "titleTR": "Parkta Bir Gün",
+    "emoji": "🌳",
+    "readingTime": "2 dk",
+    "sentences": [
+      {
+        "en": "Today is a beautiful and sunny day.",
+        "tr": "Bugün güzel ve güneşli bir gün.",
+        "words": [
+          { "w": "Today", "tr": "Bugün" },
+          { "w": "beautiful", "tr": "güzel" },
+          { "w": "sunny", "tr": "güneşli" }
+        ]
+      },
+      {
+        "en": "Ali and Sarah go to the big park.",
+        "tr": "Ali ve Sarah büyük parka gidiyorlar.",
+        "words": [
+          { "w": "park", "tr": "park" },
+          { "w": "big", "tr": "büyük" }
+        ]
+      },
+      {
+        "en": "They see a small dog near the tree.",
+        "tr": "Ağacın yanında küçük bir köpek görüyorlar.",
+        "words": [
+          { "w": "small", "tr": "küçük" },
+          { "w": "dog", "tr": "köpek" },
+          { "w": "tree", "tr": "ağaç" }
+        ]
+      },
+      {
+        "en": "The dog is happy and wags its tail.",
+        "tr": "Köpek mutlu ve kuyruğunu sallıyor.",
+        "words": [
+          { "w": "happy", "tr": "mutlu" },
+          { "w": "tail", "tr": "kuyruk" }
+        ]
+      },
+      {
+        "en": "They sit on the green grass and drink water.",
+        "tr": "Yeşil çimlerin üzerine otururlar ve su içerler.",
+        "words": [
+          { "w": "green", "tr": "yeşil" },
+          { "w": "grass", "tr": "çim" },
+          { "w": "water", "tr": "su" }
+        ]
+      },
+      {
+        "en": "Ali plays with the dog and throws a red ball.",
+        "tr": "Ali köpekle oynuyor ve kırmızı bir top atıyor.",
+        "words": [
+          { "w": "plays", "tr": "oynuyor" },
+          { "w": "throws", "tr": "atıyor" },
+          { "w": "red", "tr": "kırmızı" },
+          { "w": "ball", "tr": "top" }
+        ]
+      },
+      {
+        "en": "Sarah takes a photo of the beautiful flowers.",
+        "tr": "Sarah güzel çiçeklerin fotoğrafını çekiyor.",
+        "words": [
+          { "w": "photo", "tr": "fotoğraf" },
+          { "w": "flowers", "tr": "çiçekler" }
+        ]
+      },
+      {
+        "en": "They return home tired but very happy.",
+        "tr": "Yorgun ama çok mutlu bir şekilde eve dönerler.",
+        "words": [
+          { "w": "return", "tr": "dönmek" },
+          { "w": "tired", "tr": "yorgun" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "level": 2,
+    "title": "The Mysterious Cafe",
+    "titleTR": "Gizemli Kafe",
+    "emoji": "☕",
+    "readingTime": "3 dk",
+    "sentences": [
+      {
+        "en": "I walked into a quiet coffee shop in London.",
+        "tr": "Londra'da sakin bir kahve dükkanına girdim.",
+        "words": [
+          { "w": "quiet", "tr": "sakin" },
+          { "w": "coffee shop", "tr": "kahve dükkanı" }
+        ]
+      },
+      {
+        "en": "The barista smiled and asked, 'How can I help you today?'",
+        "tr": "Barista gülümsedi ve sordu: 'Bugün size nasıl yardımcı olabilirim?'",
+        "words": [
+          { "w": "smiled", "tr": "gülümsedi" },
+          { "w": "asked", "tr": "sordu" }
+        ]
+      },
+      {
+        "en": "I ordered a warm cup of coffee and a fresh croissant.",
+        "tr": "Sıcak bir fincan kahve ve taze bir kruvasan sipariş ettim.",
+        "words": [
+          { "w": "warm", "tr": "sıcak/ılık" },
+          { "w": "fresh", "tr": "taze" },
+          { "w": "ordered", "tr": "sipariş ettim" }
+        ]
+      },
+      {
+        "en": "Near the window, an old man was reading a newspaper.",
+        "tr": "Pencerenin yanında yaşlı bir adam gazete okuyordu.",
+        "words": [
+          { "w": "window", "tr": "pencere" },
+          { "w": "old", "tr": "yaşlı" },
+          { "w": "newspaper", "tr": "gazete" }
+        ]
+      },
+      {
+        "en": "Soft jazz music played in the background.",
+        "tr": "Arka planda yumuşak caz müziği çalıyordu.",
+        "words": [
+          { "w": "soft", "tr": "yumuşak" },
+          { "w": "background", "tr": "arka plan" }
+        ]
+      },
+      {
+        "en": "I opened my laptop and started working on my project.",
+        "tr": "Bilgisayarımı açtım ve projemi yapmaya başladım.",
+        "words": [
+          { "w": "opened", "tr": "açtım" },
+          { "w": "started", "tr": "başladım" },
+          { "w": "project", "tr": "proje" }
+        ]
+      },
+      {
+        "en": "Two hours passed and I did not notice the time.",
+        "tr": "İki saat geçti ve zamanı fark etmedim.",
+        "words": [
+          { "w": "passed", "tr": "geçti" },
+          { "w": "notice", "tr": "fark etmek" }
+        ]
+      },
+      {
+        "en": "I paid the bill and left the cafe with a smile.",
+        "tr": "Hesabı ödedim ve gülümseyerek kafeden ayrıldım.",
+        "words": [
+          { "w": "paid", "tr": "ödedim" },
+          { "w": "bill", "tr": "hesap/fatura" },
+          { "w": "left", "tr": "ayrıldım" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "level": 3,
+    "title": "The Job Interview",
+    "titleTR": "İş Mülakatı",
+    "emoji": "👔",
+    "readingTime": "4 dk",
+    "sentences": [
+      {
+        "en": "Maria prepared carefully for her important job interview.",
+        "tr": "Maria önemli iş mülakatı için dikkatli bir şekilde hazırlandı.",
+        "words": [
+          { "w": "prepared", "tr": "hazırlandı" },
+          { "w": "carefully", "tr": "dikkatli bir şekilde" },
+          { "w": "interview", "tr": "mülakat" }
+        ]
+      },
+      {
+        "en": "She researched the company and practised answering common questions.",
+        "tr": "Şirketi araştırdı ve yaygın sorulara yanıt vermeyi pratik yaptı.",
+        "words": [
+          { "w": "researched", "tr": "araştırdı" },
+          { "w": "practised", "tr": "pratik yaptı" },
+          { "w": "common", "tr": "yaygın" }
+        ]
+      },
+      {
+        "en": "The interviewer greeted her warmly and offered her a seat.",
+        "tr": "Mülakat yapan kişi onu sıcak bir şekilde karşıladı ve oturmasını teklif etti.",
+        "words": [
+          { "w": "greeted", "tr": "karşıladı" },
+          { "w": "warmly", "tr": "sıcak bir şekilde" },
+          { "w": "offered", "tr": "teklif etti" }
+        ]
+      },
+      {
+        "en": "He asked about her previous experience and her strengths.",
+        "tr": "Önceki deneyimlerini ve güçlü yönlerini sordu.",
+        "words": [
+          { "w": "previous", "tr": "önceki" },
+          { "w": "experience", "tr": "deneyim" },
+          { "w": "strengths", "tr": "güçlü yönler" }
+        ]
+      },
+      {
+        "en": "Maria answered confidently and gave specific examples from her work.",
+        "tr": "Maria güvenle yanıt verdi ve iş hayatından somut örnekler verdi.",
+        "words": [
+          { "w": "confidently", "tr": "güvenle" },
+          { "w": "specific", "tr": "somut/belirli" },
+          { "w": "examples", "tr": "örnekler" }
+        ]
+      },
+      {
+        "en": "At the end, she asked intelligent questions about the company's future plans.",
+        "tr": "Sonunda, şirketin gelecek planlarıyla ilgili akıllı sorular sordu.",
+        "words": [
+          { "w": "intelligent", "tr": "akıllı" },
+          { "w": "future", "tr": "gelecek" },
+          { "w": "plans", "tr": "planlar" }
+        ]
+      },
+      {
+        "en": "She received a job offer two days later and happily accepted it.",
+        "tr": "İki gün sonra iş teklifi aldı ve mutlulukla kabul etti.",
+        "words": [
+          { "w": "received", "tr": "aldı" },
+          { "w": "offer", "tr": "teklif" },
+          { "w": "accepted", "tr": "kabul etti" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "level": 4,
+    "title": "Digital Nomad Life",
+    "titleTR": "Dijital Göçebe Hayatı",
+    "emoji": "💻",
+    "readingTime": "5 dk",
+    "sentences": [
+      {
+        "en": "James had been working remotely for three years from different countries.",
+        "tr": "James üç yıldır farklı ülkelerden uzaktan çalışıyordu.",
+        "words": [
+          { "w": "remotely", "tr": "uzaktan" },
+          { "w": "different", "tr": "farklı" },
+          { "w": "countries", "tr": "ülkeler" }
+        ]
+      },
+      {
+        "en": "He believed that location independence brought both freedom and challenges.",
+        "tr": "Konumdan bağımsızlığın hem özgürlük hem de zorluklar getirdiğine inanıyordu.",
+        "words": [
+          { "w": "independence", "tr": "bağımsızlık" },
+          { "w": "freedom", "tr": "özgürlük" },
+          { "w": "challenges", "tr": "zorluklar" }
+        ]
+      },
+      {
+        "en": "His biggest struggle was maintaining a healthy work-life balance.",
+        "tr": "En büyük zorluğu sağlıklı bir iş-yaşam dengesi kurmaktı.",
+        "words": [
+          { "w": "struggle", "tr": "mücadele/zorluk" },
+          { "w": "maintaining", "tr": "korumak/sürdürmek" },
+          { "w": "balance", "tr": "denge" }
+        ]
+      },
+      {
+        "en": "He found that establishing routines helped him stay productive.",
+        "tr": "Rutinler oluşturmanın üretken kalmasına yardımcı olduğunu keşfetti.",
+        "words": [
+          { "w": "establishing", "tr": "oluşturmak" },
+          { "w": "routines", "tr": "rutinler" },
+          { "w": "productive", "tr": "üretken" }
+        ]
+      },
+      {
+        "en": "Despite occasional loneliness, he treasured the remarkable cultural experiences.",
+        "tr": "Ara sıra hissedilen yalnızlığa rağmen, olağanüstü kültürel deneyimlere değer veriyordu.",
+        "words": [
+          { "w": "occasional", "tr": "ara sıra" },
+          { "w": "loneliness", "tr": "yalnızlık" },
+          { "w": "treasured", "tr": "değer verdi" },
+          { "w": "remarkable", "tr": "olağanüstü" }
+        ]
+      },
+      {
+        "en": "He had learned that adaptability was the most essential skill for this lifestyle.",
+        "tr": "Bu yaşam tarzı için uyum yeteneğinin en temel beceri olduğunu öğrenmişti.",
+        "words": [
+          { "w": "adaptability", "tr": "uyum yeteneği" },
+          { "w": "essential", "tr": "temel/gerekli" },
+          { "w": "lifestyle", "tr": "yaşam tarzı" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "level": 5,
+    "title": "The Art of Persuasion",
+    "titleTR": "İkna Sanatı",
+    "emoji": "🎯",
+    "readingTime": "6 dk",
+    "sentences": [
+      {
+        "en": "Effective persuasion is not about manipulation but about genuine understanding.",
+        "tr": "Etkili ikna, manipülasyonla değil, gerçek anlayışla ilgilidir.",
+        "words": [
+          { "w": "persuasion", "tr": "ikna" },
+          { "w": "manipulation", "tr": "manipülasyon" },
+          { "w": "genuine", "tr": "gerçek/samimi" }
+        ]
+      },
+      {
+        "en": "Skilled communicators tailor their message to resonate with their audience's values.",
+        "tr": "Yetenekli iletişimciler, mesajlarını kitlenin değerleriyle örtüşecek şekilde şekillendirir.",
+        "words": [
+          { "w": "tailor", "tr": "şekillendirmek/uyarlamak" },
+          { "w": "resonate", "tr": "yankı uyandırmak" },
+          { "w": "audience", "tr": "kitle/izleyici" }
+        ]
+      },
+      {
+        "en": "Aristotle identified three pillars of persuasion: ethos, pathos, and logos.",
+        "tr": "Aristo iknanın üç temel sütununu belirledi: ethos, pathos ve logos.",
+        "words": [
+          { "w": "identified", "tr": "belirledi" },
+          { "w": "pillars", "tr": "sütunlar/temeller" }
+        ]
+      },
+      {
+        "en": "Ethos refers to credibility — establishing yourself as a trustworthy source.",
+        "tr": "Ethos, güvenilirliği ifade eder — kendinizi güvenilir bir kaynak olarak tanımlamak.",
+        "words": [
+          { "w": "credibility", "tr": "güvenilirlik" },
+          { "w": "establishing", "tr": "oluşturmak" },
+          { "w": "trustworthy", "tr": "güvenilir" }
+        ]
+      },
+      {
+        "en": "Pathos involves appealing to emotions through compelling stories and vivid imagery.",
+        "tr": "Pathos, etkileyici hikayeler ve canlı imgeler aracılığıyla duygulara hitap etmeyi içerir.",
+        "words": [
+          { "w": "appealing", "tr": "hitap etmek" },
+          { "w": "compelling", "tr": "etkileyici" },
+          { "w": "vivid", "tr": "canlı" }
+        ]
+      },
+      {
+        "en": "Logos depends on logical arguments and concrete evidence to support your claims.",
+        "tr": "Logos, iddialarınızı desteklemek için mantıksal argümanlara ve somut kanıtlara dayanır.",
+        "words": [
+          { "w": "logical", "tr": "mantıksal" },
+          { "w": "concrete", "tr": "somut" },
+          { "w": "evidence", "tr": "kanıt" },
+          { "w": "claims", "tr": "iddialar" }
+        ]
+      },
+      {
+        "en": "Mastering these techniques can transform how you communicate professionally and personally.",
+        "tr": "Bu teknikleri ustalaşmak, hem profesyonel hem de kişisel iletişim şeklinizi dönüştürebilir.",
+        "words": [
+          { "w": "mastering", "tr": "ustalaşmak" },
+          { "w": "transform", "tr": "dönüştürmek" },
+          { "w": "professionally", "tr": "profesyonelce" }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,335 @@
+/* ═══════════════════════════════════════
+   ANIMATIONS — Premium Light Theme
+   ═══════════════════════════════════════ */
+
+/* 1. Background ambient drift */
+@keyframes meshDrift {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25%      { transform: translate(20px, -15px) rotate(0.5deg); }
+  50%      { transform: translate(-10px, 20px) rotate(-0.5deg); }
+  75%      { transform: translate(15px, 10px) rotate(0.3deg); }
+}
+
+/* 2. Page slide up */
+@keyframes slideUp {
+  from { transform: translateY(24px); opacity: 0; filter: blur(4px); }
+  to   { transform: translateY(0);    opacity: 1; filter: blur(0); }
+}
+.screen { animation: slideUp 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+
+/* 3. Staggered children */
+.stagger > * {
+  opacity: 0;
+  animation: staggerFade 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes staggerFade {
+  from { transform: translateY(16px); opacity: 0; filter: blur(2px); }
+  to   { transform: translateY(0);    opacity: 1; filter: blur(0); }
+}
+.stagger > *:nth-child(1)  { animation-delay: 0.04s; }
+.stagger > *:nth-child(2)  { animation-delay: 0.08s; }
+.stagger > *:nth-child(3)  { animation-delay: 0.12s; }
+.stagger > *:nth-child(4)  { animation-delay: 0.16s; }
+.stagger > *:nth-child(5)  { animation-delay: 0.20s; }
+.stagger > *:nth-child(6)  { animation-delay: 0.24s; }
+.stagger > *:nth-child(7)  { animation-delay: 0.28s; }
+.stagger > *:nth-child(8)  { animation-delay: 0.32s; }
+.stagger > *:nth-child(9)  { animation-delay: 0.36s; }
+.stagger > *:nth-child(10) { animation-delay: 0.40s; }
+.stagger > *:nth-child(11) { animation-delay: 0.44s; }
+.stagger > *:nth-child(12) { animation-delay: 0.48s; }
+
+/* 4. Card Flip */
+.card-scene { perspective: 1200px; }
+.card-inner {
+  position: relative;
+  width: 100%; height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.card-inner.flipped  { transform: rotateY(180deg); }
+.card-front, .card-back {
+  position: absolute; width: 100%; height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--radius-lg);
+}
+.card-back { transform: rotateY(180deg); }
+
+/* 5. Correct answer pulse */
+@keyframes correctPulse {
+  0%   { transform: scale(1);    box-shadow: none; }
+  40%  { transform: scale(1.02); box-shadow: var(--shadow-glow-success); }
+  100% { transform: scale(1);    box-shadow: 0 0 16px rgba(16, 185, 129, 0.1); }
+}
+.answer-correct { animation: correctPulse 0.5s ease forwards; }
+
+/* 6. Wrong answer shake */
+@keyframes wrongShake {
+  0%, 100% { transform: translateX(0); }
+  15%      { transform: translateX(-10px) rotate(-0.8deg); }
+  30%      { transform: translateX(10px) rotate(0.8deg); }
+  45%      { transform: translateX(-7px) rotate(-0.4deg); }
+  60%      { transform: translateX(7px) rotate(0.4deg); }
+  75%      { transform: translateX(-3px); }
+  90%      { transform: translateX(3px); }
+}
+.answer-wrong { animation: wrongShake 0.5s ease; }
+
+/* 7. Score float */
+@keyframes scoreFloat {
+  0%   { transform: translateY(0) scale(1);     opacity: 1; }
+  30%  { transform: translateY(-24px) scale(1.35); opacity: 1; }
+  100% { transform: translateY(-80px) scale(1.1); opacity: 0; }
+}
+.score-float {
+  position: fixed; pointer-events: none; z-index: 9999;
+  font-family: var(--font-display); font-weight: 700; font-size: 22px;
+  animation: scoreFloat 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  letter-spacing: -0.02em;
+}
+.score-float.positive { color: var(--color-success); }
+.score-float.negative { color: var(--color-error); }
+
+/* 8. Streak fire pulse */
+@keyframes firePulse {
+  0%, 100% { transform: scale(1);    filter: brightness(1); }
+  50%      { transform: scale(1.2); filter: brightness(1.4); }
+}
+.streak-fire-anim { animation: firePulse 0.9s ease-in-out infinite; }
+
+/* 9. Badge pop */
+@keyframes badgePop {
+  0%   { transform: scale(0) rotate(-15deg); opacity: 0; }
+  60%  { transform: scale(1.2) rotate(3deg); opacity: 1; }
+  80%  { transform: scale(0.92) rotate(-1deg); }
+  100% { transform: scale(1) rotate(0deg);   opacity: 1; }
+}
+.badge-new { animation: badgePop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+
+/* 10. XP Bar fill */
+.xp-fill { transition: width 1.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+
+/* 11. Timer urgency */
+@keyframes timerUrgent {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50%      { transform: translate(-50%, -50%) scale(1.08); }
+}
+.timer-urgent { animation: timerUrgent 0.4s ease-in-out infinite; color: var(--color-error) !important; }
+
+/* 12. Confetti fall */
+@keyframes confettiFall {
+  0%   { transform: translateY(-10vh) rotate(0deg) scaleX(1);    opacity: 1; }
+  25%  { transform: translateY(25vh)  rotate(180deg) scaleX(-0.5); }
+  50%  { transform: translateY(50vh)  rotate(360deg) scaleX(1); }
+  75%  { transform: translateY(75vh)  rotate(540deg) scaleX(-0.8); }
+  100% { transform: translateY(110vh) rotate(720deg) scaleX(1);    opacity: 0; }
+}
+.confetti-piece {
+  position: fixed; pointer-events: none; z-index: 9998;
+  animation: confettiFall linear forwards;
+}
+
+/* 13. Logo float */
+@keyframes floatLogo {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+.logo-float { animation: floatLogo 3.5s ease-in-out infinite; }
+
+/* 14. Chip select */
+@keyframes chipSelect {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(0.92); }
+  100% { transform: scale(1); }
+}
+
+/* 15. Skeleton shimmer */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, rgba(0,0,0,0.03) 25%, rgba(0,0,0,0.06) 50%, rgba(0,0,0,0.03) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}
+
+/* 16. Fade in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.fade-in { animation: fadeIn 0.4s ease forwards; }
+
+/* 17. Scale in */
+@keyframes scaleIn {
+  from { transform: scale(0.85); opacity: 0; filter: blur(4px); }
+  to   { transform: scale(1);   opacity: 1; filter: blur(0); }
+}
+.scale-in { animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+
+/* 18. Glow pulse */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(var(--accent-primary-rgb), 0.1); }
+  50%      { box-shadow: 0 0 20px rgba(var(--accent-primary-rgb), 0.2), 0 0 40px rgba(var(--accent-primary-rgb), 0.06); }
+}
+.glow-pulse { animation: glowPulse 2.5s ease-in-out infinite; }
+
+/* 19. Spin */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.spin { animation: spin 1s linear infinite; }
+
+/* 20. Bounce in */
+@keyframes bounceIn {
+  0%   { transform: scale(0.3); opacity: 0; filter: blur(6px); }
+  50%  { transform: scale(1.08); filter: blur(0); }
+  70%  { transform: scale(0.95); }
+  100% { transform: scale(1);   opacity: 1; }
+}
+.bounce-in { animation: bounceIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+
+/* 21. Slide in from right */
+@keyframes slideRight {
+  from { transform: translateX(24px); opacity: 0; filter: blur(4px); }
+  to   { transform: translateX(0);    opacity: 1; filter: blur(0); }
+}
+.slide-right { animation: slideRight 0.4s ease forwards; }
+
+/* 22. Pulse dot (loading) */
+@keyframes pulseDot {
+  0%, 80%, 100% { transform: scale(0); opacity: 0.4; }
+  40%           { transform: scale(1); opacity: 1; }
+}
+.loading-dots { display: flex; gap: 6px; align-items: center; justify-content: center; }
+.loading-dots span {
+  width: 6px; height: 6px;
+  background: var(--accent-primary);
+  border-radius: 50%;
+  animation: pulseDot 1.4s ease-in-out infinite;
+}
+.loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+.loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+/* 23. Number count up */
+@keyframes countPulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.25); color: var(--color-warning); }
+  100% { transform: scale(1); }
+}
+
+/* 24. Result stars */
+@keyframes starReveal {
+  0%   { transform: scale(0) rotate(-20deg); opacity: 0; filter: blur(4px); }
+  60%  { transform: scale(1.25) rotate(4deg); opacity: 1; filter: blur(0); }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+.star-reveal { animation: starReveal 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.star-reveal:nth-child(2) { animation-delay: 0.2s; }
+.star-reveal:nth-child(3) { animation-delay: 0.4s; }
+
+/* 25. Breathe */
+@keyframes breathe {
+  0%, 100% { opacity: 0.7; }
+  50%      { opacity: 1; }
+}
+.breathe { animation: breathe 2s ease-in-out infinite; }
+
+/* 26. Gradient shift */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ═══════════════════════════════════════
+   PREMIUM MOTION UI
+   ═══════════════════════════════════════ */
+
+/* 1. METEOR SHOWER — Soft Light Streaks */
+.meteors-container {
+  position: absolute; inset: 0;
+  overflow: hidden; pointer-events: none; z-index: -1;
+}
+.meteor-line {
+  position: absolute;
+  top: -50px;
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(180deg, transparent, rgba(124, 58, 237, 0.2));
+  opacity: 0;
+  transform: rotate(45deg);
+  animation: meteorFall linear infinite;
+  border-radius: 999px;
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.15);
+}
+@keyframes meteorFall {
+  0% { transform: translateY(-10vh) translateX(0) rotate(45deg); opacity: 0.6; }
+  100% { transform: translateY(110vh) translateX(-110vh) rotate(45deg); opacity: 0; }
+}
+
+/* 2. TEXT SHIMMER */
+.text-shimmer {
+  background: linear-gradient(90deg, #7c3aed, #ec4899, #f59e0b, #10b981, #7c3aed);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shine 4s linear infinite;
+}
+@keyframes shine {
+  to { background-position: 200% center; }
+}
+
+/* 3. MAGIC BORDER */
+.magic-border {
+  position: relative;
+  z-index: 1;
+}
+.magic-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(from 0deg, transparent 60%, rgba(124, 58, 237, 0.3) 80%, rgba(16, 185, 129, 0.5) 100%);
+  z-index: -1;
+  animation: spinConic 4s linear infinite;
+}
+.magic-border::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: var(--bg-primary);
+  z-index: -1;
+}
+@keyframes spinConic {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 4. GRAVITY FLOAT */
+.float-anim {
+  animation: floatAnim 4s ease-in-out infinite;
+}
+.float-anim-delayed {
+  animation: floatAnim 4s ease-in-out infinite;
+  animation-delay: -2s;
+}
+@keyframes floatAnim {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+/* 5. HOVER LIFT — Universal */
+.hover-lift {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+  cursor: pointer;
+}
+.hover-lift:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+.hover-lift:active { transform: scale(0.97); }

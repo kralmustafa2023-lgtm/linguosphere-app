@@ -1,0 +1,232 @@
+[
+  {
+    "id": "cafe",
+    "title": "At the Coffee Shop",
+    "titleTR": "Kahve Dükkanında Sipariş Verme",
+    "emoji": "☕",
+    "character": "Barista (Alex)",
+    "dialogue": [
+      {
+        "speaker": "Alex",
+        "text": "Hello! Welcome to Central Perk. What can I get for you today?",
+        "textTR": "Merhaba! Central Perk'e hoş geldiniz. Bugün sizin için ne alabilirim?",
+        "options": [
+          { "text": "Hi! I would like a hot cappuccino, please.", "textTR": "Selam! Sıcak bir kapuçino almak istiyorum lütfen.", "correct": true },
+          { "text": "No, I am sleeping.", "textTR": "Hayır, uyuyorum.", "correct": false },
+          { "text": "My name is Tom.", "textTR": "Benim adım Tom.", "correct": false }
+        ]
+      },
+      {
+        "speaker": "Alex",
+        "text": "Great choice! What size would you like: Small, Medium, or Large?",
+        "textTR": "Harika seçim! Hangi boy istersiniz: Küçük, Orta mı Büyük mü?",
+        "options": [
+          { "text": "A medium cup, please.", "textTR": "Orta boy lütfen.", "correct": true },
+          { "text": "My car is red.", "textTR": "Arabam kırmızı.", "correct": false },
+          { "text": "I don't understand.", "textTR": "Anlamıyorum.", "correct": false }
+        ]
+      },
+      {
+        "speaker": "Alex",
+        "text": "Sure! Would you like any sugar or milk with that?",
+        "textTR": "Tabii! Yanında şeker veya süt ister misiniz?",
+        "options": [
+          { "text": "Just a little milk, no sugar please.", "textTR": "Sadece biraz süt, şeker olmasın lütfen.", "correct": true },
+          { "text": "I like football.", "textTR": "Futbolu severim.", "correct": false },
+          { "text": "It is raining outside.", "textTR": "Dışarıda yağmur yağıyor.", "correct": false }
+        ]
+      },
+      {
+        "speaker": "Alex",
+        "text": "Perfect! That will be $4.50. Have a wonderful day!",
+        "textTR": "Mükemmel! Toplam 4.50 dolar. Harika bir gün geçirin!",
+        "options": [
+          { "text": "Thank you very much! Keep the change.", "textTR": "Çok teşekkür ederim! Üstü kalsın.", "correct": true },
+          { "text": "I am from Turkey.", "textTR": "Ben Türkiye'denim.", "correct": false }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hotel",
+    "title": "Hotel Check-in",
+    "titleTR": "Otel Giriş İşlemi",
+    "emoji": "🏨",
+    "character": "Receptionist (Sarah)",
+    "dialogue": [
+      {
+        "speaker": "Sarah",
+        "text": "Good evening! Welcome to Grand Hotel. Do you have a reservation?",
+        "textTR": "İyi akşamlar! Grand Otel'e hoş geldiniz. Rezervasyonunuz var mıydı?",
+        "options": [
+          { "text": "Yes, I booked a room under the name Ali Yılmaz.", "textTR": "Evet, Ali Yılmaz adına bir oda ayırtmıştım.", "correct": true },
+          { "text": "I eat apples every morning.", "textTR": "Her sabah elma yerim.", "correct": false },
+          { "text": "The weather is nice today.", "textTR": "Bugün hava güzel.", "correct": false }
+        ]
+      },
+      {
+        "speaker": "Sarah",
+        "text": "Yes, I found your reservation! Could I please see your passport?",
+        "textTR": "Evet, rezervasyonunuzu buldum! Pasaportunuzu görebilir miyim lütfen?",
+        "options": [
+          { "text": "Of course, here is my passport.", "textTR": "Tabii ki, işte pasaportum.", "correct": true },
+          { "text": "I like cats very much.", "textTR": "Kedileri çok severim.", "correct": false }
+        ]
+      },
+      {
+        "speaker": "Sarah",
+        "text": "Thank you. You are in Room 305. Breakfast is served from 7 to 10 AM. Do you need anything else?",
+        "textTR": "Teşekkürler. 305 numaralı odasındasınız. Kahvaltı sabah 7-10 arasında. Başka bir şeye ihtiyacınız var mı?",
+        "options": [
+          { "text": "Could you please call a taxi for 8 AM tomorrow?", "textTR": "Yarın sabah 8 için taksi çağırabilir misiniz?", "correct": true },
+          { "text": "I want to go swimming.", "textTR": "Yüzmeye gitmek istiyorum.", "correct": false }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "doctor",
+    "title": "At the Doctor's Office",
+    "titleTR": "Doktor Muayenesinde",
+    "emoji": "🏥",
+    "character": "Doctor (Dr. Patel)",
+    "dialogue": [
+      {
+        "speaker": "Dr. Patel",
+        "text": "Good morning! Please sit down. What seems to be the problem today?",
+        "textTR": "Günaydın! Lütfen oturun. Bugün sorununuz nedir?",
+        "options": [
+          { "text": "I have had a headache and sore throat for three days.", "textTR": "Üç gündür baş ağrım ve boğaz ağrım var.", "correct": true },
+          { "text": "I like to play chess.", "textTR": "Satranç oynamayı severim.", "correct": false },
+          { "text": "My house is near the park.", "textTR": "Evim parkın yanında.", "correct": false }
+        ]
+      },
+      {
+        "speaker": "Dr. Patel",
+        "text": "I see. Do you have any fever or difficulty breathing?",
+        "textTR": "Anlıyorum. Ateşiniz veya nefes alma güçlüğünüz var mı?",
+        "options": [
+          { "text": "I had a low fever yesterday, but no breathing problems.", "textTR": "Dün hafif ateşim vardı ama nefes problemim yok.", "correct": true },
+          { "text": "I enjoy reading books.", "textTR": "Kitap okumayı severim.", "correct": false }
+        ]
+      },
+      {
+        "speaker": "Dr. Patel",
+        "text": "I will prescribe some antibiotics and recommend rest. Take one pill twice a day. How does that sound?",
+        "textTR": "Biraz antibiyotik yazacağım ve dinlenmenizi önereceğim. Günde iki kez bir hap alın. Bu nasıl görünüyor?",
+        "options": [
+          { "text": "That sounds good. For how many days should I take them?", "textTR": "Kulağa iyi geliyor. Kaç gün almam gerekiyor?", "correct": true },
+          { "text": "I prefer chocolate ice cream.", "textTR": "Çikolatalı dondurmayı tercih ederim.", "correct": false }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "airport",
+    "title": "At the Airport",
+    "titleTR": "Havalimanında",
+    "emoji": "✈️",
+    "character": "Check-in Agent (Maria)",
+    "dialogue": [
+      {
+        "speaker": "Maria",
+        "text": "Good afternoon! May I see your ticket and passport, please?",
+        "textTR": "İyi öğleden sonralar! Biletinizi ve pasaportunuzu görebilir miyim lütfen?",
+        "options": [
+          { "text": "Sure, here they are. I am flying to London.", "textTR": "Tabii, buyurun. Londra'ya uçuyorum.", "correct": true },
+          { "text": "I don't have a pencil.", "textTR": "Kurşun kalemim yok.", "correct": false }
+        ]
+      },
+      {
+        "speaker": "Maria",
+        "text": "Perfect. Do you have any bags to check in?",
+        "textTR": "Mükemmel. Teslim etmek istediğiniz bagaj var mı?",
+        "options": [
+          { "text": "Yes, I have one suitcase and one carry-on bag.", "textTR": "Evet, bir valiz ve bir el çantam var.", "correct": true },
+          { "text": "I like to swim in the ocean.", "textTR": "Okyanusta yüzmeyi severim.", "correct": false }
+        ]
+      },
+      {
+        "speaker": "Maria",
+        "text": "Your gate is B12. Boarding starts in 45 minutes. Would you prefer a window or aisle seat?",
+        "textTR": "Kapınız B12. Biniş 45 dakika içinde başlıyor. Pencere kenarı mı yoksa koridor koltuğu mu tercih edersiniz?",
+        "options": [
+          { "text": "A window seat please, I love watching the clouds.", "textTR": "Pencere kenarı lütfen, bulutları izlemeyi çok seviyorum.", "correct": true },
+          { "text": "My favourite colour is blue.", "textTR": "En sevdiğim renk mavi.", "correct": false }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shopping",
+    "title": "Shopping at a Clothing Store",
+    "titleTR": "Giyim Mağazasında Alışveriş",
+    "emoji": "🛍️",
+    "character": "Store Assistant (Emma)",
+    "dialogue": [
+      {
+        "speaker": "Emma",
+        "text": "Hello! Can I help you find anything today?",
+        "textTR": "Merhaba! Bugün bir şey bulmanıza yardımcı olabilir miyim?",
+        "options": [
+          { "text": "Yes, I am looking for a blue jacket in medium size.", "textTR": "Evet, orta beden mavi bir ceket arıyorum.", "correct": true },
+          { "text": "The sky is very blue today.", "textTR": "Bugün gökyüzü çok mavi.", "correct": false }
+        ]
+      },
+      {
+        "speaker": "Emma",
+        "text": "We have several styles. Would you prefer a casual or formal jacket?",
+        "textTR": "Birkaç farklı modelimiz var. Günlük mi yoksa resmi bir ceket mi tercih edersiniz?",
+        "options": [
+          { "text": "Casual, please. Something comfortable for the weekend.", "textTR": "Günlük lütfen. Hafta sonu için rahat bir şey.", "correct": true },
+          { "text": "I usually wake up at 7 AM.", "textTR": "Genellikle sabah 7'de kalkarım.", "correct": false }
+        ]
+      },
+      {
+        "speaker": "Emma",
+        "text": "This one is perfect and it's on sale — 30% off today only. Would you like to try it on?",
+        "textTR": "Bu mükemmel ve indirimde — bugün sadece yüzde 30 indirim. Denemek ister misiniz?",
+        "options": [
+          { "text": "Absolutely! Where is the fitting room?", "textTR": "Kesinlikle! Soyunma kabini nerede?", "correct": true },
+          { "text": "My brother is a doctor.", "textTR": "Erkek kardeşim doktordur.", "correct": false }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "restaurant",
+    "title": "At the Restaurant",
+    "titleTR": "Restoranda Yemek Siparişi",
+    "emoji": "🍽️",
+    "character": "Waiter (James)",
+    "dialogue": [
+      {
+        "speaker": "James",
+        "text": "Good evening! Do you have a reservation, or would you like a table for two?",
+        "textTR": "İyi akşamlar! Rezervasyonunuz var mı, yoksa iki kişilik masa mı istersiniz?",
+        "options": [
+          { "text": "We don't have a reservation. Do you have a table available?", "textTR": "Rezervasyonumuz yok. Müsait masanız var mı?", "correct": true },
+          { "text": "I am learning Turkish.", "textTR": "Türkçe öğreniyorum.", "correct": false }
+        ]
+      },
+      {
+        "speaker": "James",
+        "text": "Of course! Follow me please. Here is the menu. Would you like some water while you decide?",
+        "textTR": "Tabii! Lütfen beni takip edin. İşte menü. Karar verirken biraz su ister misiniz?",
+        "options": [
+          { "text": "Yes please, sparkling water for me and still for my friend.", "textTR": "Evet lütfen, benim için soda ve arkadaşım için normal su.", "correct": true },
+          { "text": "I usually travel by bus.", "textTR": "Genellikle otobüsle seyahat ederim.", "correct": false }
+        ]
+      },
+      {
+        "speaker": "James",
+        "text": "Are you ready to order, or do you need a few more minutes?",
+        "textTR": "Sipariş vermeye hazır mısınız, yoksa birkaç dakikaya daha ihtiyaç var mı?",
+        "options": [
+          { "text": "I think we are ready. I will have the grilled salmon, please.", "textTR": "Sanırım hazırız. Ben ızgara somon alacağım lütfen.", "correct": true },
+          { "text": "I prefer mountains over beaches.", "textTR": "Sahillerden çok dağları severim.", "correct": false }
+        ]
+      }
+    ]
+  }
+]
