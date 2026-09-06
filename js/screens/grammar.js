@@ -2,6 +2,9 @@
 // GRAMMAR SCREEN — Magic UI / Aceternity Style
 // ===========================
 
+import { backArrowSVG } from '../utils.js';
+import { navigate, AppState } from '../app.js';
+
 const GRAMMAR_COLORS = {
   purple: '#7c5dfa',
   blue: '#5fa8ff',

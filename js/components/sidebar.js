@@ -21,8 +21,8 @@ export function renderSidebar(currentScreen = 'home') {
   ];
 
   return `
-    <!-- STITCH ULTRA SIDEBAR (Always Docked on Left) -->
-    <aside class="fixed left-0 top-0 h-full w-72 bg-surface-glass backdrop-blur-2xl z-50 flex flex-col justify-between p-space-lg shadow-[0_12px_32px_-4px_rgba(0,0,0,0.35)] border-r border-border-glass">
+    <!-- STITCH ULTRA SIDEBAR (Hidden on Mobile, Docked on Desktop) -->
+    <aside class="hidden md:flex fixed left-0 top-0 h-full w-72 bg-surface-glass backdrop-blur-2xl z-50 flex-col justify-between p-space-lg shadow-[0_12px_32px_-4px_rgba(0,0,0,0.35)] border-r border-border-glass">
       <div class="flex flex-col gap-space-xl">
         <!-- Logo & Branding -->
         <div class="flex items-center justify-between cursor-pointer" onclick="window.navigate('home')">
@@ -47,7 +47,7 @@ export function renderSidebar(currentScreen = 'home') {
               : 'text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface';
 
             return `
-              <a class="group flex items-center justify-between px-space-md py-space-sm rounded-xl transition-all duration-200 cursor-pointer ${activeClasses}"
+              <button type="button" class="group flex items-center justify-between px-space-md py-space-sm rounded-xl transition-all duration-200 cursor-pointer text-left w-full ${activeClasses}"
                  onclick="window.navigate('${item.id}')"
                  data-path="${item.path}">
                 <div class="flex items-center gap-space-md">
@@ -55,7 +55,7 @@ export function renderSidebar(currentScreen = 'home') {
                   <span class="font-label-lg text-label-lg">${item.label}</span>
                 </div>
                 <span class="px-space-xs py-space-3xs rounded-full bg-surface-container ${item.color} font-label-sm text-label-sm font-semibold">${item.badge}</span>
-              </a>
+              </button>
             `;
           }).join('')}
         </nav>
@@ -87,12 +87,12 @@ export function renderSidebar(currentScreen = 'home') {
             </div>
           </div>
           <div class="flex items-center gap-1">
-            <button class="theme-toggle-btn text-on-surface-variant hover:text-on-surface transition-colors p-space-2xs rounded-lg hover:bg-surface-container-high flex items-center justify-center" 
+            <button type="button" class="theme-toggle-btn text-on-surface-variant hover:text-on-surface transition-colors p-space-2xs rounded-lg hover:bg-surface-container-high flex items-center justify-center cursor-pointer" 
                     onclick="window.toggleTheme()" 
                     title="Temayı Değiştir">
               <span class="material-symbols-outlined text-[18px]" id="themeIcon">${Storage.getTheme() === 'dark' ? 'light_mode' : 'dark_mode'}</span>
             </button>
-            <button class="text-on-surface-variant hover:text-on-surface transition-colors p-space-2xs rounded-lg hover:bg-surface-container-high flex items-center justify-center" onclick="window.navigate('profile')">
+            <button type="button" class="text-on-surface-variant hover:text-on-surface transition-colors p-space-2xs rounded-lg hover:bg-surface-container-high flex items-center justify-center cursor-pointer" onclick="window.navigate('profile')">
               <span class="material-symbols-outlined text-[18px]">settings</span>
             </button>
           </div>
@@ -101,13 +101,13 @@ export function renderSidebar(currentScreen = 'home') {
     </aside>
 
     <!-- MOBILE BOTTOM NAVIGATION (< 768px) -->
-    <nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-surface-glass backdrop-blur-2xl z-50 flex items-center justify-around px-2 border-t border-border-glass shadow-[0_-4px_24px_rgba(0,0,0,0.35)]">
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-surface-container-high/95 backdrop-blur-2xl z-50 flex items-center justify-around px-2 border-t border-border-glass shadow-[0_-4px_24px_rgba(0,0,0,0.5)]">
       ${navItems.map(item => {
         const isActive = (currentScreen === item.id || (currentScreen === 'home' && item.id === 'home'));
         const activeColor = isActive ? 'text-primary font-bold scale-105' : 'text-on-surface-variant opacity-70';
 
         return `
-          <button class="flex flex-col items-center justify-center flex-1 h-full gap-0.5 transition-all cursor-pointer ${activeColor}"
+          <button type="button" class="flex flex-col items-center justify-center flex-1 h-full gap-0.5 transition-all cursor-pointer ${activeColor}"
                   onclick="window.navigate('${item.id}')">
             <span class="material-symbols-outlined text-[20px]">${item.icon}</span>
             <span class="font-label-sm text-[10px]">${item.label}</span>
@@ -122,28 +122,36 @@ export function renderHeaderBar() {
   const state = Storage.load();
 
   return `
-    <header class="fixed top-0 left-72 right-0 h-16 bg-surface-glass backdrop-blur-xl z-40 flex items-center justify-between px-space-xl border-b border-border-glass shadow-[0_1px_8px_rgba(0,0,0,0.15)]">
-      <div class="flex items-center gap-space-md">
-        <div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container-high/80">
+    <header class="fixed top-0 left-0 md:left-72 right-0 h-16 bg-surface-glass backdrop-blur-xl z-40 flex items-center justify-between px-4 md:px-space-xl border-b border-border-glass shadow-[0_1px_8px_rgba(0,0,0,0.15)]">
+      <div class="flex items-center gap-space-sm md:gap-space-md">
+        <!-- Mobile Logo -->
+        <div class="flex md:hidden items-center gap-2 cursor-pointer" onclick="window.navigate('home')">
+          <div class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary border border-primary/30">
+            <span class="material-symbols-outlined text-[18px]">school</span>
+          </div>
+          <span class="font-bold text-on-surface text-sm">Linguosphere</span>
+        </div>
+
+        <div class="hidden sm:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container-high/80">
           <span class="material-symbols-outlined text-on-surface-variant text-[18px]">translate</span>
           <span class="font-label-sm text-label-sm text-on-surface font-semibold">İngilizce • EN</span>
         </div>
-        <div class="hidden md:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container-high/60">
+        <div class="hidden lg:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container-high/60">
           <span class="material-symbols-outlined text-secondary text-[18px]">headset_mic</span>
           <span class="font-label-sm text-label-sm text-secondary font-semibold">AI Telaffuz Motoru Aktif</span>
         </div>
       </div>
-      <div class="flex items-center gap-space-md">
+      <div class="flex items-center gap-2 md:gap-space-md">
         <div class="hidden sm:flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container/80">
           <span class="material-symbols-outlined text-tertiary text-[18px]">military_tech</span>
-          <span class="font-label-sm text-label-sm text-on-surface">Lig: <strong class="text-tertiary">Safir Kademe</strong></span>
+          <span class="font-label-sm text-label-sm text-on-surface">Lig: <strong class="text-tertiary">Safir</strong></span>
         </div>
-        <button class="flex items-center justify-center w-9 h-9 rounded-full bg-surface-container-high/60 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" 
+        <button type="button" class="theme-toggle-btn flex items-center justify-center w-9 h-9 rounded-full bg-surface-container-high/60 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer" 
                 onclick="window.toggleTheme()" 
                 title="Temayı Değiştir">
-          <span class="material-symbols-outlined text-[20px]">${Storage.getTheme() === 'dark' ? 'light_mode' : 'dark_mode'}</span>
+          <span class="material-symbols-outlined text-[20px]" id="themeIcon">${Storage.getTheme() === 'dark' ? 'light_mode' : 'dark_mode'}</span>
         </button>
-        <button class="flex items-center justify-center w-9 h-9 rounded-full bg-surface-container-high/60 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="window.navigate('profile')">
+        <button type="button" class="flex items-center justify-center w-9 h-9 rounded-full bg-surface-container-high/60 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer" onclick="window.navigate('profile')">
           <span class="material-symbols-outlined text-[20px]">notifications</span>
         </button>
       </div>
@@ -151,14 +159,21 @@ export function renderHeaderBar() {
   `;
 }
 
-// Global window.toggleTheme function
+// Global window.toggleTheme function — Instant smooth toggle without full reload
 if (typeof window !== 'undefined') {
   window.toggleTheme = function() {
     const current = Storage.getTheme();
     const next = current === 'dark' ? 'light' : 'dark';
     Storage.setTheme(next);
-    // Re-render current screen to update icons
-    const currentActive = document.querySelector('[data-path]')?.dataset.path || 'home';
-    navigate(window.AppState?.currentScreen || 'home');
+    document.documentElement.setAttribute('data-theme', next);
+    if (next === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    // Update theme toggle icons across the DOM without re-navigating
+    document.querySelectorAll('#themeIcon, .theme-toggle-btn span').forEach(el => {
+      el.textContent = next === 'dark' ? 'light_mode' : 'dark_mode';
+    });
   };
 }

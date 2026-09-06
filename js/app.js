@@ -105,10 +105,10 @@ export async function navigate(screen, params = {}) {
   }
 
   const root = document.getElementById('app');
-  root.innerHTML = '';
+  AppState.currentScreen = targetScreen;
 
   try {
-    const cacheBuster = 'v2-stitch-1';
+    const cacheBuster = 'v2-stitch-fixed';
 
     if (type === 'screen') {
       const modulePath = `./screens/${targetScreen}.js?v=${cacheBuster}`;
@@ -134,6 +134,7 @@ export async function navigate(screen, params = {}) {
 
       const Component = screenComponents[targetScreen];
       if (Component && Component.render) {
+        root.innerHTML = '';
         switch (targetScreen) {
           case 'home':
           case 'practicePortal':
@@ -190,6 +191,17 @@ export async function navigate(screen, params = {}) {
 
       const GameComponent = gameComponents[screen];
       if (GameComponent && GameComponent.start) {
+        // Robust fallback: if lessonData is missing and game needs it, load Level 1 Lesson 1
+        if (!AppState.lessonData && screen !== 'minimalPairs' && screen !== 'examPrep') {
+          const defaultLvl = await DataManager.loadLevel(AppState.currentLevel || 1);
+          if (defaultLvl && defaultLvl.lessons && defaultLvl.lessons.length > 0) {
+            AppState.levelData = defaultLvl;
+            AppState.currentLevel = AppState.currentLevel || 1;
+            AppState.currentLesson = AppState.currentLesson || 1;
+            AppState.lessonData = defaultLvl.lessons[0];
+          }
+        }
+        root.innerHTML = '';
         GameComponent.start(root, AppState.lessonData);
       } else {
         throw new Error(`Game component '${screen}' not found or start method missing.`);

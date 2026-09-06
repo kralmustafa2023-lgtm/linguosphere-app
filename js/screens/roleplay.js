@@ -4,8 +4,8 @@
 
 import { Speech } from '../speech.js';
 import { Storage } from '../storage.js';
-import { backArrowSVG, showToast, playSound, showConfetti } from '../utils.js';
-import { navigate } from '../app.js';
+import { backArrowSVG, showToast, playSound, showConfetti, showScoreFloat } from '../utils.js';
+import { navigate, AppState } from '../app.js';
 
 export const RoleplayScreen = {
   scenarios: [],

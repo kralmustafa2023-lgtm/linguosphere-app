@@ -21,11 +21,11 @@ export const ProfileScreen = {
     root.innerHTML = `
       ${renderSidebar('profile')}
       
-      <div class="pl-72 relative z-10 min-h-screen">
+      <div class="pl-0 md:pl-72 relative z-10 min-h-screen">
         ${renderHeaderBar()}
 
-        <main class="w-full pt-16 px-space-xl bg-transparent relative min-h-screen">
-          <div class="flex flex-col w-full pb-space-4xl gap-space-2xl">
+        <main class="w-full pt-16 px-4 md:px-space-xl pb-24 md:pb-space-4xl bg-transparent relative min-h-screen">
+          <div class="flex flex-col w-full gap-space-2xl">
             
             <!-- Section 1: Profil Hero Header Bento -->
             <div class="relative w-full rounded-2xl bg-surface-glass backdrop-blur-2xl p-space-xl shadow-xl overflow-hidden border border-border-glass">

@@ -25,11 +25,11 @@ export const AnalyticsScreen = {
     root.innerHTML = `
       ${renderSidebar('analytics')}
       
-      <div class="pl-72 relative z-10 min-h-screen">
+      <div class="pl-0 md:pl-72 relative z-10 min-h-screen">
         ${renderHeaderBar()}
 
-        <main class="w-full pt-16 px-space-xl bg-transparent relative min-h-screen">
-          <div class="flex flex-col w-full pb-space-4xl gap-space-xl">
+        <main class="w-full pt-16 px-4 md:px-space-xl pb-24 md:pb-space-4xl bg-transparent relative min-h-screen">
+          <div class="flex flex-col w-full gap-space-xl">
             
             <!-- Overview Header & Period Selector -->
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pt-space-md">

@@ -2,6 +2,10 @@
 // SPEED ROUND GAME
 // ===========================
 
+import { shuffle, playSound, showScoreFloat } from '../utils.js';
+import { Storage } from '../storage.js';
+import { navigate, AppState } from '../app.js';
+
 export const SpeedGame = {
   start(root, lessonData) {
     const vocab = lessonData ? (lessonData.vocabulary || []) : [];
