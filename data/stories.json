@@ -11,75 +11,346 @@
         "en": "Today is a beautiful and sunny day.",
         "tr": "Bugün güzel ve güneşli bir gün.",
         "words": [
-          { "w": "Today", "tr": "Bugün" },
-          { "w": "beautiful", "tr": "güzel" },
-          { "w": "sunny", "tr": "güneşli" }
+          {
+            "w": "Today",
+            "tr": "Bugün"
+          },
+          {
+            "w": "beautiful",
+            "tr": "güzel"
+          },
+          {
+            "w": "sunny",
+            "tr": "güneşli"
+          }
         ]
       },
       {
         "en": "Ali and Sarah go to the big park.",
         "tr": "Ali ve Sarah büyük parka gidiyorlar.",
         "words": [
-          { "w": "park", "tr": "park" },
-          { "w": "big", "tr": "büyük" }
+          {
+            "w": "park",
+            "tr": "park"
+          },
+          {
+            "w": "big",
+            "tr": "büyük"
+          }
         ]
       },
       {
         "en": "They see a small dog near the tree.",
         "tr": "Ağacın yanında küçük bir köpek görüyorlar.",
         "words": [
-          { "w": "small", "tr": "küçük" },
-          { "w": "dog", "tr": "köpek" },
-          { "w": "tree", "tr": "ağaç" }
+          {
+            "w": "small",
+            "tr": "küçük"
+          },
+          {
+            "w": "dog",
+            "tr": "köpek"
+          },
+          {
+            "w": "tree",
+            "tr": "ağaç"
+          }
         ]
       },
       {
         "en": "The dog is happy and wags its tail.",
         "tr": "Köpek mutlu ve kuyruğunu sallıyor.",
         "words": [
-          { "w": "happy", "tr": "mutlu" },
-          { "w": "tail", "tr": "kuyruk" }
+          {
+            "w": "happy",
+            "tr": "mutlu"
+          },
+          {
+            "w": "tail",
+            "tr": "kuyruk"
+          }
         ]
       },
       {
         "en": "They sit on the green grass and drink water.",
         "tr": "Yeşil çimlerin üzerine otururlar ve su içerler.",
         "words": [
-          { "w": "green", "tr": "yeşil" },
-          { "w": "grass", "tr": "çim" },
-          { "w": "water", "tr": "su" }
+          {
+            "w": "green",
+            "tr": "yeşil"
+          },
+          {
+            "w": "grass",
+            "tr": "çim"
+          },
+          {
+            "w": "water",
+            "tr": "su"
+          }
         ]
       },
       {
         "en": "Ali plays with the dog and throws a red ball.",
         "tr": "Ali köpekle oynuyor ve kırmızı bir top atıyor.",
         "words": [
-          { "w": "plays", "tr": "oynuyor" },
-          { "w": "throws", "tr": "atıyor" },
-          { "w": "red", "tr": "kırmızı" },
-          { "w": "ball", "tr": "top" }
+          {
+            "w": "plays",
+            "tr": "oynuyor"
+          },
+          {
+            "w": "throws",
+            "tr": "atıyor"
+          },
+          {
+            "w": "red",
+            "tr": "kırmızı"
+          },
+          {
+            "w": "ball",
+            "tr": "top"
+          }
         ]
       },
       {
         "en": "Sarah takes a photo of the beautiful flowers.",
         "tr": "Sarah güzel çiçeklerin fotoğrafını çekiyor.",
         "words": [
-          { "w": "photo", "tr": "fotoğraf" },
-          { "w": "flowers", "tr": "çiçekler" }
+          {
+            "w": "photo",
+            "tr": "fotoğraf"
+          },
+          {
+            "w": "flowers",
+            "tr": "çiçekler"
+          }
         ]
       },
       {
         "en": "They return home tired but very happy.",
         "tr": "Yorgun ama çok mutlu bir şekilde eve dönerler.",
         "words": [
-          { "w": "return", "tr": "dönmek" },
-          { "w": "tired", "tr": "yorgun" }
+          {
+            "w": "return",
+            "tr": "dönmek"
+          },
+          {
+            "w": "tired",
+            "tr": "yorgun"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "q": "sunny",
+        "a": "güneşli",
+        "o": [
+          "güneşli",
+          "yağmurlu",
+          "rüzgarlı",
+          "karlı"
+        ]
+      },
+      {
+        "q": "grass",
+        "a": "çim",
+        "o": [
+          "çim",
+          "çiçek",
+          "ağaç",
+          "toprak"
+        ]
+      },
+      {
+        "q": "throws",
+        "a": "atıyor",
+        "o": [
+          "atıyor",
+          "tutuyor",
+          "koşuyor",
+          "yüzüyor"
+        ]
+      },
+      {
+        "q": "tired",
+        "a": "yorgun",
+        "o": [
+          "yorgun",
+          "mutlu",
+          "kızgın",
+          "heyecanlı"
         ]
       }
     ]
   },
   {
     "id": 2,
+    "level": 1,
+    "title": "The Lost Kitten",
+    "titleTR": "Kayıp Yavru Kedi",
+    "emoji": "🐱",
+    "readingTime": "2 dk",
+    "sentences": [
+      {
+        "en": "Emma hears a quiet sound behind the door.",
+        "tr": "Emma kapının arkasından sessiz bir ses duyar.",
+        "words": [
+          {
+            "w": "hears",
+            "tr": "duyar"
+          },
+          {
+            "w": "quiet",
+            "tr": "sessiz"
+          },
+          {
+            "w": "behind",
+            "tr": "arkasında"
+          }
+        ]
+      },
+      {
+        "en": "She opens the front door slowly.",
+        "tr": "Ön kapıyı yavaşça açar.",
+        "words": [
+          {
+            "w": "opens",
+            "tr": "açar"
+          },
+          {
+            "w": "slowly",
+            "tr": "yavaşça"
+          }
+        ]
+      },
+      {
+        "en": "A tiny white kitten is sitting in a box.",
+        "tr": "Küçük beyaz bir yavru kedi bir kutunun içinde oturuyor.",
+        "words": [
+          {
+            "w": "tiny",
+            "tr": "minik / çok küçük"
+          },
+          {
+            "w": "kitten",
+            "tr": "yavru kedi"
+          },
+          {
+            "w": "box",
+            "tr": "kutu"
+          }
+        ]
+      },
+      {
+        "en": "The kitten is shivering because it is cold.",
+        "tr": "Yavru kedi hava soğuk olduğu için titriyor.",
+        "words": [
+          {
+            "w": "shivering",
+            "tr": "titriyor"
+          },
+          {
+            "w": "cold",
+            "tr": "soğuk"
+          }
+        ]
+      },
+      {
+        "en": "Emma brings a warm blanket and a bowl of warm milk.",
+        "tr": "Emma sıcak bir battaniye ve bir kase ılık süt getirir.",
+        "words": [
+          {
+            "w": "brings",
+            "tr": "getirir"
+          },
+          {
+            "w": "blanket",
+            "tr": "battaniye"
+          },
+          {
+            "w": "bowl",
+            "tr": "kase"
+          }
+        ]
+      },
+      {
+        "en": "The little cat drinks the milk and starts to purr.",
+        "tr": "Küçük kedi sütü içer ve mırıldanmaya başlar.",
+        "words": [
+          {
+            "w": "drinks",
+            "tr": "içer"
+          },
+          {
+            "w": "purr",
+            "tr": "mırıldanmak"
+          }
+        ]
+      },
+      {
+        "en": "Emma decides to give it a loving new home.",
+        "tr": "Emma ona sevgi dolu yeni bir yuva vermeye karar verir.",
+        "words": [
+          {
+            "w": "decides",
+            "tr": "karar verir"
+          },
+          {
+            "w": "loving",
+            "tr": "sevgi dolu"
+          },
+          {
+            "w": "home",
+            "tr": "ev / yuva"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "q": "kitten",
+        "a": "yavru kedi",
+        "o": [
+          "yavru kedi",
+          "köpek",
+          "kuş",
+          "tavşan"
+        ]
+      },
+      {
+        "q": "blanket",
+        "a": "battaniye",
+        "o": [
+          "battaniye",
+          "yastık",
+          "çarşaf",
+          "halı"
+        ]
+      },
+      {
+        "q": "shivering",
+        "a": "titriyor",
+        "o": [
+          "titriyor",
+          "uyuyor",
+          "koşuyor",
+          "oynuyor"
+        ]
+      },
+      {
+        "q": "tiny",
+        "a": "minik / çok küçük",
+        "o": [
+          "minik / çok küçük",
+          "büyük",
+          "ağır",
+          "hızlı"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
     "level": 2,
     "title": "The Mysterious Cafe",
     "titleTR": "Gizemli Kafe",
@@ -90,74 +361,318 @@
         "en": "I walked into a quiet coffee shop in London.",
         "tr": "Londra'da sakin bir kahve dükkanına girdim.",
         "words": [
-          { "w": "quiet", "tr": "sakin" },
-          { "w": "coffee shop", "tr": "kahve dükkanı" }
+          {
+            "w": "quiet",
+            "tr": "sakin"
+          },
+          {
+            "w": "coffee shop",
+            "tr": "kahve dükkanı"
+          }
         ]
       },
       {
         "en": "The barista smiled and asked, 'How can I help you today?'",
         "tr": "Barista gülümsedi ve sordu: 'Bugün size nasıl yardımcı olabilirim?'",
         "words": [
-          { "w": "smiled", "tr": "gülümsedi" },
-          { "w": "asked", "tr": "sordu" }
+          {
+            "w": "smiled",
+            "tr": "gülümsedi"
+          },
+          {
+            "w": "asked",
+            "tr": "sordu"
+          }
         ]
       },
       {
         "en": "I ordered a warm cup of coffee and a fresh croissant.",
         "tr": "Sıcak bir fincan kahve ve taze bir kruvasan sipariş ettim.",
         "words": [
-          { "w": "warm", "tr": "sıcak/ılık" },
-          { "w": "fresh", "tr": "taze" },
-          { "w": "ordered", "tr": "sipariş ettim" }
+          {
+            "w": "warm",
+            "tr": "sıcak/ılık"
+          },
+          {
+            "w": "fresh",
+            "tr": "taze"
+          },
+          {
+            "w": "ordered",
+            "tr": "sipariş ettim"
+          }
         ]
       },
       {
         "en": "Near the window, an old man was reading a newspaper.",
         "tr": "Pencerenin yanında yaşlı bir adam gazete okuyordu.",
         "words": [
-          { "w": "window", "tr": "pencere" },
-          { "w": "old", "tr": "yaşlı" },
-          { "w": "newspaper", "tr": "gazete" }
+          {
+            "w": "window",
+            "tr": "pencere"
+          },
+          {
+            "w": "old",
+            "tr": "yaşlı"
+          },
+          {
+            "w": "newspaper",
+            "tr": "gazete"
+          }
         ]
       },
       {
         "en": "Soft jazz music played in the background.",
         "tr": "Arka planda yumuşak caz müziği çalıyordu.",
         "words": [
-          { "w": "soft", "tr": "yumuşak" },
-          { "w": "background", "tr": "arka plan" }
+          {
+            "w": "soft",
+            "tr": "yumuşak"
+          },
+          {
+            "w": "background",
+            "tr": "arka plan"
+          }
         ]
       },
       {
         "en": "I opened my laptop and started working on my project.",
         "tr": "Bilgisayarımı açtım ve projemi yapmaya başladım.",
         "words": [
-          { "w": "opened", "tr": "açtım" },
-          { "w": "started", "tr": "başladım" },
-          { "w": "project", "tr": "proje" }
+          {
+            "w": "opened",
+            "tr": "açtım"
+          },
+          {
+            "w": "started",
+            "tr": "başladım"
+          },
+          {
+            "w": "project",
+            "tr": "proje"
+          }
         ]
       },
       {
         "en": "Two hours passed and I did not notice the time.",
         "tr": "İki saat geçti ve zamanı fark etmedim.",
         "words": [
-          { "w": "passed", "tr": "geçti" },
-          { "w": "notice", "tr": "fark etmek" }
+          {
+            "w": "passed",
+            "tr": "geçti"
+          },
+          {
+            "w": "notice",
+            "tr": "fark etmek"
+          }
         ]
       },
       {
         "en": "I paid the bill and left the cafe with a smile.",
         "tr": "Hesabı ödedim ve gülümseyerek kafeden ayrıldım.",
         "words": [
-          { "w": "paid", "tr": "ödedim" },
-          { "w": "bill", "tr": "hesap/fatura" },
-          { "w": "left", "tr": "ayrıldım" }
+          {
+            "w": "paid",
+            "tr": "ödedim"
+          },
+          {
+            "w": "bill",
+            "tr": "hesap/fatura"
+          },
+          {
+            "w": "left",
+            "tr": "ayrıldım"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "q": "ordered",
+        "a": "sipariş ettim",
+        "o": [
+          "sipariş ettim",
+          "ödedim",
+          "hazırladım",
+          "içtim"
+        ]
+      },
+      {
+        "q": "notice",
+        "a": "fark etmek",
+        "o": [
+          "fark etmek",
+          "unutmak",
+          "hatırlamak",
+          "kaybetmek"
+        ]
+      },
+      {
+        "q": "bill",
+        "a": "hesap/fatura",
+        "o": [
+          "hesap/fatura",
+          "menü",
+          "bahşiş",
+          "garson"
+        ]
+      },
+      {
+        "q": "fresh",
+        "a": "taze",
+        "o": [
+          "taze",
+          "bayat",
+          "sıcak",
+          "lezzetli"
         ]
       }
     ]
   },
   {
-    "id": 3,
+    "id": 4,
+    "level": 2,
+    "title": "A Weekend Camping Trip",
+    "titleTR": "Hafta Sonu Kampı",
+    "emoji": "⛺",
+    "readingTime": "3 dk",
+    "sentences": [
+      {
+        "en": "David and his friends planned a camping trip in the mountains.",
+        "tr": "David ve arkadaşları dağlarda bir kamp gezisi planladılar.",
+        "words": [
+          {
+            "w": "planned",
+            "tr": "planladılar"
+          },
+          {
+            "w": "camping",
+            "tr": "kamp yapma"
+          },
+          {
+            "w": "mountains",
+            "tr": "dağlar"
+          }
+        ]
+      },
+      {
+        "en": "They packed tents, sleeping bags, and flashlights.",
+        "tr": "Çadırları, uyku tulumlarını ve el fenerlerini paketlediler.",
+        "words": [
+          {
+            "w": "packed",
+            "tr": "hazırladılar/paketlediler"
+          },
+          {
+            "w": "tents",
+            "tr": "çadırlar"
+          },
+          {
+            "w": "flashlights",
+            "tr": "el fenerleri"
+          }
+        ]
+      },
+      {
+        "en": "When they arrived, they set up the camp near a crystal river.",
+        "tr": "Vardıklarında, berrak bir nehrin yanına kamp kurdular.",
+        "words": [
+          {
+            "w": "arrived",
+            "tr": "vardılar"
+          },
+          {
+            "w": "crystal",
+            "tr": "berrak / kristal"
+          },
+          {
+            "w": "river",
+            "tr": "nehir"
+          }
+        ]
+      },
+      {
+        "en": "At night, they gathered around a warm campfire and roasted marshmallows.",
+        "tr": "Gece, sıcak kamp ateşinin etrafında toplandılar ve marshmallow kızarttılar.",
+        "words": [
+          {
+            "w": "gathered",
+            "tr": "toplandılar"
+          },
+          {
+            "w": "campfire",
+            "tr": "kamp ateşi"
+          },
+          {
+            "w": "roasted",
+            "tr": "kızarttılar"
+          }
+        ]
+      },
+      {
+        "en": "The night sky was filled with thousands of glowing stars.",
+        "tr": "Gece gökyüzü binlerce parlayan yıldızla doluydu.",
+        "words": [
+          {
+            "w": "filled",
+            "tr": "dolu"
+          },
+          {
+            "w": "glowing",
+            "tr": "parlayan"
+          },
+          {
+            "w": "stars",
+            "tr": "yıldızlar"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "q": "tents",
+        "a": "çadırlar",
+        "o": [
+          "çadırlar",
+          "evler",
+          "oteller",
+          "arabalar"
+        ]
+      },
+      {
+        "q": "gathered",
+        "a": "toplandılar",
+        "o": [
+          "toplandılar",
+          "dağıldılar",
+          "uyudular",
+          "yürüdüler"
+        ]
+      },
+      {
+        "q": "campfire",
+        "a": "kamp ateşi",
+        "o": [
+          "kamp ateşi",
+          "fener",
+          "güneş",
+          "ocak"
+        ]
+      },
+      {
+        "q": "glowing",
+        "a": "parlayan",
+        "o": [
+          "parlayan",
+          "sönen",
+          "karanlık",
+          "uzak"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
     "level": 3,
     "title": "The Job Interview",
     "titleTR": "İş Mülakatı",
@@ -168,69 +683,316 @@
         "en": "Maria prepared carefully for her important job interview.",
         "tr": "Maria önemli iş mülakatı için dikkatli bir şekilde hazırlandı.",
         "words": [
-          { "w": "prepared", "tr": "hazırlandı" },
-          { "w": "carefully", "tr": "dikkatli bir şekilde" },
-          { "w": "interview", "tr": "mülakat" }
+          {
+            "w": "prepared",
+            "tr": "hazırlandı"
+          },
+          {
+            "w": "carefully",
+            "tr": "dikkatli bir şekilde"
+          },
+          {
+            "w": "interview",
+            "tr": "mülakat"
+          }
         ]
       },
       {
         "en": "She researched the company and practised answering common questions.",
         "tr": "Şirketi araştırdı ve yaygın sorulara yanıt vermeyi pratik yaptı.",
         "words": [
-          { "w": "researched", "tr": "araştırdı" },
-          { "w": "practised", "tr": "pratik yaptı" },
-          { "w": "common", "tr": "yaygın" }
+          {
+            "w": "researched",
+            "tr": "araştırdı"
+          },
+          {
+            "w": "practised",
+            "tr": "pratik yaptı"
+          },
+          {
+            "w": "common",
+            "tr": "yaygın"
+          }
         ]
       },
       {
         "en": "The interviewer greeted her warmly and offered her a seat.",
         "tr": "Mülakat yapan kişi onu sıcak bir şekilde karşıladı ve oturmasını teklif etti.",
         "words": [
-          { "w": "greeted", "tr": "karşıladı" },
-          { "w": "warmly", "tr": "sıcak bir şekilde" },
-          { "w": "offered", "tr": "teklif etti" }
+          {
+            "w": "greeted",
+            "tr": "karşıladı"
+          },
+          {
+            "w": "warmly",
+            "tr": "sıcak bir şekilde"
+          },
+          {
+            "w": "offered",
+            "tr": "teklif etti"
+          }
         ]
       },
       {
         "en": "He asked about her previous experience and her strengths.",
         "tr": "Önceki deneyimlerini ve güçlü yönlerini sordu.",
         "words": [
-          { "w": "previous", "tr": "önceki" },
-          { "w": "experience", "tr": "deneyim" },
-          { "w": "strengths", "tr": "güçlü yönler" }
+          {
+            "w": "previous",
+            "tr": "önceki"
+          },
+          {
+            "w": "experience",
+            "tr": "deneyim"
+          },
+          {
+            "w": "strengths",
+            "tr": "güçlü yönler"
+          }
         ]
       },
       {
         "en": "Maria answered confidently and gave specific examples from her work.",
         "tr": "Maria güvenle yanıt verdi ve iş hayatından somut örnekler verdi.",
         "words": [
-          { "w": "confidently", "tr": "güvenle" },
-          { "w": "specific", "tr": "somut/belirli" },
-          { "w": "examples", "tr": "örnekler" }
+          {
+            "w": "confidently",
+            "tr": "güvenle"
+          },
+          {
+            "w": "specific",
+            "tr": "somut/belirli"
+          },
+          {
+            "w": "examples",
+            "tr": "örnekler"
+          }
         ]
       },
       {
         "en": "At the end, she asked intelligent questions about the company's future plans.",
         "tr": "Sonunda, şirketin gelecek planlarıyla ilgili akıllı sorular sordu.",
         "words": [
-          { "w": "intelligent", "tr": "akıllı" },
-          { "w": "future", "tr": "gelecek" },
-          { "w": "plans", "tr": "planlar" }
+          {
+            "w": "intelligent",
+            "tr": "akıllı"
+          },
+          {
+            "w": "future",
+            "tr": "gelecek"
+          },
+          {
+            "w": "plans",
+            "tr": "planlar"
+          }
         ]
       },
       {
         "en": "She received a job offer two days later and happily accepted it.",
         "tr": "İki gün sonra iş teklifi aldı ve mutlulukla kabul etti.",
         "words": [
-          { "w": "received", "tr": "aldı" },
-          { "w": "offer", "tr": "teklif" },
-          { "w": "accepted", "tr": "kabul etti" }
+          {
+            "w": "received",
+            "tr": "aldı"
+          },
+          {
+            "w": "offer",
+            "tr": "teklif"
+          },
+          {
+            "w": "accepted",
+            "tr": "kabul etti"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "q": "confidently",
+        "a": "güvenle",
+        "o": [
+          "güvenle",
+          "çekinerek",
+          "sessizce",
+          "hızlıca"
+        ]
+      },
+      {
+        "q": "experience",
+        "a": "deneyim",
+        "o": [
+          "deneyim",
+          "eğitim",
+          "diploma",
+          "maaş"
+        ]
+      },
+      {
+        "q": "strengths",
+        "a": "güçlü yönler",
+        "o": [
+          "güçlü yönler",
+          "zayıflıklar",
+          "hatalar",
+          "korkular"
+        ]
+      },
+      {
+        "q": "accepted",
+        "a": "kabul etti",
+        "o": [
+          "kabul etti",
+          "reddetti",
+          "erteledi",
+          "sildi"
         ]
       }
     ]
   },
   {
-    "id": 4,
+    "id": 6,
+    "level": 3,
+    "title": "An Unexpected Journey",
+    "titleTR": "Beklenmedik Bir Yolculuk",
+    "emoji": "✈️",
+    "readingTime": "4 dk",
+    "sentences": [
+      {
+        "en": "Selim received an email invitation to present his research in Tokyo.",
+        "tr": "Selim, araştırmasını Tokyo'da sunmak için bir e-posta daveti aldı.",
+        "words": [
+          {
+            "w": "invitation",
+            "tr": "davet"
+          },
+          {
+            "w": "present",
+            "tr": "sunmak"
+          },
+          {
+            "w": "research",
+            "tr": "araştırma"
+          }
+        ]
+      },
+      {
+        "en": "He had never traveled overseas alone before.",
+        "tr": "Daha önce hiç tek başına yurt dışına seyahat etmemişti.",
+        "words": [
+          {
+            "w": "traveled",
+            "tr": "seyahat etti"
+          },
+          {
+            "w": "overseas",
+            "tr": "yurt dışı / denizaşırı"
+          },
+          {
+            "w": "alone",
+            "tr": "yalnız / tek başına"
+          }
+        ]
+      },
+      {
+        "en": "Navigating the busy airport and high-speed train system was thrilling.",
+        "tr": "Yoğun havaalanını ve hızlı tren sistemini kullanmak heyecan vericiydi.",
+        "words": [
+          {
+            "w": "navigating",
+            "tr": "yol bulmak / yönlendirmek"
+          },
+          {
+            "w": "busy",
+            "tr": "yoğun"
+          },
+          {
+            "w": "thrilling",
+            "tr": "heyecan verici"
+          }
+        ]
+      },
+      {
+        "en": "The conference attendees showed great appreciation for his presentation.",
+        "tr": "Konferans katılımcıları onun sunumuna büyük takdir gösterdi.",
+        "words": [
+          {
+            "w": "attendees",
+            "tr": "katılımcılar"
+          },
+          {
+            "w": "appreciation",
+            "tr": "takdir / beğeni"
+          }
+        ]
+      },
+      {
+        "en": "This journey broadened his perspective and boosted his self-confidence.",
+        "tr": "Bu yolculuk bakış açısını genişletti ve özgüvenini artırdı.",
+        "words": [
+          {
+            "w": "broadened",
+            "tr": "genişletti"
+          },
+          {
+            "w": "perspective",
+            "tr": "bakış açısı"
+          },
+          {
+            "w": "boosted",
+            "tr": "artırdı / yükseltti"
+          },
+          {
+            "w": "self-confidence",
+            "tr": "özgüven"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "q": "overseas",
+        "a": "yurt dışı / denizaşırı",
+        "o": [
+          "yurt dışı / denizaşırı",
+          "yerel",
+          "şehrin içi",
+          "komşu"
+        ]
+      },
+      {
+        "q": "thrilling",
+        "a": "heyecan verici",
+        "o": [
+          "heyecan verici",
+          "sıkıcı",
+          "tehlikeli",
+          "üzücü"
+        ]
+      },
+      {
+        "q": "perspective",
+        "a": "bakış açısı",
+        "o": [
+          "bakış açısı",
+          "karar",
+          "hedef",
+          "plan"
+        ]
+      },
+      {
+        "q": "boosted",
+        "a": "artırdı / yükseltti",
+        "o": [
+          "artırdı / yükseltti",
+          "azalttı",
+          "durdurdu",
+          "gizledi"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
     "level": 4,
     "title": "Digital Nomad Life",
     "titleTR": "Dijital Göçebe Hayatı",
@@ -241,61 +1003,302 @@
         "en": "James had been working remotely for three years from different countries.",
         "tr": "James üç yıldır farklı ülkelerden uzaktan çalışıyordu.",
         "words": [
-          { "w": "remotely", "tr": "uzaktan" },
-          { "w": "different", "tr": "farklı" },
-          { "w": "countries", "tr": "ülkeler" }
+          {
+            "w": "remotely",
+            "tr": "uzaktan"
+          },
+          {
+            "w": "different",
+            "tr": "farklı"
+          },
+          {
+            "w": "countries",
+            "tr": "ülkeler"
+          }
         ]
       },
       {
         "en": "He believed that location independence brought both freedom and challenges.",
         "tr": "Konumdan bağımsızlığın hem özgürlük hem de zorluklar getirdiğine inanıyordu.",
         "words": [
-          { "w": "independence", "tr": "bağımsızlık" },
-          { "w": "freedom", "tr": "özgürlük" },
-          { "w": "challenges", "tr": "zorluklar" }
+          {
+            "w": "independence",
+            "tr": "bağımsızlık"
+          },
+          {
+            "w": "freedom",
+            "tr": "özgürlük"
+          },
+          {
+            "w": "challenges",
+            "tr": "zorluklar"
+          }
         ]
       },
       {
         "en": "His biggest struggle was maintaining a healthy work-life balance.",
         "tr": "En büyük zorluğu sağlıklı bir iş-yaşam dengesi kurmaktı.",
         "words": [
-          { "w": "struggle", "tr": "mücadele/zorluk" },
-          { "w": "maintaining", "tr": "korumak/sürdürmek" },
-          { "w": "balance", "tr": "denge" }
+          {
+            "w": "struggle",
+            "tr": "mücadele/zorluk"
+          },
+          {
+            "w": "maintaining",
+            "tr": "korumak/sürdürmek"
+          },
+          {
+            "w": "balance",
+            "tr": "denge"
+          }
         ]
       },
       {
         "en": "He found that establishing routines helped him stay productive.",
         "tr": "Rutinler oluşturmanın üretken kalmasına yardımcı olduğunu keşfetti.",
         "words": [
-          { "w": "establishing", "tr": "oluşturmak" },
-          { "w": "routines", "tr": "rutinler" },
-          { "w": "productive", "tr": "üretken" }
+          {
+            "w": "establishing",
+            "tr": "oluşturmak"
+          },
+          {
+            "w": "routines",
+            "tr": "rutinler"
+          },
+          {
+            "w": "productive",
+            "tr": "üretken"
+          }
         ]
       },
       {
         "en": "Despite occasional loneliness, he treasured the remarkable cultural experiences.",
         "tr": "Ara sıra hissedilen yalnızlığa rağmen, olağanüstü kültürel deneyimlere değer veriyordu.",
         "words": [
-          { "w": "occasional", "tr": "ara sıra" },
-          { "w": "loneliness", "tr": "yalnızlık" },
-          { "w": "treasured", "tr": "değer verdi" },
-          { "w": "remarkable", "tr": "olağanüstü" }
+          {
+            "w": "occasional",
+            "tr": "ara sıra"
+          },
+          {
+            "w": "loneliness",
+            "tr": "yalnızlık"
+          },
+          {
+            "w": "treasured",
+            "tr": "değer verdi"
+          },
+          {
+            "w": "remarkable",
+            "tr": "olağanüstü"
+          }
         ]
       },
       {
         "en": "He had learned that adaptability was the most essential skill for this lifestyle.",
         "tr": "Bu yaşam tarzı için uyum yeteneğinin en temel beceri olduğunu öğrenmişti.",
         "words": [
-          { "w": "adaptability", "tr": "uyum yeteneği" },
-          { "w": "essential", "tr": "temel/gerekli" },
-          { "w": "lifestyle", "tr": "yaşam tarzı" }
+          {
+            "w": "adaptability",
+            "tr": "uyum yeteneği"
+          },
+          {
+            "w": "essential",
+            "tr": "temel/gerekli"
+          },
+          {
+            "w": "lifestyle",
+            "tr": "yaşam tarzı"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "q": "adaptability",
+        "a": "uyum yeteneği",
+        "o": [
+          "uyum yeteneği",
+          "hız",
+          "sabır",
+          "çalışkanlık"
+        ]
+      },
+      {
+        "q": "maintaining",
+        "a": "korumak/sürdürmek",
+        "o": [
+          "korumak/sürdürmek",
+          "yıkmak",
+          "satın almak",
+          "başlatmak"
+        ]
+      },
+      {
+        "q": "remarkable",
+        "a": "olağanüstü",
+        "o": [
+          "olağanüstü",
+          "sıradan",
+          "tehlikeli",
+          "ucuz"
+        ]
+      },
+      {
+        "q": "productive",
+        "a": "üretken",
+        "o": [
+          "üretken",
+          "tembel",
+          "yavaş",
+          "yorgun"
         ]
       }
     ]
   },
   {
-    "id": 5,
+    "id": 8,
+    "level": 4,
+    "title": "The Future of Clean Energy",
+    "titleTR": "Temiz Enerjinin Geleceği",
+    "emoji": "⚡",
+    "readingTime": "5 dk",
+    "sentences": [
+      {
+        "en": "Transitioning to sustainable energy sources is one of humanity's urgent tasks.",
+        "tr": "Sürdürülebilir enerji kaynaklarına geçiş, insanlığın en acil görevlerinden biridir.",
+        "words": [
+          {
+            "w": "Transitioning",
+            "tr": "Geçiş yapmak"
+          },
+          {
+            "w": "sustainable",
+            "tr": "sürdürülebilir"
+          },
+          {
+            "w": "urgent",
+            "tr": "acil"
+          }
+        ]
+      },
+      {
+        "en": "Solar panel efficiency and battery storage capacity have improved drastically.",
+        "tr": "Güneş paneli verimliliği ve pil depolama kapasitesi çarpıcı biçimde arttı.",
+        "words": [
+          {
+            "w": "efficiency",
+            "tr": "verimlilik"
+          },
+          {
+            "w": "storage",
+            "tr": "depolama"
+          },
+          {
+            "w": "drastically",
+            "tr": "çarpıcı biçimde / önemli ölçüde"
+          }
+        ]
+      },
+      {
+        "en": "Wind turbines generate green power while minimizing harmful emissions.",
+        "tr": "Rüzgar türbinleri zararlı emisyonları en aza indirirken yeşil enerji üretir.",
+        "words": [
+          {
+            "w": "turbines",
+            "tr": "türbinler"
+          },
+          {
+            "w": "minimizing",
+            "tr": "en aza indirmek"
+          },
+          {
+            "w": "emissions",
+            "tr": "emisyonlar / salınımlar"
+          }
+        ]
+      },
+      {
+        "en": "Governments are enacting legislation to incentivize eco-friendly technologies.",
+        "tr": "Hükümetler çevre dostu teknolojileri teşvik etmek için yasalar çıkarıyor.",
+        "words": [
+          {
+            "w": "enacting",
+            "tr": "yürürlüğe koymak"
+          },
+          {
+            "w": "legislation",
+            "tr": "mevzuat / kanunlar"
+          },
+          {
+            "w": "incentivize",
+            "tr": "teşvik etmek"
+          }
+        ]
+      },
+      {
+        "en": "Global collaboration will accelerate the shift towards a carbon-neutral planet.",
+        "tr": "Küresel işbirliği, karbon-nötr bir gezegene doğru dönüşümü hızlandıracaktır.",
+        "words": [
+          {
+            "w": "collaboration",
+            "tr": "işbirliği"
+          },
+          {
+            "w": "accelerate",
+            "tr": "hızlandırmak"
+          },
+          {
+            "w": "carbon-neutral",
+            "tr": "karbon-nötr"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "q": "sustainable",
+        "a": "sürdürülebilir",
+        "o": [
+          "sürdürülebilir",
+          "tükenebilir",
+          "zararlı",
+          "pahalı"
+        ]
+      },
+      {
+        "q": "efficiency",
+        "a": "verimlilik",
+        "o": [
+          "verimlilik",
+          "tüketim",
+          "maliyet",
+          "atık"
+        ]
+      },
+      {
+        "q": "incentivize",
+        "a": "teşvik etmek",
+        "o": [
+          "teşvik etmek",
+          "yasaklamak",
+          "cezalandırmak",
+          "ertelemek"
+        ]
+      },
+      {
+        "q": "accelerate",
+        "a": "hızlandırmak",
+        "o": [
+          "hızlandırmak",
+          "yavaşlatmak",
+          "durdurmak",
+          "önlemek"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9,
     "level": 5,
     "title": "The Art of Persuasion",
     "titleTR": "İkna Sanatı",
@@ -306,63 +1309,296 @@
         "en": "Effective persuasion is not about manipulation but about genuine understanding.",
         "tr": "Etkili ikna, manipülasyonla değil, gerçek anlayışla ilgilidir.",
         "words": [
-          { "w": "persuasion", "tr": "ikna" },
-          { "w": "manipulation", "tr": "manipülasyon" },
-          { "w": "genuine", "tr": "gerçek/samimi" }
+          {
+            "w": "persuasion",
+            "tr": "ikna"
+          },
+          {
+            "w": "manipulation",
+            "tr": "manipülasyon"
+          },
+          {
+            "w": "genuine",
+            "tr": "gerçek/samimi"
+          }
         ]
       },
       {
         "en": "Skilled communicators tailor their message to resonate with their audience's values.",
         "tr": "Yetenekli iletişimciler, mesajlarını kitlenin değerleriyle örtüşecek şekilde şekillendirir.",
         "words": [
-          { "w": "tailor", "tr": "şekillendirmek/uyarlamak" },
-          { "w": "resonate", "tr": "yankı uyandırmak" },
-          { "w": "audience", "tr": "kitle/izleyici" }
+          {
+            "w": "tailor",
+            "tr": "şekillendirmek/uyarlamak"
+          },
+          {
+            "w": "resonate",
+            "tr": "yankı uyandırmak"
+          },
+          {
+            "w": "audience",
+            "tr": "kitle/izleyici"
+          }
         ]
       },
       {
         "en": "Aristotle identified three pillars of persuasion: ethos, pathos, and logos.",
         "tr": "Aristo iknanın üç temel sütununu belirledi: ethos, pathos ve logos.",
         "words": [
-          { "w": "identified", "tr": "belirledi" },
-          { "w": "pillars", "tr": "sütunlar/temeller" }
+          {
+            "w": "identified",
+            "tr": "belirledi"
+          },
+          {
+            "w": "pillars",
+            "tr": "sütunlar/temeller"
+          }
         ]
       },
       {
         "en": "Ethos refers to credibility — establishing yourself as a trustworthy source.",
         "tr": "Ethos, güvenilirliği ifade eder — kendinizi güvenilir bir kaynak olarak tanımlamak.",
         "words": [
-          { "w": "credibility", "tr": "güvenilirlik" },
-          { "w": "establishing", "tr": "oluşturmak" },
-          { "w": "trustworthy", "tr": "güvenilir" }
+          {
+            "w": "credibility",
+            "tr": "güvenilirlik"
+          },
+          {
+            "w": "establishing",
+            "tr": "oluşturmak"
+          },
+          {
+            "w": "trustworthy",
+            "tr": "güvenilir"
+          }
         ]
       },
       {
         "en": "Pathos involves appealing to emotions through compelling stories and vivid imagery.",
         "tr": "Pathos, etkileyici hikayeler ve canlı imgeler aracılığıyla duygulara hitap etmeyi içerir.",
         "words": [
-          { "w": "appealing", "tr": "hitap etmek" },
-          { "w": "compelling", "tr": "etkileyici" },
-          { "w": "vivid", "tr": "canlı" }
+          {
+            "w": "appealing",
+            "tr": "hitap etmek"
+          },
+          {
+            "w": "compelling",
+            "tr": "etkileyici"
+          },
+          {
+            "w": "vivid",
+            "tr": "canlı"
+          }
         ]
       },
       {
         "en": "Logos depends on logical arguments and concrete evidence to support your claims.",
         "tr": "Logos, iddialarınızı desteklemek için mantıksal argümanlara ve somut kanıtlara dayanır.",
         "words": [
-          { "w": "logical", "tr": "mantıksal" },
-          { "w": "concrete", "tr": "somut" },
-          { "w": "evidence", "tr": "kanıt" },
-          { "w": "claims", "tr": "iddialar" }
+          {
+            "w": "logical",
+            "tr": "mantıksal"
+          },
+          {
+            "w": "concrete",
+            "tr": "somut"
+          },
+          {
+            "w": "evidence",
+            "tr": "kanıt"
+          },
+          {
+            "w": "claims",
+            "tr": "iddialar"
+          }
         ]
       },
       {
         "en": "Mastering these techniques can transform how you communicate professionally and personally.",
         "tr": "Bu teknikleri ustalaşmak, hem profesyonel hem de kişisel iletişim şeklinizi dönüştürebilir.",
         "words": [
-          { "w": "mastering", "tr": "ustalaşmak" },
-          { "w": "transform", "tr": "dönüştürmek" },
-          { "w": "professionally", "tr": "profesyonelce" }
+          {
+            "w": "mastering",
+            "tr": "ustalaşmak"
+          },
+          {
+            "w": "transform",
+            "tr": "dönüştürmek"
+          },
+          {
+            "w": "professionally",
+            "tr": "profesyonelce"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "q": "credibility",
+        "a": "güvenilirlik",
+        "o": [
+          "güvenilirlik",
+          "şüphe",
+          "güç",
+          "zenginlik"
+        ]
+      },
+      {
+        "q": "compelling",
+        "a": "etkileyici / ikna edici",
+        "o": [
+          "etkileyici / ikna edici",
+          "sıkıcı",
+          "karmaşık",
+          "zararlı"
+        ]
+      },
+      {
+        "q": "genuine",
+        "a": "gerçek/samimi",
+        "o": [
+          "gerçek/samimi",
+          "sahte",
+          "yapay",
+          "geçici"
+        ]
+      },
+      {
+        "q": "evidence",
+        "a": "kanıt",
+        "o": [
+          "kanıt",
+          "varsayım",
+          "tahmin",
+          "rüya"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "level": 5,
+    "title": "Cognitive Biases and Decisions",
+    "titleTR": "Bilişsel Yanılgılar ve Kararlar",
+    "emoji": "🧠",
+    "readingTime": "6 dk",
+    "sentences": [
+      {
+        "en": "Human rationality is inherently bounded by cognitive shortcuts known as heuristics.",
+        "tr": "İnsan rasyonelliği, sezgisel yöntemler olarak bilinen bilişsel kestirmelerle doğası gereği sınırlıdır.",
+        "words": [
+          {
+            "w": "rationality",
+            "tr": "rasyonellik / mantık"
+          },
+          {
+            "w": "inherently",
+            "tr": "doğası gereği"
+          },
+          {
+            "w": "heuristics",
+            "tr": "sezgisel yöntemler"
+          }
+        ]
+      },
+      {
+        "en": "Confirmation bias leads individuals to favor information that confirms preexisting beliefs.",
+        "tr": "Doğrulama yanlılığı, bireyleri önceden var olan inançlarını doğrulayan bilgileri tercih etmeye yönlendirir.",
+        "words": [
+          {
+            "w": "bias",
+            "tr": "yanlılık / önyargı"
+          },
+          {
+            "w": "favor",
+            "tr": "tercih etmek / kayırmak"
+          },
+          {
+            "w": "preexisting",
+            "tr": "önceden var olan"
+          }
+        ]
+      },
+      {
+        "en": "The sunk cost fallacy causes people to persist in unproductive endeavors.",
+        "tr": "Batık maliyet yanılgısı, insanların verimsiz çabalarda ısrar etmesine neden olur.",
+        "words": [
+          {
+            "w": "fallacy",
+            "tr": "yanılgı"
+          },
+          {
+            "w": "persist",
+            "tr": "ısrar etmek / sürdürmek"
+          },
+          {
+            "w": "endeavors",
+            "tr": "çabalar / girişimler"
+          }
+        ]
+      },
+      {
+        "en": "Cultivating intellectual humility enables us to mitigate these subconscious pitfalls.",
+        "tr": "Entelektüel alçakgönüllülük geliştirmek, bu bilinçaltı tuzakları hafifletmemizi sağlar.",
+        "words": [
+          {
+            "w": "Cultivating",
+            "tr": "Geliştirmek / yetiştirmek"
+          },
+          {
+            "w": "humility",
+            "tr": "alçakgönüllülük"
+          },
+          {
+            "w": "mitigate",
+            "tr": "hafifletmek / azaltmak"
+          },
+          {
+            "w": "pitfalls",
+            "tr": "tuzaklar / tehlikeler"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "q": "fallacy",
+        "a": "yanılgı",
+        "o": [
+          "yanılgı",
+          "gerçek",
+          "doğruluk",
+          "kanıt"
+        ]
+      },
+      {
+        "q": "mitigate",
+        "a": "hafifletmek / azaltmak",
+        "o": [
+          "hafifletmek / azaltmak",
+          "artırmak",
+          "büyütmek",
+          "hızlandırmak"
+        ]
+      },
+      {
+        "q": "humility",
+        "a": "alçakgönüllülük",
+        "o": [
+          "alçakgönüllülük",
+          "kibir",
+          "öfke",
+          "cesaret"
+        ]
+      },
+      {
+        "q": "persist",
+        "a": "ısrar etmek / sürdürmek",
+        "o": [
+          "ısrar etmek / sürdürmek",
+          "vazgeçmek",
+          "unutmak",
+          "kaçmak"
         ]
       }
     ]

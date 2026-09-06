@@ -4,7 +4,7 @@
 
 import { Storage } from '../storage.js';
 import { Speech } from '../speech.js';
-import { backArrowSVG, showToast } from '../utils.js';
+import { backArrowSVG, showToast, escapeHTML } from '../utils.js';
 import { navigate, AppState } from '../app.js';
 
 export const CustomVocabScreen = {
@@ -74,14 +74,14 @@ export const CustomVocabScreen = {
                 <div class="custom-word-item hover-lift" style="background:var(--bg-card); border:1px solid var(--bg-card-border); border-radius:20px; padding:16px 20px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
                   <div style="flex:1; min-width:0;">
                     <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
-                      <span style="font-size:20px">${item.emoji || '📝'}</span>
-                      <span style="font-family:var(--font-display); font-weight:700; font-size:18px; color:var(--text-primary);">${item.en}</span>
-                      <button class="speak-item-btn" data-word="${item.en}" style="background:transparent; border:none; color:var(--accent-primary); cursor:pointer; padding:4px;">
+                      <span style="font-size:20px">${escapeHTML(item.emoji || '📝')}</span>
+                      <span style="font-family:var(--font-display); font-weight:700; font-size:18px; color:var(--text-primary);">${escapeHTML(item.en)}</span>
+                      <button class="speak-item-btn" data-word="${escapeHTML(item.en)}" style="background:transparent; border:none; color:var(--accent-primary); cursor:pointer; padding:4px;">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
                       </button>
                     </div>
-                    <div style="font-size:14px; font-weight:600; color:var(--color-success);">${item.tr}</div>
-                    ${item.ex ? `<div style="font-size:12px; color:var(--text-tertiary); margin-top:4px; font-style:italic">"${item.ex}"</div>` : ''}
+                    <div style="font-size:14px; font-weight:600; color:var(--color-success);">${escapeHTML(item.tr)}</div>
+                    ${item.ex ? `<div style="font-size:12px; color:var(--text-tertiary); margin-top:4px; font-style:italic">"${escapeHTML(item.ex)}"</div>` : ''}
                   </div>
 
                   <button class="delete-custom-btn" data-id="${item.id}" title="Sil" style="background:transparent; border:none; color:var(--text-muted); cursor:pointer; padding:8px; border-radius:8px;">

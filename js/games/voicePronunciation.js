@@ -248,19 +248,67 @@ export const VoicePronunciationGame = {
 
     } else {
       playSound('wrong');
-      Storage.recordMistake(word);
+      const phonemeTip = this.detectPhonemeMismatch(transcript, word.en);
+      
+      Storage.recordMistake({
+        ...word,
+        ex: phonemeTip ? `Telaffuz Hatası: ${phonemeTip}` : `Algılanan: "${transcript}"`
+      }, 'pronunciation');
       Storage.updateSRSWord(word.en, false);
 
       if (feedbackArea) {
         feedbackArea.innerHTML = `
           <div style="background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.25); color:var(--color-error); padding:20px 24px; border-radius:20px; font-weight:700; width:100%;">
-            <div style="font-size:18px; margin-bottom:6px;">💡 Tekrar Deneyin (%${accuracy})</div>
-            <div style="font-size:12px; opacity:0.85; margin-bottom:8px;">Algılanan: "${transcript}"</div>
-            <div style="font-size:13px; color:var(--text-secondary);">Önce 🔊 butonuyla dinleyin, sonra tekrarlayın.</div>
+            <div style="font-size:18px; margin-bottom:6px;">💡 Telaffuz İpucu (%${accuracy})</div>
+            <div style="font-size:13px; opacity:0.9; margin-bottom:8px;">Algılanan Ses: "<strong>${transcript}</strong>"</div>
+            ${phonemeTip ? `
+              <div style="font-size:14px; background:rgba(239,68,68,0.12); padding:10px 14px; border-radius:12px; color:var(--color-error); margin-bottom:10px; border:1px solid rgba(239,68,68,0.2);">
+                🎯 <strong>Fonetik Teşhis:</strong> ${phonemeTip}
+              </div>
+            ` : ''}
+            <div style="font-size:13px; color:var(--text-secondary);">Önce 🔊 butonuyla dinleyin, dudak ve dil pozisyonuna dikkat ederek tekrar söyleyin.</div>
           </div>
         `;
       }
     }
+  },
+
+  // Fonetik Kural Eşleme Motoru (Türkçe Konuşanlar İçin)
+  detectPhonemeMismatch(userInput, target) {
+    const u = userInput.toLowerCase().trim();
+    const t = target.toLowerCase().trim();
+
+    // 1. [θ] peltek th sesi -> [s] veya [t] (think -> sink / tink)
+    if (t.includes('th') && (u.includes('s') || u.includes('t') || u.includes('f')) && !u.includes('th')) {
+      return "'th' sesini peltek çıkarmalısın. Dilini ön dişlerinin arasına hafifçe sıkıştırarak nefes ver (s veya t gibi söyleme).";
+    }
+
+    // 2. [w] çift dudak sesi -> [v] diş-dudak sesi (wine -> vine / west -> vest)
+    if (t.startsWith('w') && u.startsWith('v')) {
+      return "'w' sesini çıkarırken üst dişlerini alt dudağına DEĞDİRME, dudaklarını ıslık çalar gibi yuvarla.";
+    }
+
+    // 3. [v] sesi -> [w] (very -> wery)
+    if (t.startsWith('v') && u.startsWith('w')) {
+      return "'v' sesinde üst ön dişlerin alt dudağına hafifçe dokunmalıdır.";
+    }
+
+    // 4. Kısa [ɪ] vs Uzun [i:] (ship -> sheep / live -> leave)
+    if ((t.includes('i') && u.includes('ee')) || (t.includes('ee') && u.includes('i'))) {
+      return "Kısa ve uzun ünlü ayrımına dikkat et: Kısa [ɪ] gevşek söylenir, uzun [i:] gülümser gibi uzatılır.";
+    }
+
+    // 5. [r] ve [l] ayrımı (right -> light)
+    if (t.includes('r') && u.includes('l')) {
+      return "İngilizce 'r' sesinde dil damağa asla değmez, geriye doğru kıvrılır.";
+    }
+
+    // 6. [ŋ] geniz sesi (sing -> sin)
+    if (t.endsWith('ing') && !u.endsWith('ing')) {
+      return "Kelime sonundaki '-ing' takısında 'g' harfi yutulur ve genizden [ŋ] sesi verilir.";
+    }
+
+    return null;
   },
 
   finish() {

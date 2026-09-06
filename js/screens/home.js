@@ -8,6 +8,7 @@ import { Speech } from '../speech.js';
 import { getUserLevel, getXPProgress } from '../progress.js';
 import { renderSidebar, renderHeaderBar } from '../components/sidebar.js';
 import { navigate } from '../app.js';
+import { showToast } from '../utils.js';
 
 export const HomeScreen = {
   render(root) {
@@ -356,6 +357,20 @@ export const HomeScreen = {
                     <span class="font-headline-sm text-headline-sm text-on-surface font-extrabold">C1 - Profesyonel Hakimiyet</span>
                   </div>
                 </div>
+
+                <!-- NODE 6: Sınav Odaklı Modül (YDS / YÖKDİL / LGS) -->
+                <div class="relative flex flex-col items-center z-20 group hover:scale-105 transition-all my-space-2xl cursor-pointer" onclick="window.navigate('examPrep')">
+                  <div class="w-28 h-28 rounded-3xl bg-gradient-to-tr from-primary-container to-secondary p-1 shadow-[0_0_35px_rgba(124,93,250,0.5)] flex items-center justify-center">
+                    <div class="w-full h-full rounded-2xl bg-surface-container-lowest flex flex-col items-center justify-center text-primary">
+                      <span class="material-symbols-outlined text-[44px]">assignment</span>
+                    </div>
+                  </div>
+                  <div class="mt-space-sm px-space-lg py-space-sm rounded-xl bg-surface-container-high/90 backdrop-blur-xl shadow-xl flex flex-col items-center text-center max-w-xs border border-primary/40">
+                    <span class="font-label-sm text-label-sm text-secondary font-extrabold uppercase tracking-wider">Akademik Modül</span>
+                    <span class="font-headline-sm text-headline-sm text-on-surface font-extrabold">Sınav Hazırlık (YDS / YÖKDİL / LGS)</span>
+                    <span class="text-xs text-on-surface-variant mt-1">ÖSYM Cloze Paragraf & Net Hesaplama</span>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -406,11 +421,16 @@ export const HomeScreen = {
       if (text) text.textContent = Speech.enabled ? 'Ses Efektleri Açık' : 'Ses Kapalı';
     });
 
-    // Start level button handlers
+    // Start level button handlers with lazy-loading feedback
     const openLevelSelect = async (level) => {
+      if (!DataManager.cache[level]) {
+        showToast(`Seviye ${level} yükleniyor... ⏳`, 1500);
+      }
       const levelData = await DataManager.loadLevel(level);
       if (levelData) {
         navigate('lessonSelect', { currentLevel: level, levelData });
+      } else {
+        showToast(`Seviye ${level} yüklenirken hata oluştu! ❌`);
       }
     };
 

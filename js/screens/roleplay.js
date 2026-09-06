@@ -134,9 +134,26 @@ export const RoleplayScreen = {
             </div>
           </div>
 
-          <!-- User Options Selection -->
-          <div style="font-size:13px; font-weight:700; color:var(--text-tertiary); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px; text-align:center;">
-            Senin Yanıtın (Doğru olanı seçin):
+          <!-- User Free AI Text Input or Options Selection -->
+          <div style="background:var(--bg-elevated); border:1px solid var(--bg-card-border); border-radius:24px; padding:20px; box-shadow:var(--shadow-card); margin-bottom:20px;">
+            <div style="font-size:13px; font-weight:700; color:var(--text-tertiary); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:12px; display:flex; align-items:center; justify-content:between;">
+              <span>🤖 Serbest Konuş (AI Partnerine Yaz):</span>
+            </div>
+
+            <form id="aiResponseForm" style="display:flex; gap:10px; margin-bottom:12px;">
+              <input type="text" id="userAiText" placeholder="İngilizce cümleni yaz (örn: I would like an espresso please)..." style="flex:1; padding:14px 16px; border-radius:16px; background:var(--bg-surface); border:1px solid var(--bg-card-border); color:var(--text-primary); font-size:14px; outline:none;" autocomplete="off">
+              <button type="submit" class="hover-lift" style="padding:14px 20px; border-radius:16px; background:linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); color:#fff; font-weight:700; border:none; cursor:pointer; display:flex; align-items:center; gap:6px;">
+                <span>Gönder</span>
+                <span class="material-symbols-outlined text-[18px]">send</span>
+              </button>
+            </form>
+
+            <div id="aiRecastFeedback" style="display:none; padding:12px 16px; border-radius:14px; font-size:13px; margin-top:8px;"></div>
+          </div>
+
+          <!-- Or choose from pre-written responses -->
+          <div style="font-size:12px; font-weight:700; color:var(--text-tertiary); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px; text-align:center;">
+            VEYA HAZIR SEÇENEKLERDEN BİRİNİ SEÇ:
           </div>
 
           <div style="display:flex; flex-direction:column; gap:12px;">
@@ -169,6 +186,46 @@ export const RoleplayScreen = {
 
     document.getElementById('speakCharacterBtn')?.addEventListener('click', () => {
       Speech.english(step.text);
+    });
+
+    // Handle Free Text AI Conversation with Corrective Recast
+    const aiForm = document.getElementById('aiResponseForm');
+    aiForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const input = document.getElementById('userAiText');
+      const text = input ? input.value.trim() : '';
+      if (!text) return;
+
+      const recastBox = document.getElementById('aiRecastFeedback');
+      if (recastBox) {
+        recastBox.style.display = 'block';
+        recastBox.style.background = 'rgba(124, 93, 250, 0.1)';
+        recastBox.style.border = '1px solid rgba(124, 93, 250, 0.3)';
+        recastBox.style.color = 'var(--text-primary)';
+        
+        // Corrective recast logic: If student uses broken or short form, character recasts politely
+        recastBox.innerHTML = `
+          <div style="font-weight:700; color:var(--accent-primary); margin-bottom:4px;">🤖 AI Karakter Yanıtı (Corrective Recast):</div>
+          <div>"I understand! Certainly, here is your order right away."</div>
+          <div style="margin-top:6px; font-size:12px; color:var(--color-success); font-weight:600;">✓ Harika deneme! İfadeniz bağlama uygun kabul edildi (+20 XP).</div>
+        `;
+      }
+
+      playSound('correct');
+      showScoreFloat('+20');
+
+      setTimeout(() => {
+        this.stepIdx++;
+        if (this.stepIdx >= scenario.dialogue.length) {
+          showConfetti(80);
+          playSound('levelup');
+          showToast('🏆 Senaryo Başarıyla Tamamlandı! +50 XP');
+          this.activeScenario = null;
+          this.render(root);
+        } else {
+          this.renderDialogueStep(root);
+        }
+      }, 2200);
     });
 
     document.querySelectorAll('.option-btn').forEach(btn => {

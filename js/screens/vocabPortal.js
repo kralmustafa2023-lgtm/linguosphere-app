@@ -149,10 +149,16 @@ export const VocabPortalScreen = {
                   </div>
                 </div>
 
-                <button class="px-space-lg py-space-sm rounded-xl bg-primary-container text-on-primary-container font-label-lg text-label-lg font-bold flex items-center justify-center gap-space-xs shadow-lg hover:scale-[1.02] transition-all cursor-pointer" id="toggle-drawer-btn">
-                  <span class="material-symbols-outlined text-[20px]">add_circle</span>
-                  <span>Yeni Kelime Ekle</span>
-                </button>
+                <div class="flex items-center gap-space-sm">
+                  <button class="px-space-md py-space-sm rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md font-bold flex items-center justify-center gap-space-xs shadow-md hover:bg-secondary hover:text-on-secondary transition-all cursor-pointer" onclick="window.navigate('ocrScanner')">
+                    <span class="material-symbols-outlined text-[20px]">photo_camera</span>
+                    <span>Kamerayla Tara (OCR)</span>
+                  </button>
+                  <button class="px-space-lg py-space-sm rounded-xl bg-primary-container text-on-primary-container font-label-lg text-label-lg font-bold flex items-center justify-center gap-space-xs shadow-lg hover:scale-[1.02] transition-all cursor-pointer" id="toggle-drawer-btn">
+                    <span class="material-symbols-outlined text-[20px]">add_circle</span>
+                    <span>Yeni Kelime Ekle</span>
+                  </button>
+                </div>
               </div>
 
               <!-- Inline Word Creator Drawer -->

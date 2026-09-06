@@ -4,6 +4,23 @@
 
 import { Storage } from './storage.js';
 
+let cachedVoices = [];
+
+function updateVoices() {
+  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+    const list = speechSynthesis.getVoices();
+    if (list && list.length > 0) {
+      cachedVoices = list;
+    }
+  }
+}
+
+// Initial voices load & event listener
+if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+  updateVoices();
+  speechSynthesis.addEventListener('voiceschanged', updateVoices);
+}
+
 export const Speech = {
   enabled: true,
   rate: 0.85,
@@ -12,6 +29,14 @@ export const Speech = {
     const state = Storage.load();
     this.enabled = state.settings?.sound ?? true;
     this.rate = state.settings?.speechRate ?? 0.85;
+    updateVoices();
+  },
+
+  getBestVoice(lang = 'en-US') {
+    if (!cachedVoices.length) updateVoices();
+    return cachedVoices.find(v => v.lang === lang) || 
+           cachedVoices.find(v => v.lang.startsWith(lang.split('-')[0])) ||
+           null;
   },
 
   speak(text, lang = 'en-US') {
@@ -26,10 +51,8 @@ export const Speech = {
     u.pitch = 1;
     u.volume = 1;
     
-    // Try to get an English voice
-    const voices = speechSynthesis.getVoices();
-    const enVoice = voices.find(v => v.lang.startsWith('en'));
-    if (enVoice) u.voice = enVoice;
+    const voice = this.getBestVoice(lang);
+    if (voice) u.voice = voice;
     
     speechSynthesis.speak(u);
   },
@@ -45,9 +68,8 @@ export const Speech = {
     u.pitch = 1;
     u.volume = 1;
     
-    const voices = speechSynthesis.getVoices();
-    const enVoice = voices.find(v => v.lang.startsWith('en'));
-    if (enVoice) u.voice = enVoice;
+    const voice = this.getBestVoice('en-US');
+    if (voice) u.voice = voice;
     
     speechSynthesis.speak(u);
   },
@@ -123,11 +145,3 @@ export const Speech = {
     }
   }
 };
-
-// Pre-load voices
-if ('speechSynthesis' in window) {
-  speechSynthesis.getVoices();
-  speechSynthesis.addEventListener('voiceschanged', () => {
-    speechSynthesis.getVoices();
-  });
-}

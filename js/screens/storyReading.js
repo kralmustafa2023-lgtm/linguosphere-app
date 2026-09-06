@@ -6,7 +6,7 @@ import { DataManager } from '../data.js';
 import { Speech } from '../speech.js';
 import { Storage } from '../storage.js';
 import { backArrowSVG, showToast, playSound, showConfetti } from '../utils.js';
-import { navigate } from '../app.js';
+import { navigate, AppState } from '../app.js';
 
 export const StoryReadingScreen = {
   stories: [],
@@ -203,17 +203,48 @@ export const StoryReadingScreen = {
       Speech.english(currentSentence.en);
     });
 
-    document.querySelectorAll('.word-chip').forEach(chip => {
-      chip.addEventListener('click', (e) => {
-        const cleanWord = chip.dataset.word.replace(/[^a-zA-Z]/g, '');
-        Speech.english(cleanWord);
+    // Event delegation on sentenceEnBox for Click-to-Translate
+    const sentenceBox = document.getElementById('sentenceEnBox');
+    sentenceBox?.addEventListener('click', async (e) => {
+      const chip = e.target.closest('.word-chip');
+      if (!chip) return;
 
-        const foundWordObj = currentSentence.words ? currentSentence.words.find(w => w.w.toLowerCase() === cleanWord.toLowerCase()) : null;
-        const popup = document.getElementById('wordPopup');
-        if (popup) {
-          popup.innerHTML = `✨ <strong>${cleanWord}</strong> = ${foundWordObj ? foundWordObj.tr : 'Kelime telaffuz ediliyor'}`;
-        }
-      });
+      const cleanWord = chip.dataset.word.replace(/[^a-zA-Z]/g, '');
+      if (!cleanWord) return;
+
+      Speech.english(cleanWord);
+
+      // Search in story sentence word dictionary or current loaded level
+      let foundTr = null;
+      if (currentSentence.words) {
+        const found = currentSentence.words.find(w => w.w.toLowerCase() === cleanWord.toLowerCase());
+        if (found) foundTr = found.tr;
+      }
+
+      const popup = document.getElementById('wordPopup');
+      if (popup) {
+        const meaningText = foundTr ? foundTr : 'Anlamı sözlükte aranıyor...';
+        popup.innerHTML = `
+          <div style="display:inline-flex; align-items:center; gap:12px; background:var(--bg-surface); padding:8px 16px; border-radius:14px; border:1px solid var(--accent-primary); box-shadow:0 4px 16px rgba(124,93,250,0.15); animation:popIn 0.2s ease;">
+            <span>💡 <strong>${cleanWord}</strong>: <span style="color:var(--color-success)">${meaningText}</span></span>
+            <button id="addCustomFromStoryBtn" class="hover-lift" style="background:var(--accent-primary); color:white; border:none; border-radius:8px; padding:4px 10px; font-size:12px; font-weight:700; cursor:pointer;">
+              + Deftere Ekle
+            </button>
+          </div>
+        `;
+
+        document.getElementById('addCustomFromStoryBtn')?.addEventListener('click', (ev) => {
+          ev.stopPropagation();
+          Storage.addCustomWord({
+            en: cleanWord,
+            tr: foundTr || 'Hikayeden Eklendi',
+            ex: currentSentence.en,
+            exTR: currentSentence.tr
+          });
+          showToast(`"${cleanWord}" kelime defterine eklendi! ✨`);
+          popup.innerHTML = `<span style="color:var(--color-success)">✓ "${cleanWord}" defterine kaydedildi!</span>`;
+        });
+      }
     });
 
     document.getElementById('prevBtn')?.addEventListener('click', () => {
@@ -233,9 +264,97 @@ export const StoryReadingScreen = {
         showConfetti(80);
         playSound('levelup');
         showToast('🏆 Hikaye Tamamlandı! +30 XP');
-        this.activeStory = null;
-        this.render(root);
+        this.renderStoryCompleted(root, story);
       }
+    });
+  },
+
+  generateQuizFromStory(story) {
+    const wordList = [];
+    story.sentences.forEach(s => {
+      if (s.words) {
+        s.words.forEach(w => {
+          if (!wordList.some(item => item.w.toLowerCase() === w.w.toLowerCase())) {
+            wordList.push(w);
+          }
+        });
+      }
+    });
+
+    if (wordList.length === 0) return [];
+
+    return wordList.slice(0, 6).map((item, idx) => {
+      const distractors = ['hızlı', 'güzel', 'öğrenmek', 'başarı', 'çalışmak', 'yolculuk', 'karar']
+        .filter(d => d !== item.tr)
+        .slice(0, 3);
+      return {
+        q: item.w,
+        a: item.tr,
+        o: [item.tr, ...distractors].sort(() => Math.random() - 0.5)
+      };
+    });
+  },
+
+  renderStoryCompleted(root, story) {
+    root.innerHTML = `
+      <div class="screen" style="padding-bottom: 120px;">
+        <div class="container container-narrow stagger" style="text-align:center; padding-top:40px;">
+          
+          <div style="font-size:64px; margin-bottom:16px; animation:popIn 0.5s ease;">
+            🎉
+          </div>
+
+          <div style="display:inline-block; background:rgba(45,212,168,0.15); border:1px solid rgba(45,212,168,0.3); color:#10b981; font-weight:800; font-size:13px; padding:6px 16px; border-radius:20px; margin-bottom:16px;">
+            +30 XP KAZANILDI
+          </div>
+
+          <h1 style="font-family:var(--font-display); font-size:28px; font-weight:800; color:var(--text-primary); margin-bottom:8px;">
+            ${story.title}
+          </h1>
+          <p style="color:var(--text-secondary); font-size:15px; max-width:320px; margin:0 auto 32px auto; line-height:1.6;">
+            Harika iş! Hikayeyi başarıyla tamamladın. Şimdi öğrendiğin kelimeleri test ederek bilgilerini pekiştirebilirsin.
+          </p>
+
+          <div style="display:flex; flex-direction:column; gap:12px; max-width:320px; margin:0 auto;">
+            
+            <button id="startStoryQuizBtn" class="btn hover-lift" style="background:linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); color:white; font-weight:700; padding:16px; border-radius:18px; border:none; box-shadow:0 8px 24px rgba(124,93,250,0.3); font-size:15px; display:flex; align-items:center; justify-content:center; gap:8px;">
+              <span>📝</span> Bu Hikayedeki Kelimelerle Test Yap
+            </button>
+
+            <button id="backToStoryListBtn" class="btn btn-secondary hover-lift" style="padding:14px; border-radius:18px; font-weight:700;">
+              📚 Hikaye Listesine Dön
+            </button>
+
+            <button id="backToHomeBtn" class="btn btn-ghost hover-lift" style="font-weight:600; font-size:14px; color:var(--text-tertiary);">
+              🏠 Ana Menüye Dön
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+    `;
+
+    document.getElementById('startStoryQuizBtn')?.addEventListener('click', () => {
+      const quizQuestions = (story.quiz && story.quiz.length > 0) ? story.quiz : this.generateQuizFromStory(story);
+      AppState.lessonData = {
+        title: `${story.title} - Kelime Testi`,
+        quizQuestions: quizQuestions,
+        quiz: quizQuestions,
+        grammar: [{ exp: `Bu test "${story.title}" hikayesindeki anahtar kelimeleri pekiştirmek içindir.` }]
+      };
+      this.activeStory = null;
+      navigate('quiz', { lessonData: AppState.lessonData });
+    });
+
+    document.getElementById('backToStoryListBtn')?.addEventListener('click', () => {
+      this.activeStory = null;
+      this.render(root);
+    });
+
+    document.getElementById('backToHomeBtn')?.addEventListener('click', () => {
+      this.activeStory = null;
+      navigate('home');
     });
   }
 };

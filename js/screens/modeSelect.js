@@ -17,6 +17,7 @@ const MODES = [
   { id: 'listening',        icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>', name: 'Dinleme', color: '#f07aaf', screen: 'listening', span: 1 },
   { id: 'voicePronunciation', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>', name: 'Telaffuz Analizi (Mikrofon)', color: '#ec4899', screen: 'voicePronunciation', span: 1 },
   { id: 'shadowing',          icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>', name: 'Gölgeleme (Shadowing)', color: '#10b981', screen: 'shadowing', span: 1 },
+  { id: 'minimalPairs',       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><circle cx="12" cy="12" r="3"/></svg>', name: 'Fonetik Ayrım (Minimal Pairs)', color: '#7c3aed', screen: 'minimalPairs', span: 2 },
 ];
 
 export const ModeSelectScreen = {
@@ -78,6 +79,7 @@ export const ModeSelectScreen = {
               else if (mode.id === 'quiz') hasData = !!quizCount;
               else if (mode.id === 'sentenceBuilder') hasData = (lessonData.sentences && lessonData.sentences.length > 0) || !!vocabCount;
               else if (mode.id === 'fillBlank') hasData = (lessonData.fillBlanks && lessonData.fillBlanks.length > 0) || !!vocabCount;
+              else if (mode.id === 'minimalPairs') hasData = true;
 
               const best = records[mode.id] || 0;
               const isLocked = !hasData;

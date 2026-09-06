@@ -7,6 +7,8 @@ import { Storage } from '../storage.js';
 import { Speech } from '../speech.js';
 import { getUserLevel, getXPProgress } from '../progress.js';
 import { navigate } from '../app.js';
+import { NotificationManager } from '../notifications.js';
+import { showToast } from '../utils.js';
 
 export const ProfileScreen = {
   render(root) {
@@ -173,6 +175,23 @@ export const ProfileScreen = {
                       <option>🇬🇧 English (Full Immersion)</option>
                     </select>
                   </div>
+
+                  <!-- Daily SRS Reminder Card -->
+                  <div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container-low/70 border border-border-glass">
+                    <div class="flex items-start gap-space-sm">
+                      <div class="p-space-xs rounded-lg bg-tertiary/15 text-tertiary flex items-center justify-center shrink-0 mt-0.5">
+                        <span class="material-symbols-outlined text-[20px]">notifications_active</span>
+                      </div>
+                      <div>
+                        <span class="font-label-lg text-label-lg text-on-surface block font-bold">Günlük Hatırlatıcı</span>
+                        <span class="font-body-sm text-body-sm text-on-surface-variant">Unutma eğrisine göre kelime tekrar uyarısı</span>
+                      </div>
+                    </div>
+                    
+                    <button class="px-space-md py-space-xs rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md font-bold cursor-pointer hover:brightness-110 transition-all" id="requestNotifyBtn">
+                      Aktif Et
+                    </button>
+                  </div>
                 </div>
               </div>
 
@@ -220,6 +239,21 @@ export const ProfileScreen = {
       Speech.toggle();
       const btn = document.getElementById('profileSoundToggleBtn');
       if (btn) btn.textContent = Speech.enabled ? 'Açık' : 'Kapalı';
+    });
+
+    document.getElementById('requestNotifyBtn')?.addEventListener('click', async () => {
+      const granted = await NotificationManager.requestPermission();
+      if (granted) {
+        showToast('🔔 Günlük hatırlatıcılar aktif edildi!');
+        const btn = document.getElementById('requestNotifyBtn');
+        if (btn) {
+          btn.textContent = 'Aktif ✓';
+          btn.classList.replace('bg-primary-container', 'bg-secondary');
+          btn.classList.replace('text-on-primary-container', 'text-on-secondary');
+        }
+      } else {
+        showToast('Bildirim izni verilmedi.');
+      }
     });
 
     window.setProfileSpeechRate = (rate) => {

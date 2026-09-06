@@ -74,10 +74,17 @@ export const ResultScreen = {
             <div class="result-stat-value" style="color:var(--color-error)">${total - correct}</div>
             <div class="result-stat-label">Yanlış</div>
           </div>
-          <div class="result-stat hover-lift">
-            <div class="result-stat-value" style="color:var(--color-info)">%${percent}</div>
-            <div class="result-stat-label">Başarı</div>
-          </div>
+          ${params.examNet !== undefined ? `
+            <div class="result-stat hover-lift">
+              <div class="result-stat-value" style="color:var(--accent-primary)">${params.examNet}</div>
+              <div class="result-stat-label">Sınav Neti (ÖSYM)</div>
+            </div>
+          ` : `
+            <div class="result-stat hover-lift">
+              <div class="result-stat-value" style="color:var(--color-info)">%${percent}</div>
+              <div class="result-stat-label">Başarı</div>
+            </div>
+          `}
           <div class="result-stat hover-lift">
             <div class="result-stat-value" style="color:var(--color-warning)">+${points || Math.round(percent * 0.5)}</div>
             <div class="result-stat-label">XP Kazanıldı</div>

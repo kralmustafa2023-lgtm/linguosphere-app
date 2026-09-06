@@ -1,0 +1,61 @@
+﻿[
+  {
+    "id": "yds_cloze_1",
+    "examType": "YDS / YÖKDİL",
+    "title": "Bilişsel Dil Edinimi ve Nöroplastisite",
+    "passage": "Recent neuroimaging studies indicate that bilingual individuals develop higher cognitive flexibility ___ (1) their brains constantly manage two active linguistic systems. This persistent executive control ___ (2) the onset of cognitive decline in older adults. Furthermore, researchers have observed that acquiring a new vocabulary ___ (3) structural density in the left inferior parietal cortex. Consequently, regular linguistic exercises are increasingly ___ (4) by neurologists worldwide.",
+    "questions": [
+      {
+        "blankId": 1,
+        "options": ["because", "despite", "although", "unless", "in case"],
+        "correct": "because",
+        "explanation": "Sebep bildiren bağlaç gereklidir: 'çift dilli bireyler daha yüksek bilişsel esneklik geliştirir ÇÜNKÜ beyinleri iki aktif sistemi yönetir'."
+      },
+      {
+        "blankId": 2,
+        "options": ["delays", "delaying", "delayed", "delay", "is delayed"],
+        "correct": "delays",
+        "explanation": "Özne tekil üçüncü şahıstır ('This persistent executive control') ve genel bir bilimsel gerçeği ifade ettiği için Simple Present Tense -s takısı alır."
+      },
+      {
+        "blankId": 3,
+        "options": ["enhances", "depletes", "ignores", "destroys", "neglects"],
+        "correct": "enhances",
+        "explanation": "Akademik kelime anlamı: 'Yeni bir kelime dağarcığı edinmek yapısal yoğunluğu ARTIRIR (enhances)'."
+      },
+      {
+        "blankId": 4,
+        "options": ["recommended", "prohibited", "dismissed", "criticized", "condemned"],
+        "correct": "recommended",
+        "explanation": "Pasif yapı: 'Nörologlar tarafından tüm dünyada tavsiye edilmektedir (recommended)'."
+      }
+    ]
+  },
+  {
+    "id": "lgs_sample_1",
+    "examType": "LGS",
+    "title": "Friendship and Teen Life",
+    "passage": "A true friend is someone who always backs you up when you have a problem. They never share your secrets with others and you can count on them in every situation. If you have such a friend, you are very lucky.",
+    "questions": [
+      {
+        "blankId": 1,
+        "questionText": "According to the passage, a true friend ___.",
+        "options": [
+          "always supports you in difficult times",
+          "often argues with your family",
+          "never listens to your opinions",
+          "shares your personal secrets"
+        ],
+        "correct": "always supports you in difficult times",
+        "explanation": "'backs you up' ifadesi destek olmak (support) anlamına gelir."
+      },
+      {
+        "blankId": 2,
+        "questionText": "Which idiom in the text means 'to trust somebody'?",
+        "options": ["count on", "back up", "share with", "have a problem"],
+        "correct": "count on",
+        "explanation": "'Count on' güvenmek, bel bağlamak (trust/rely on) demektir."
+      }
+    ]
+  }
+]

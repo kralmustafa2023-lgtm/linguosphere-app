@@ -5,20 +5,17 @@
 import { DataManager } from './data.js';
 import { Storage } from './storage.js';
 import { Speech } from './speech.js';
-import { HomeScreen } from './screens/home.js';
-import { LevelSelectScreen } from './screens/levelSelect.js';
-import { LessonSelectScreen } from './screens/lessonSelect.js';
-import { ModeSelectScreen } from './screens/modeSelect.js';
-import { GrammarScreen } from './screens/grammar.js';
-import { ResultScreen } from './screens/result.js';
-import { FlashcardGame } from './games/flashcard.js';
-import { QuizGame } from './games/quiz.js';
-import { MatchGame } from './games/match.js';
-import { FillBlankGame } from './games/fillBlank.js';
-import { SentenceGame } from './games/sentenceBuilder.js';
-import { SpeedGame } from './games/speedRound.js';
-import { TypingGame } from './games/typing.js';
-import { ListeningGame } from './games/listening.js';
+
+// Apply saved theme immediately on load
+const currentTheme = Storage.getTheme();
+if (typeof document !== 'undefined') {
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  if (currentTheme === 'dark') {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+}
 
 // Global state
 export const AppState = {
@@ -85,6 +82,7 @@ export async function navigate(screen, params = {}) {
     customVocab: 'screen',
     storyReading: 'screen',
     roleplay: 'screen',
+    ocrScanner: 'screen',
     flashcard: 'game',
     quiz: 'game',
     match: 'game',
@@ -95,6 +93,8 @@ export async function navigate(screen, params = {}) {
     listening: 'game',
     voicePronunciation: 'game',
     shadowing: 'game',
+    minimalPairs: 'game',
+    examPrep: 'game',
   };
 
   const type = screenTypes[screen];
@@ -128,7 +128,8 @@ export async function navigate(screen, params = {}) {
         mistakeBank: module.MistakeBankScreen,
         customVocab: module.CustomVocabScreen,
         storyReading: module.StoryReadingScreen,
-        roleplay: module.RoleplayScreen
+        roleplay: module.RoleplayScreen,
+        ocrScanner: module.OcrScannerScreen
       };
 
       const Component = screenComponents[targetScreen];
@@ -143,6 +144,7 @@ export async function navigate(screen, params = {}) {
           case 'customVocab':
           case 'storyReading':
           case 'roleplay':
+          case 'ocrScanner':
             Component.render(root);
             break;
           case 'levelSelect':
@@ -181,7 +183,9 @@ export async function navigate(screen, params = {}) {
         typing: module.TypingGame,
         listening: module.ListeningGame,
         voicePronunciation: module.VoicePronunciationGame,
-        shadowing: module.ShadowingGame
+        shadowing: module.ShadowingGame,
+        minimalPairs: module.MinimalPairsGame,
+        examPrep: module.ExamPrepGame
       };
 
       const GameComponent = gameComponents[screen];
@@ -230,13 +234,10 @@ async function init() {
   `;
 
   try {
-    // Load all JSON data
-    await DataManager.loadAllLevels();
+    // Initial delay for smooth loading animation
+    await new Promise(resolve => setTimeout(resolve, 800));
     
-    // Short delay for loading animation
-    await new Promise(resolve => setTimeout(resolve, 1200));
-    
-    // Navigate to home
+    // Navigate to home (levels will be lazy loaded on demand)
     navigate('home');
   } catch (err) {
     console.error('Uygulama başlatma hatası:', err);

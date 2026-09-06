@@ -21,7 +21,8 @@ const DEFAULT_STATE = {
   mistakes: {},            // wordEn → { en, tr, ex, exTR, wrongCount, lastFailed }
   customVocabulary: [],    // [ { id, en, tr, emoji, ex, exTR, dateAdded } ]
   dailyQuests: { date: null, quests: [], streakFreezeCount: 1 },
-  settings: { sound: true, speechRate: 0.85 }
+  errorCategoryStats: { tense: 0, article: 0, preposition: 0, wordOrder: 0, vocabulary: 0, spelling: 0 },
+  settings: { sound: true, speechRate: 0.85, theme: 'dark' }
 };
 
 export const Storage = {
@@ -44,6 +45,16 @@ export const Storage = {
     } catch (e) {
       console.warn('localStorage save failed:', e);
     }
+  },
+
+  // Batch Update — Tek seferlik okuma, mutasyon ve yazma
+  batchUpdate(updateFn) {
+    const state = this.load();
+    if (typeof updateFn === 'function') {
+      updateFn(state);
+    }
+    this.save(state);
+    return state;
   },
 
   completeLesson(levelId, lessonId, score, mode) {
@@ -161,26 +172,115 @@ export const Storage = {
     return existing;
   },
 
+  // Batch SRS update — multiple words at once
+  batchUpdateSRSWords(items) {
+    if (!Array.isArray(items) || items.length === 0) return;
+    return this.batchUpdate((state) => {
+      if (!state.srsData) state.srsData = {};
+      const boxIntervals = { 1: 1, 2: 3, 3: 7, 4: 14, 5: 30 };
+
+      items.forEach(({ wordEn, isCorrect }) => {
+        if (!wordEn) return;
+        const existing = state.srsData[wordEn] || {
+          box: 1,
+          nextReview: getTodayStr(),
+          mastery: 0,
+          correctCount: 0,
+          wrongCount: 0,
+          lastReviewed: null
+        };
+
+        if (isCorrect) {
+          existing.correctCount++;
+          existing.box = Math.min(5, existing.box + 1);
+        } else {
+          existing.wrongCount++;
+          existing.box = Math.max(1, existing.box - 1);
+        }
+
+        const daysToAdd = boxIntervals[existing.box] || 1;
+        const nextDate = new Date();
+        nextDate.setDate(nextDate.getDate() + daysToAdd);
+        existing.nextReview = nextDate.toISOString().split('T')[0];
+        existing.mastery = Math.min(100, Math.round((existing.box / 5) * 100));
+        existing.lastReviewed = new Date().toISOString();
+
+        state.srsData[wordEn] = existing;
+      });
+    });
+  },
+
   // --- Mistake Bank ---
-  recordMistake(item) {
+  recordMistake(item, category = null) {
     if (!item || (!item.en && !item.q && !item.s)) return;
     const state = this.load();
     if (!state.mistakes) state.mistakes = {};
+    if (!state.errorCategoryStats) {
+      state.errorCategoryStats = { tense: 0, article: 0, preposition: 0, wordOrder: 0, vocabulary: 0, spelling: 0 };
+    }
 
     const key = item.en || item.q || item.s;
+    const cat = category || item.errorCategory || item.category || 'vocabulary';
     const existing = state.mistakes[key] || {
       en: item.en || item.q || item.s,
       tr: item.tr || item.a || '',
       ex: item.ex || '',
       exTR: item.exTR || '',
+      category: cat,
       wrongCount: 0,
       lastFailed: new Date().toISOString()
     };
 
     existing.wrongCount++;
+    existing.category = cat;
     existing.lastFailed = new Date().toISOString();
     state.mistakes[key] = existing;
+
+    if (state.errorCategoryStats[cat] !== undefined) {
+      state.errorCategoryStats[cat]++;
+    } else {
+      state.errorCategoryStats[cat] = 1;
+    }
+
     this.save(state);
+  },
+
+  // Batch Mistakes recording
+  batchRecordMistakes(items) {
+    if (!Array.isArray(items) || items.length === 0) return;
+    return this.batchUpdate((state) => {
+      if (!state.mistakes) state.mistakes = {};
+      if (!state.errorCategoryStats) {
+        state.errorCategoryStats = { tense: 0, article: 0, preposition: 0, wordOrder: 0, vocabulary: 0, spelling: 0 };
+      }
+      const now = new Date().toISOString();
+
+      items.forEach(item => {
+        if (!item || (!item.en && !item.q && !item.s)) return;
+        const key = item.en || item.q || item.s;
+        const cat = item.errorCategory || item.category || 'vocabulary';
+        const existing = state.mistakes[key] || {
+          en: item.en || item.q || item.s,
+          tr: item.tr || item.a || '',
+          ex: item.ex || '',
+          exTR: item.exTR || '',
+          category: cat,
+          wrongCount: 0,
+          lastFailed: now
+        };
+
+        existing.wrongCount++;
+        existing.category = cat;
+        existing.lastFailed = now;
+        state.mistakes[key] = existing;
+
+        if (state.errorCategoryStats[cat] !== undefined) {
+          state.errorCategoryStats[cat]++;
+        } else {
+          state.errorCategoryStats[cat] = 1;
+        }
+      });
+    });
   },
 
   removeMistake(key) {
@@ -226,6 +326,27 @@ export const Storage = {
   getCustomWords() {
     const state = this.load();
     return state.customVocabulary || [];
+  },
+
+  getTheme() {
+    const state = this.load();
+    return state.settings?.theme || 'dark';
+  },
+
+  setTheme(theme) {
+    const state = this.load();
+    if (!state.settings) state.settings = {};
+    state.settings.theme = theme;
+    this.save(state);
+    if (typeof document !== 'undefined') {
+      document.documentElement.setAttribute('data-theme', theme);
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+    return theme;
   },
 
   reset() {

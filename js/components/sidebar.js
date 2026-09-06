@@ -86,9 +86,16 @@ export function renderSidebar(currentScreen = 'home') {
               <span class="font-label-sm text-label-sm text-on-surface-variant truncate">${userLevel.name}</span>
             </div>
           </div>
-          <button class="text-on-surface-variant hover:text-on-surface transition-colors p-space-2xs rounded-lg hover:bg-surface-container-high flex items-center justify-center" onclick="window.navigate('profile')">
-            <span class="material-symbols-outlined text-[18px]">settings</span>
-          </button>
+          <div class="flex items-center gap-1">
+            <button class="theme-toggle-btn text-on-surface-variant hover:text-on-surface transition-colors p-space-2xs rounded-lg hover:bg-surface-container-high flex items-center justify-center" 
+                    onclick="window.toggleTheme()" 
+                    title="Temayı Değiştir">
+              <span class="material-symbols-outlined text-[18px]" id="themeIcon">${Storage.getTheme() === 'dark' ? 'light_mode' : 'dark_mode'}</span>
+            </button>
+            <button class="text-on-surface-variant hover:text-on-surface transition-colors p-space-2xs rounded-lg hover:bg-surface-container-high flex items-center justify-center" onclick="window.navigate('profile')">
+              <span class="material-symbols-outlined text-[18px]">settings</span>
+            </button>
+          </div>
         </div>
       </div>
     </aside>
@@ -131,10 +138,27 @@ export function renderHeaderBar() {
           <span class="material-symbols-outlined text-tertiary text-[18px]">military_tech</span>
           <span class="font-label-sm text-label-sm text-on-surface">Lig: <strong class="text-tertiary">Safir Kademe</strong></span>
         </div>
+        <button class="flex items-center justify-center w-9 h-9 rounded-full bg-surface-container-high/60 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" 
+                onclick="window.toggleTheme()" 
+                title="Temayı Değiştir">
+          <span class="material-symbols-outlined text-[20px]">${Storage.getTheme() === 'dark' ? 'light_mode' : 'dark_mode'}</span>
+        </button>
         <button class="flex items-center justify-center w-9 h-9 rounded-full bg-surface-container-high/60 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="window.navigate('profile')">
           <span class="material-symbols-outlined text-[20px]">notifications</span>
         </button>
       </div>
     </header>
   `;
+}
+
+// Global window.toggleTheme function
+if (typeof window !== 'undefined') {
+  window.toggleTheme = function() {
+    const current = Storage.getTheme();
+    const next = current === 'dark' ? 'light' : 'dark';
+    Storage.setTheme(next);
+    // Re-render current screen to update icons
+    const currentActive = document.querySelector('[data-path]')?.dataset.path || 'home';
+    navigate(window.AppState?.currentScreen || 'home');
+  };
 }

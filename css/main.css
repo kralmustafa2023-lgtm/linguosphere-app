@@ -230,3 +230,37 @@ body {
   clip: rect(0,0,0,0); border: 0;
 }
 .no-select { user-select: none; -webkit-user-select: none; }
+
+/* ═══════════════════════════════════════════════
+   LINGUOSPHERE — Ultra Premium Dark Theme
+   ═══════════════════════════════════════════════ */
+[data-theme="dark"], .dark {
+  --bg-void: #0b0c14;
+  --bg-primary: #11131b;
+  --bg-secondary: #161824;
+  --bg-tertiary: #1c1f2e;
+  --bg-elevated: #1f2233;
+  --bg-card: rgba(22, 24, 36, 0.75);
+  --bg-card-solid: #161824;
+  --bg-card-border: rgba(255, 255, 255, 0.08);
+  --bg-glass: rgba(17, 19, 27, 0.65);
+  --bg-glass-strong: rgba(22, 24, 36, 0.88);
+  --bg-glass-border: rgba(255, 255, 255, 0.1);
+  --bg-input: rgba(25, 28, 42, 0.95);
+  --bg-surface: #11131b;
+
+  --text-primary:    #f1f0f7;
+  --text-secondary:  #c7c5d9;
+  --text-tertiary:   #947dff;
+  --text-muted:      #636682;
+  --text-accent:     #a78bfa;
+  --text-inverse:    #11131b;
+
+  --shadow-card:     0 4px 20px rgba(0, 0, 0, 0.35);
+  --shadow-hover:    0 12px 36px rgba(0, 0, 0, 0.5);
+  --shadow-float:    0 20px 60px rgba(0, 0, 0, 0.65);
+}
+
+[data-theme="dark"] .colorful-bg, .dark .colorful-bg {
+  background: linear-gradient(135deg, #0b0c14 0%, #11131b 40%, #171926 100%);
+}

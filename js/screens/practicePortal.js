@@ -220,6 +220,23 @@ export const PracticePortalScreen = {
                   <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Oda kaydı ve otel pratiği</p>
                 </div>
               </div>
+
+              <!-- Minimal Pairs Featured Section -->
+              <div class="mt-space-lg p-space-xl rounded-2xl bg-gradient-to-r from-primary-container/20 to-secondary/15 border border-primary/30 flex flex-col md:flex-row items-center justify-between gap-space-lg">
+                <div class="flex items-center gap-space-md">
+                  <div class="w-14 h-14 rounded-2xl bg-primary text-on-primary flex items-center justify-center text-3xl shadow-lg">
+                    🎧
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">Yeni Nöro-İşitsel Modül</span>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Minimal Pairs (Fonetik Ayrım)</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Ship vs Sheep, Bit vs Beat gibi Türklerin en çok karıştırdığı ses çiftlerini dinleyerek ayırt et.</p>
+                  </div>
+                </div>
+                <button class="px-space-xl py-space-md rounded-xl bg-primary text-on-primary font-label-lg text-label-lg font-bold shadow-lg hover:brightness-110 transition-all cursor-pointer shrink-0" onclick="window.navigate('minimalPairs')">
+                  Oyunu Başlat
+                </button>
+              </div>
             </div>
 
           </div>
