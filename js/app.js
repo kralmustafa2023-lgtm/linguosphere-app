@@ -108,7 +108,7 @@ export async function navigate(screen, params = {}) {
   AppState.currentScreen = targetScreen;
 
   try {
-    const cacheBuster = 'v2-stitch-fixed';
+    const cacheBuster = 'v3-final';
 
     if (type === 'screen') {
       const modulePath = `./screens/${targetScreen}.js?v=${cacheBuster}`;

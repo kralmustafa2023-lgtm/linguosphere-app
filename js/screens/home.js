@@ -439,6 +439,8 @@ export const HomeScreen = {
     document.getElementById('node-level-1')?.addEventListener('click', () => openLevelSelect(1));
     document.getElementById('node-level-2')?.addEventListener('click', () => openLevelSelect(2));
     document.getElementById('node-level-3')?.addEventListener('click', () => openLevelSelect(3));
+    document.getElementById('node-level-4')?.addEventListener('click', () => openLevelSelect(4));
+    document.getElementById('node-level-5')?.addEventListener('click', () => openLevelSelect(5));
 
     // Chest modal interaction
     const modal = document.getElementById('chest-modal');

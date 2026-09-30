@@ -138,39 +138,28 @@ body {
   min-height: 100dvh;
 }
 
-/* ═══ ULTRA PREMIUM MESH GRADIENT BACKGROUND ═══ */
+/* ═══ ULTRA PREMIUM MESH GRADIENT BACKGROUND (OPTIMIZED) ═══ */
 .colorful-bg {
   position: fixed; inset: 0;
   pointer-events: none; z-index: -2;
   overflow: hidden;
-  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 25%, #e0e7ff 50%, #fce7f3 75%, #fdf2f8 100%);
-  animation: bgShift 20s ease-in-out infinite alternate;
+  background: radial-gradient(circle at 10% 20%, rgba(124, 58, 237, 0.08) 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.07) 0%, transparent 40%),
+              radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
+              var(--bg-void);
+  transform: translateZ(0);
 }
 
 .colorful-bg::before {
-  content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(124, 58, 237, 0.12), transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.1), transparent 50%),
-    radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.08), transparent 50%),
-    radial-gradient(circle at 30% 60%, rgba(59, 130, 246, 0.08), transparent 40%);
-  animation: spinSlow 50s linear infinite;
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.06), transparent 50%);
+  pointer-events: none;
 }
 
 .colorful-bg::after {
   content: ''; position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse at 70% 10%, rgba(245, 158, 11, 0.06), transparent 50%),
-    radial-gradient(ellipse at 10% 90%, rgba(139, 92, 246, 0.08), transparent 50%);
-  animation: spinSlow 35s linear infinite reverse;
-}
-
-@keyframes spinSlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-@keyframes bgShift {
-  0%   { background: linear-gradient(135deg, #f5f3ff, #ede9fe, #e0e7ff, #fce7f3, #fdf2f8); }
-  33%  { background: linear-gradient(135deg, #e0e7ff, #f5f3ff, #fdf4ff, #ecfdf5, #ede9fe); }
-  66%  { background: linear-gradient(135deg, #fdf2f8, #e0e7ff, #f5f3ff, #ede9fe, #ecfdf5); }
-  100% { background: linear-gradient(135deg, #ecfdf5, #fdf2f8, #ede9fe, #e0e7ff, #f5f3ff); }
+  background: radial-gradient(circle at 20% 80%, rgba(245, 158, 11, 0.04), transparent 50%);
+  pointer-events: none;
 }
 
 #app {

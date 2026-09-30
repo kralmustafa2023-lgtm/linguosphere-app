@@ -68,8 +68,10 @@ export const ListeningGame = {
           </div>
 
           <div class="game-body">
-            <div class="game-question-area">
-              <div style="font-size:13px;color:var(--text-muted);margin-bottom:var(--space-md)">Dinleyin ve do\u011Fru kelimeyi se\u00E7in</div>
+            <div class="game-question-area" style="margin-bottom:16px; padding:24px;">
+              <div style="font-size:44px; margin-bottom:12px;">🎧</div>
+              <div class="game-question-text" style="font-size:22px !important;">Kelimeyi Dinleyin</div>
+              <div style="font-size:15px; color:var(--text-secondary); font-weight:600; margin-top:8px;">Sesi dinleyip doğru kelimeyi seçin</div>
             </div>
 
             <!-- Play buttons -->

@@ -282,25 +282,36 @@
 
 /* ═══ GAME SCREENS SHARED ═══ */
 .game-question-area {
-  width: 100%; max-width: 500px;
+  width: 100%; max-width: 620px;
   text-align: center;
-  margin-bottom: var(--space-xl);
+  margin: 0 auto var(--space-xl) auto;
+  background: var(--bg-card-solid);
+  border: 1.5px solid var(--bg-card-border);
+  border-radius: var(--radius-xl);
+  padding: 30px 24px;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: relative;
 }
 .game-question-text {
   font-family: var(--font-display);
-  font-size: 22px; font-weight: 700;
+  font-size: 26px !important;
+  font-weight: 800 !important;
   margin-bottom: var(--space-sm);
-  line-height: 1.4;
+  line-height: 1.5;
   letter-spacing: -0.02em;
-  color: var(--text-primary);
+  color: var(--text-primary) !important;
 }
 .game-question-sub {
-  font-size: 14px; color: var(--text-secondary);
-  font-weight: 500;
+  font-size: 15px !important;
+  color: var(--text-secondary) !important;
+  font-weight: 600 !important;
 }
 
 .game-answer-area {
-  width: 100%; max-width: 500px;
+  width: 100%; max-width: 620px;
+  margin: 0 auto;
 }
 
 /* Sentence builder */

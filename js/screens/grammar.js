@@ -24,10 +24,10 @@ export const GrammarScreen = {
         <div class="container container-narrow">
           
           <!-- Sticky Header -->
-          <div class="header-bar" style="position: sticky; top: 0; z-index: 100; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(0,0,0,0.05); margin: 0 -16px 24px -16px; padding: 16px 20px;">
-            <div class="back-area hover-lift" id="backBtn" style="margin: 0; padding: 0;">
+          <div class="header-bar" style="position: sticky; top: 0; z-index: 100; background: var(--bg-glass-strong); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--bg-card-border); margin: 0 -16px 24px -16px; padding: 16px 20px;">
+            <div class="back-area hover-lift" id="backBtn" style="margin: 0; padding: 0; cursor: pointer;">
               ${backArrowSVG()}
-              <span style="font-weight: 500;">Geri Dön</span>
+              <span style="font-weight: 600; color: var(--text-primary);">Geri Dön</span>
             </div>
             <div style="font-family: var(--font-display); font-weight: 700; font-size: 15px; letter-spacing: -0.01em; color:var(--text-primary); display:flex; align-items:center; gap:6px;">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>

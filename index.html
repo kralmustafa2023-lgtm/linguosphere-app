@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr" class="dark">
+<html lang="tr" class="dark" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,20 +32,20 @@
   </style>
 
   <!-- Legacy & Component Styles -->
-  <link rel="stylesheet" href="css/main.css?v=v2-stitch-ultra-fixed">
-  <link rel="stylesheet" href="css/layout.css?v=v2-stitch-ultra-fixed">
-  <link rel="stylesheet" href="css/components.css?v=v2-stitch-ultra-fixed">
-  <link rel="stylesheet" href="css/animations.css?v=v2-stitch-ultra-fixed">
-  <link rel="stylesheet" href="css/screens.css?v=v2-stitch-ultra-fixed">
-  <link rel="stylesheet" href="css/responsive.css?v=v2-stitch-ultra-fixed">
+  <link rel="stylesheet" href="css/main.css?v=v3-final">
+  <link rel="stylesheet" href="css/layout.css?v=v3-final">
+  <link rel="stylesheet" href="css/components.css?v=v3-final">
+  <link rel="stylesheet" href="css/animations.css?v=v3-final">
+  <link rel="stylesheet" href="css/screens.css?v=v3-final">
+  <link rel="stylesheet" href="css/responsive.css?v=v3-final">
 </head>
 <body class="bg-background font-body-md text-on-surface antialiased min-h-screen relative selection:bg-primary selection:text-on-primary">
   
-  <!-- Ambient Mesh Background Glows -->
-  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
-    <div class="absolute -top-[20%] left-[10%] w-[560px] h-[560px] rounded-full bg-mesh-glow-indigo blur-[120px]"></div>
-    <div class="absolute top-[40%] -right-[10%] w-[600px] h-[600px] rounded-full bg-mesh-glow-emerald blur-[130px]"></div>
-    <div class="absolute -bottom-[15%] left-[30%] w-[520px] h-[520px] rounded-full bg-mesh-glow-amber blur-[110px]"></div>
+  <!-- Ambient Mesh Background Glows (Hardware Accelerated) -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0 opacity-60" style="transform: translateZ(0); will-change: transform;">
+    <div class="absolute -top-[10%] left-[10%] w-[450px] h-[450px] rounded-full bg-mesh-glow-indigo blur-[70px] opacity-40"></div>
+    <div class="absolute top-[35%] -right-[5%] w-[450px] h-[450px] rounded-full bg-mesh-glow-emerald blur-[80px] opacity-30"></div>
+    <div class="absolute -bottom-[10%] left-[25%] w-[420px] h-[420px] rounded-full bg-mesh-glow-amber blur-[70px] opacity-30"></div>
   </div>
 
   <!-- App Root Shell -->
@@ -55,6 +55,6 @@
 
   <!-- Tesseract.js OCR Engine -->
   <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
-  <script type="module" src="js/app.js?v=v2-stitch-ultra-fixed"></script>
+  <script type="module" src="js/app.js?v=v3-final"></script>
 </body>
 </html>

@@ -29,8 +29,8 @@ export const SentenceGame = {
       const progress = ((currentIndex + 1) / sentences.length) * 100;
       selectedWords = [];
 
-      // Shuffle the words from the correct answer
-      const correctWords = s.en.split(' ');
+      // Use s.w array if available, otherwise split by space
+      const correctWords = (s.w && s.w.length > 0) ? [...s.w] : s.en.split(' ');
       const shuffledWords = shuffle([...correctWords]);
 
       root.innerHTML = `
@@ -51,28 +51,30 @@ export const SentenceGame = {
             <div class="game-progress-fill" style="width:${progress}%"></div>
           </div>
 
-          <div class="game-body">
-            <div class="game-question-area">
-              <div style="font-size:13px;color:var(--text-muted);margin-bottom:var(--space-sm)">C\u00FCmleyi kurun</div>
-              <div class="game-question-text" style="color:var(--mode-sentence)">${s.tr}</div>
+          <div class="game-body" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; max-width:620px; margin:0 auto; padding-top:var(--space-md);">
+            <div class="game-question-area" style="background:var(--bg-card-solid); border:2px solid var(--bg-card-border); border-radius:28px; padding:30px 24px; box-shadow:var(--shadow-card); text-align:center; width:100%; margin-bottom:24px;">
+              <div style="display:inline-block; margin-bottom:12px;">
+                <span style="font-size:12px; font-weight:800; background:rgba(59, 130, 246, 0.15); color:var(--mode-sentence); padding:6px 16px; border-radius:20px; text-transform:uppercase; letter-spacing:0.06em; border:1px solid rgba(59, 130, 246, 0.3);">Cümleyi Kurun</span>
+              </div>
+              <div class="game-question-text" style="font-size:26px !important; font-weight:800 !important; color:var(--text-primary) !important; line-height:1.5;">${s.tr}</div>
             </div>
 
-            <div class="game-answer-area" style="width:100%;max-width:500px">
+            <div class="game-answer-area" style="width:100%;">
               <!-- Sentence Area -->
-              <div class="sentence-area" id="sentenceArea" style="min-height:60px;margin-bottom:var(--space-lg)">
-                <span style="color:var(--text-muted);font-size:14px" id="placeholder">Kelimelere t\u0131klayarak c\u00FCmle kurun...</span>
+              <div class="sentence-area" id="sentenceArea" style="min-height:70px; margin-bottom:var(--space-lg); background:var(--bg-card-solid); border:2px dashed var(--bg-card-border); border-radius:20px;">
+                <span style="color:var(--text-muted);font-size:15px;font-weight:600;" id="placeholder">Kelimelere tıklayarak cümleyi oluşturun...</span>
               </div>
 
               <!-- Word Chips -->
-              <div class="sentence-chips" id="wordChips">
+              <div class="sentence-chips" id="wordChips" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
                 ${shuffledWords.map((word, i) => `
-                  <div class="chip" data-word="${word}" data-index="${i}">${word}</div>
+                  <div class="chip hover-lift" data-word="${word}" data-index="${i}" style="font-size:16px; font-weight:700; color:var(--text-primary); background:var(--bg-card-solid); border:1.5px solid var(--bg-card-border); padding:12px 20px; border-radius:16px; cursor:pointer;">${word}</div>
                 `).join('')}
               </div>
 
               <div style="display:flex;gap:var(--space-md);margin-top:var(--space-xl);justify-content:center">
-                <button class="btn btn-ghost" id="clearBtn">\uD83D\uDD04 Temizle</button>
-                <button class="btn btn-primary" id="checkBtn">\u2705 Kontrol Et</button>
+                <button class="btn btn-ghost hover-lift" id="clearBtn" style="font-weight:700; font-size:15px;">🔄 Temizle</button>
+                <button class="btn btn-primary hover-lift" id="checkBtn" style="font-weight:800; font-size:15px; padding:14px 32px;">✅ Kontrol Et</button>
               </div>
 
               <div id="feedback" style="margin-top:var(--space-md);text-align:center;min-height:50px"></div>
@@ -145,9 +147,9 @@ export const SentenceGame = {
 
     function checkAnswer(s, correctWords) {
       const feedback = document.getElementById('feedback');
-      const area = document.getElementById('sentenceArea');
-      const userSentence = selectedWords.join(' ');
-      const isCorrect = userSentence.toLowerCase() === s.en.toLowerCase();
+      const userSentence = selectedWords.join(' ').replace(/\s+([.,!?;:])/g, '$1').trim();
+      const targetSentence = s.en.replace(/\s+([.,!?;:])/g, '$1').trim();
+      const isCorrect = userSentence.toLowerCase() === targetSentence.toLowerCase() || selectedWords.join(' ').toLowerCase() === s.en.toLowerCase();
 
       if (isCorrect) {
         area.classList.add('correct');

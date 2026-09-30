@@ -36,10 +36,10 @@ export const RoleplayScreen = {
         <div class="container container-narrow stagger">
           
           <!-- Sticky Header -->
-          <div class="header-bar hover-lift" style="position: sticky; top: 0; z-index: 100; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(0,0,0,0.05); margin: 0 -16px 24px -16px; padding: 16px 20px;">
-            <div class="back-area hover-lift" id="backBtn" style="margin: 0; padding: 0;">
+          <div class="header-bar hover-lift" style="position: sticky; top: 0; z-index: 100; background: var(--bg-glass-strong); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--bg-card-border); margin: 0 -16px 24px -16px; padding: 16px 20px;">
+            <div class="back-area hover-lift" id="backBtn" style="margin: 0; padding: 0; cursor: pointer;">
               ${backArrowSVG()}
-              <span style="font-weight: 500;">Ana Menü</span>
+              <span style="font-weight: 600; color: var(--text-primary);">Ana Menü</span>
             </div>
             <div style="font-family: var(--font-display); font-weight: 700; font-size: 15px; letter-spacing: -0.01em; color:var(--text-primary); display:flex; align-items:center; gap:6px;">
               <span style="font-size:18px">💬</span> Günlük Yaşam Senaryoları
@@ -100,10 +100,10 @@ export const RoleplayScreen = {
         <div class="container container-narrow stagger">
           
           <!-- Sticky Header -->
-          <div class="header-bar hover-lift" style="position: sticky; top: 0; z-index: 100; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(0,0,0,0.05); margin: 0 -16px 24px -16px; padding: 16px 20px;">
-            <div class="back-area hover-lift" id="exitScenarioBtn" style="margin: 0; padding: 0;">
+          <div class="header-bar hover-lift" style="position: sticky; top: 0; z-index: 100; background: var(--bg-glass-strong); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--bg-card-border); margin: 0 -16px 24px -16px; padding: 16px 20px;">
+            <div class="back-area hover-lift" id="exitScenarioBtn" style="margin: 0; padding: 0; cursor: pointer;">
               ${backArrowSVG()}
-              <span style="font-weight: 500;">Çıkış</span>
+              <span style="font-weight: 600; color: var(--text-primary);">Çıkış</span>
             </div>
             <div style="font-family: var(--font-display); font-weight: 700; font-size: 15px; color:var(--text-primary);">
               ${scenario.emoji} ${scenario.title}
