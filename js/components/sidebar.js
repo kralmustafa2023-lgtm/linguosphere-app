@@ -21,40 +21,40 @@ export function renderSidebar(currentScreen = 'home') {
   ];
 
   return `
-    <!-- STITCH ULTRA SIDEBAR (Hidden on Mobile, Docked on Desktop) -->
-    <aside class="hidden md:flex fixed left-0 top-0 h-full w-72 bg-surface-glass backdrop-blur-2xl z-50 flex-col justify-between p-space-lg shadow-[0_12px_32px_-4px_rgba(0,0,0,0.35)] border-r border-border-glass">
+    <!-- STITCH LUMINARY SIDEBAR (Hidden on Mobile, Docked on Desktop) -->
+    <aside class="hidden md:flex fixed left-0 top-0 h-full w-72 bg-white/95 backdrop-blur-xl z-50 flex-col justify-between p-space-lg shadow-sm border-r border-outline-variant">
       <div class="flex flex-col gap-space-xl">
         <!-- Logo & Branding -->
         <div class="flex items-center justify-between cursor-pointer" onclick="window.navigate('home')">
           <div class="flex items-center gap-space-sm">
-            <div class="w-8 h-8 rounded-xl bg-primary/20 flex items-center justify-center text-primary shadow-sm border border-primary/30">
-              <span class="material-symbols-outlined text-[22px]">school</span>
+            <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-md">
+              <span class="material-symbols-outlined text-[24px]">school</span>
             </div>
             <div class="flex flex-col">
               <span class="font-headline-sm text-headline-sm text-on-surface font-extrabold tracking-tight">Linguosphere</span>
-              <span class="font-label-sm text-label-sm text-secondary font-bold tracking-wider uppercase">Elite Linguistic AI</span>
+              <span class="font-label-sm text-label-sm text-primary font-bold tracking-wider uppercase">Master English</span>
             </div>
           </div>
-          <span class="px-space-xs py-space-3xs rounded-full bg-primary/15 text-primary font-label-sm text-label-sm uppercase tracking-wider font-bold">v2.5 PRO</span>
+          <span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm uppercase tracking-wider font-extrabold">PRO</span>
         </div>
 
         <!-- Navigation Links -->
-        <nav class="flex flex-col gap-space-xs">
+        <nav class="flex flex-col gap-1.5">
           ${navItems.map(item => {
             const isActive = (currentScreen === item.id || (currentScreen === 'home' && item.id === 'home'));
             const activeClasses = isActive 
-              ? 'bg-primary-container text-on-primary-container font-bold shadow-[0_0_20px_rgba(124,93,250,0.35)]' 
-              : 'text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface';
+              ? 'bg-primary text-white font-bold shadow-md tactile-btn-primary' 
+              : 'text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-semibold';
 
             return `
-              <button type="button" class="group flex items-center justify-between px-space-md py-space-sm rounded-xl transition-all duration-200 cursor-pointer text-left w-full ${activeClasses}"
+              <button type="button" class="group flex items-center justify-between px-space-md py-3 rounded-2xl transition-all duration-200 cursor-pointer text-left w-full ${activeClasses}"
                  onclick="window.navigate('${item.id}')"
                  data-path="${item.path}">
-                <div class="flex items-center gap-space-md">
+                <div class="flex items-center gap-3">
                   <span class="material-symbols-outlined text-[22px] transition-transform group-hover:scale-110">${item.icon}</span>
                   <span class="font-label-lg text-label-lg">${item.label}</span>
                 </div>
-                <span class="px-space-xs py-space-3xs rounded-full bg-surface-container ${item.color} font-label-sm text-label-sm font-semibold">${item.badge}</span>
+                <span class="px-2 py-0.5 rounded-full ${isActive ? 'bg-white/20 text-white' : 'bg-surface-container text-on-surface-variant'} font-label-sm text-[11px] font-bold">${item.badge}</span>
               </button>
             `;
           }).join('')}
@@ -62,38 +62,38 @@ export function renderSidebar(currentScreen = 'home') {
       </div>
 
       <!-- Bottom Mini Stats & Profile Pill -->
-      <div class="flex flex-col gap-space-md pt-space-md bg-surface-container-low/60 rounded-xl p-space-md border border-border-glass">
+      <div class="flex flex-col gap-3 pt-3 bg-surface-container rounded-2xl p-4 border border-outline-variant">
         <div class="flex items-center justify-between">
-          <div class="flex items-center gap-space-xs">
-            <span class="material-symbols-outlined text-tertiary text-[20px]" style="font-variation-settings:'FILL' 1;">local_fire_department</span>
-            <span class="font-label-md text-label-md text-tertiary font-extrabold">${streak} Gün Seri</span>
+          <div class="flex items-center gap-1.5 px-2.5 py-1 bg-amber-50 rounded-full border border-amber-200">
+            <span class="material-symbols-outlined text-amber-600 text-[18px]" style="font-variation-settings:'FILL' 1;">local_fire_department</span>
+            <span class="font-label-md text-label-md text-amber-700 font-extrabold">${streak} Gün</span>
           </div>
-          <div class="flex items-center gap-space-xs">
-            <span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings:'FILL' 1;">bolt</span>
-            <span class="font-label-md text-label-md text-secondary font-extrabold">${totalXP.toLocaleString()} XP</span>
+          <div class="flex items-center gap-1.5 px-2.5 py-1 bg-primary-fixed rounded-full border border-primary-fixed-dim">
+            <span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings:'FILL' 1;">toll</span>
+            <span class="font-label-md text-label-md text-primary font-extrabold">${totalXP.toLocaleString()} XP</span>
           </div>
         </div>
-        <div class="flex items-center justify-between gap-space-sm">
+        <div class="flex items-center justify-between gap-space-sm pt-2 border-t border-outline-variant/60">
           <div class="flex items-center gap-space-sm min-w-0 cursor-pointer" onclick="window.navigate('profile')">
             <div class="relative flex-shrink-0">
-              <div class="w-8 h-8 rounded-full bg-primary/20 border border-primary/40 text-primary flex items-center justify-center font-bold">
-                <span class="material-symbols-outlined text-[18px]">person</span>
+              <div class="w-9 h-9 rounded-full bg-primary-fixed border border-primary-fixed-dim text-primary flex items-center justify-center font-bold">
+                <span class="material-symbols-outlined text-[20px]">person</span>
               </div>
-              <span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-secondary ring-2 ring-surface"></span>
+              <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-2 ring-white"></span>
             </div>
             <div class="flex flex-col min-w-0">
-              <span class="font-label-md text-label-md text-on-surface truncate font-bold">İngilizce Öğrenicisi</span>
-              <span class="font-label-sm text-label-sm text-on-surface-variant truncate">${userLevel.name}</span>
+              <span class="font-label-md text-label-md text-on-surface truncate font-extrabold">Mustafa</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant truncate font-medium">${userLevel.name}</span>
             </div>
           </div>
           <div class="flex items-center gap-1">
-            <button type="button" class="theme-toggle-btn text-on-surface-variant hover:text-on-surface transition-colors p-space-2xs rounded-lg hover:bg-surface-container-high flex items-center justify-center cursor-pointer" 
+            <button type="button" class="theme-toggle-btn text-on-surface-variant hover:text-on-surface transition-colors p-2 rounded-xl hover:bg-surface-container-high flex items-center justify-center cursor-pointer" 
                     onclick="window.toggleTheme()" 
                     title="Temayı Değiştir">
-              <span class="material-symbols-outlined text-[18px]" id="themeIcon">${Storage.getTheme() === 'dark' ? 'light_mode' : 'dark_mode'}</span>
+              <span class="material-symbols-outlined text-[20px]" id="themeIcon">${Storage.getTheme() === 'dark' ? 'light_mode' : 'dark_mode'}</span>
             </button>
-            <button type="button" class="text-on-surface-variant hover:text-on-surface transition-colors p-space-2xs rounded-lg hover:bg-surface-container-high flex items-center justify-center cursor-pointer" onclick="window.navigate('profile')">
-              <span class="material-symbols-outlined text-[18px]">settings</span>
+            <button type="button" class="text-on-surface-variant hover:text-on-surface transition-colors p-2 rounded-xl hover:bg-surface-container-high flex items-center justify-center cursor-pointer" onclick="window.navigate('profile')">
+              <span class="material-symbols-outlined text-[20px]">settings</span>
             </button>
           </div>
         </div>
@@ -101,16 +101,16 @@ export function renderSidebar(currentScreen = 'home') {
     </aside>
 
     <!-- MOBILE BOTTOM NAVIGATION (< 768px) -->
-    <nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-surface-container-high/95 backdrop-blur-2xl z-50 flex items-center justify-around px-2 border-t border-border-glass shadow-[0_-4px_24px_rgba(0,0,0,0.5)]">
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-white/95 backdrop-blur-2xl z-50 flex items-center justify-around px-2 border-t border-outline-variant shadow-lg">
       ${navItems.map(item => {
         const isActive = (currentScreen === item.id || (currentScreen === 'home' && item.id === 'home'));
-        const activeColor = isActive ? 'text-primary font-bold scale-105' : 'text-on-surface-variant opacity-70';
+        const activeColor = isActive ? 'text-primary font-extrabold scale-105' : 'text-on-surface-variant opacity-70 hover:opacity-100';
 
         return `
           <button type="button" class="flex flex-col items-center justify-center flex-1 h-full gap-0.5 transition-all cursor-pointer ${activeColor}"
                   onclick="window.navigate('${item.id}')">
-            <span class="material-symbols-outlined text-[20px]">${item.icon}</span>
-            <span class="font-label-sm text-[10px]">${item.label}</span>
+            <span class="material-symbols-outlined text-[22px] ${isActive ? 'fill-icon' : ''}" ${isActive ? 'style="font-variation-settings: \'FILL\' 1;"' : ''}>${item.icon}</span>
+            <span class="font-label-sm text-[10px] font-bold">${item.label}</span>
           </button>
         `;
       }).join('')}
@@ -122,36 +122,36 @@ export function renderHeaderBar() {
   const state = Storage.load();
 
   return `
-    <header class="fixed top-0 left-0 md:left-72 right-0 h-16 bg-surface-glass backdrop-blur-xl z-40 flex items-center justify-between px-4 md:px-space-xl border-b border-border-glass shadow-[0_1px_8px_rgba(0,0,0,0.15)]">
+    <header class="fixed top-0 left-0 md:left-72 right-0 h-16 bg-white/90 backdrop-blur-xl z-40 flex items-center justify-between px-4 md:px-space-xl border-b border-outline-variant shadow-xs">
       <div class="flex items-center gap-space-sm md:gap-space-md">
         <!-- Mobile Logo -->
         <div class="flex md:hidden items-center gap-2 cursor-pointer" onclick="window.navigate('home')">
-          <div class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary border border-primary/30">
-            <span class="material-symbols-outlined text-[18px]">school</span>
+          <div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center text-white shadow-sm">
+            <span class="material-symbols-outlined text-[20px]">school</span>
           </div>
-          <span class="font-bold text-on-surface text-sm">Linguosphere</span>
+          <span class="font-extrabold text-on-surface text-base">Linguosphere</span>
         </div>
 
-        <div class="hidden sm:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container-high/80">
-          <span class="material-symbols-outlined text-on-surface-variant text-[18px]">translate</span>
-          <span class="font-label-sm text-label-sm text-on-surface font-semibold">İngilizce • EN</span>
+        <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container border border-outline-variant/60">
+          <span class="material-symbols-outlined text-primary text-[18px]">translate</span>
+          <span class="font-label-sm text-label-sm text-on-surface font-bold">İngilizce B1</span>
         </div>
-        <div class="hidden lg:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container-high/60">
-          <span class="material-symbols-outlined text-secondary text-[18px]">headset_mic</span>
-          <span class="font-label-sm text-label-sm text-secondary font-semibold">AI Telaffuz Motoru Aktif</span>
+        <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200">
+          <span class="material-symbols-outlined text-emerald-600 text-[18px]">headset_mic</span>
+          <span class="font-label-sm text-label-sm text-emerald-800 font-bold">AI Telaffuz Motoru Hazır</span>
         </div>
       </div>
       <div class="flex items-center gap-2 md:gap-space-md">
-        <div class="hidden sm:flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container/80">
-          <span class="material-symbols-outlined text-tertiary text-[18px]">military_tech</span>
-          <span class="font-label-sm text-label-sm text-on-surface">Lig: <strong class="text-tertiary">Safir</strong></span>
+        <div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200">
+          <span class="material-symbols-outlined text-amber-600 text-[18px]" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+          <span class="font-label-sm text-label-sm text-amber-800 font-bold">Lig: Safir</span>
         </div>
-        <button type="button" class="theme-toggle-btn flex items-center justify-center w-9 h-9 rounded-full bg-surface-container-high/60 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer" 
+        <button type="button" class="theme-toggle-btn flex items-center justify-center w-10 h-10 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer" 
                 onclick="window.toggleTheme()" 
                 title="Temayı Değiştir">
           <span class="material-symbols-outlined text-[20px]" id="themeIcon">${Storage.getTheme() === 'dark' ? 'light_mode' : 'dark_mode'}</span>
         </button>
-        <button type="button" class="flex items-center justify-center w-9 h-9 rounded-full bg-surface-container-high/60 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer" onclick="window.navigate('profile')">
+        <button type="button" class="flex items-center justify-center w-10 h-10 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer" onclick="window.navigate('profile')">
           <span class="material-symbols-outlined text-[20px]">notifications</span>
         </button>
       </div>

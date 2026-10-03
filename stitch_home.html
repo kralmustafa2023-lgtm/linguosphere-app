@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Linguosphere — Master English</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed-variant": "#372abf",
+            "outline-variant": "#c7c4d7",
+            "on-tertiary-fixed": "#002114",
+            "on-tertiary": "#ffffff",
+            "on-background": "#1f1b17",
+            "surface-container-high": "#f0e6e0",
+            "surface-container-highest": "#eae1da",
+            "surface-variant": "#eae1da",
+            "tertiary-fixed-dim": "#68dba9",
+            "primary": "#2a14b4",
+            "secondary-fixed-dim": "#d2bbff",
+            "error": "#ba1a1a",
+            "on-secondary": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-surface": "#1f1b17",
+            "surface-container": "#f6ece6",
+            "primary-container": "#4338ca",
+            "on-secondary-fixed-variant": "#5a00c6",
+            "on-tertiary-fixed-variant": "#005137",
+            "inverse-on-surface": "#f9efe8",
+            "inverse-surface": "#342f2b",
+            "surface": "#fff8f5",
+            "on-surface-variant": "#464554",
+            "surface-dim": "#e2d8d2",
+            "surface-container-low": "#fcf2eb",
+            "primary-fixed-dim": "#c3c0ff",
+            "tertiary": "#00442d",
+            "on-error": "#ffffff",
+            "secondary-fixed": "#eaddff",
+            "on-primary-fixed": "#100069",
+            "on-secondary-container": "#fffbff",
+            "on-primary-container": "#c1beff",
+            "secondary-container": "#8a4cfc",
+            "primary-fixed": "#e3dfff",
+            "error-container": "#ffdad6",
+            "surface-bright": "#fff8f5",
+            "background": "#fff8f5",
+            "on-tertiary-container": "#66daa8",
+            "tertiary-container": "#005e40",
+            "on-secondary-fixed": "#25005a",
+            "outline": "#777586",
+            "surface-tint": "#5148d7",
+            "on-error-container": "#93000a",
+            "tertiary-fixed": "#85f8c4",
+            "surface-container-lowest": "#ffffff",
+            "inverse-primary": "#c3c0ff",
+            "secondary": "#712ae2"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-sm": "1rem",
+            "margin-sm": "1rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "gutter": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "margin": "2rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["Plus Jakarta Sans"],
+            "display": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "phonetic-display": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "display": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+            "body-sm": ["13px", {"lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400"}],
+            "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+            "phonetic-display": ["20px", {"lineHeight": "26px", "letterSpacing": "0.03em", "fontWeight": "500"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-md": ["15px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400"}],
+            "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700"}],
+            "headline-xl-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #FAFAF9;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    /* Tactile 3D Button Shadows matching design system */
+    .tactile-btn-primary {
+      box-shadow: 0 4px 0 #3730A3;
+      transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .tactile-btn-primary:active {
+      transform: translateY(3px);
+      box-shadow: 0 1px 0 #3730A3;
+    }
+
+    .tactile-btn-secondary {
+      box-shadow: 0 3px 0 #E7E5E4;
+      transition: all 0.15s ease;
+    }
+    .tactile-btn-secondary:active {
+      transform: translateY(2px);
+      box-shadow: 0 1px 0 #E7E5E4;
+    }
+
+    .tactile-node-emerald {
+      box-shadow: 0 6px 0 #047857, 0 12px 20px -4px rgba(5, 150, 105, 0.35);
+      transition: all 0.15s ease;
+    }
+    .tactile-node-emerald:active {
+      transform: translateY(4px);
+      box-shadow: 0 2px 0 #047857;
+    }
+
+    .tactile-node-sapphire {
+      box-shadow: 0 6px 0 #1D4ED8, 0 12px 20px -4px rgba(37, 99, 235, 0.35);
+      transition: all 0.15s ease;
+    }
+    .tactile-node-sapphire:active {
+      transform: translateY(4px);
+      box-shadow: 0 2px 0 #1D4ED8;
+    }
+
+    .tactile-node-purple {
+      box-shadow: 0 8px 0 #4C1D95, 0 16px 28px -4px rgba(124, 58, 237, 0.45);
+      transition: all 0.15s ease;
+    }
+    .tactile-node-purple:active {
+      transform: translateY(5px);
+      box-shadow: 0 3px 0 #4C1D95;
+    }
+
+    .tactile-node-locked {
+      box-shadow: 0 5px 0 #D6D3D1;
+    }
+
+    /* Subtle pulse animation for active learning node */
+    @keyframes pulse-ring {
+      0% {
+        transform: scale(0.95);
+        opacity: 0.8;
+      }
+      50% {
+        transform: scale(1.15);
+        opacity: 0.25;
+      }
+      100% {
+        transform: scale(0.95);
+        opacity: 0.8;
+      }
+    }
+    .animate-pulse-ring {
+      animation: pulse-ring 2.4s infinite cubic-bezier(0.4, 0, 0.6, 1);
+    }
+
+    /* Floating badge bounce */
+    @keyframes subtle-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    .animate-float {
+      animation: subtle-float 2.8s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-[#FAFAF9] text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary-fixed selection:text-primary">
+<!-- ==================== DESKTOP PERSISTENT RAIL (SIDE NAV BAR) ==================== -->
+<aside class="hidden lg:flex fixed top-0 left-0 h-full w-64 p-4 z-40 bg-surface-container-lowest border-r border-outline-variant flex-col justify-between shadow-none">
+<div class="flex flex-col gap-6">
+<!-- App Brand Logo -->
+<div class="flex items-center gap-3 px-3 py-2">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-md">
+<span class="material-symbols-outlined text-2xl" data-icon="language">language</span>
+</div>
+<div>
+<h1 class="text-headline-sm font-headline-sm text-primary font-extrabold tracking-tight">Linguosphere</h1>
+<p class="text-label-md font-label-md text-on-surface-variant font-medium">Master English</p>
+</div>
+</div>
+<!-- Navigation Tabs -->
+<nav class="flex flex-col gap-1.5 mt-2">
+<!-- Active Tab: Home -->
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-fixed text-primary rounded-DEFAULT font-semibold transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-label-lg font-label-lg">Home</span>
+</a>
+<!-- Tab: Practice -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-DEFAULT font-medium transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="fitness_center">fitness_center</span>
+<span class="text-label-lg font-label-lg">Practice</span>
+</a>
+<!-- Tab: Vocabulary -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-DEFAULT font-medium transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="text-label-lg font-label-lg">Vocabulary</span>
+</a>
+<!-- Tab: Analytics -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-DEFAULT font-medium transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="text-label-lg font-label-lg">Analytics</span>
+</a>
+<!-- Tab: Profile -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-DEFAULT font-medium transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-label-lg font-label-lg">Profile</span>
+</a>
+</nav>
+</div>
+<!-- Rail Footer -->
+<div class="flex flex-col gap-3 pt-4 border-t border-outline-variant">
+<button class="w-full py-3 px-4 bg-primary text-on-primary rounded-DEFAULT font-label-lg text-label-lg tactile-btn-primary flex items-center justify-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined text-lg" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span>Practice Now</span>
+</button>
+<a class="flex items-center gap-3 px-4 py-2.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-DEFAULT font-medium transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-label-lg font-label-lg">Settings</span>
+</a>
+</div>
+</aside>
+<!-- ==================== TOP NAVIGATION BAR ==================== -->
+<header class="sticky top-0 z-30 w-full bg-surface-container-lowest/95 backdrop-blur-md shadow-sm">
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 lg:pl-72">
+<!-- Left side: Mobile Brand / Desktop Context Breadcrumb -->
+<div class="flex items-center gap-3">
+<div class="lg:hidden flex items-center gap-2">
+<div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined text-xl" data-icon="language">language</span>
+</div>
+<span class="text-headline-sm font-headline-sm text-primary font-extrabold tracking-tight">Linguosphere</span>
+</div>
+<div class="hidden lg:flex items-center gap-2 text-on-surface-variant">
+<span class="text-label-md font-label-md bg-surface-container px-2.5 py-1 rounded-full text-primary font-semibold">İngilizce B1</span>
+<span class="text-outline-variant">/</span>
+<span class="text-label-md font-label-md font-medium text-on-surface">Öğrenme Yolu</span>
+</div>
+</div>
+<!-- Right side: Gamification Stat Pills & User Avatar -->
+<div class="flex items-center gap-2 sm:gap-4">
+<!-- Streak Counter -->
+<div class="flex items-center gap-1.5 px-3 py-1.5 bg-[#FEF3C7] border border-[#FDE68A] rounded-full shadow-xs cursor-pointer hover:bg-amber-100 transition-colors">
+<span class="material-symbols-outlined text-[#B45309] text-xl" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="text-label-lg font-label-lg text-[#B45309] font-bold">14 Gün</span>
+</div>
+<!-- XP Points Badge -->
+<div class="flex items-center gap-1.5 px-3 py-1.5 bg-[#EEF2FF] border border-[#C7D2FE] rounded-full shadow-xs cursor-pointer hover:bg-indigo-100 transition-colors">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="toll" style="font-variation-settings: 'FILL' 1;">toll</span>
+<span class="text-label-lg font-label-lg text-primary font-bold">1,420 XP</span>
+</div>
+<!-- Notification Bell (Desktop) -->
+<button aria-label="Bildirimler" class="hidden sm:flex p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-full transition-colors relative">
+<span class="material-symbols-outlined text-2xl" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-secondary rounded-full ring-2 ring-white"></span>
+</button>
+<!-- Mustafa Profile Avatar with Online Status Indicator -->
+<div class="relative cursor-pointer group ml-1">
+<div class="w-10 h-10 rounded-full ring-2 ring-primary/20 group-hover:ring-primary overflow-hidden flex items-center justify-center bg-gradient-to-tr from-primary to-secondary text-white font-bold text-base shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Portrait photo of a cheerful young adult man named Mustafa with a warm confident smile, neatly styled dark hair, wearing a casual stylish modern crewneck sweater against a softly lit minimalist creative studio environment with cool blue and warm ambient backlighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1fU7T3CkGqyGt3KsyHsP8t3mx53T2TOpQbxFeh72k5Fp4bGfzX3UrYYEMogW2GTFgE17allDfvQwmk684iUu8RI_7wEgi0SSsA-NVN26rPLCCqIEPUZGQrHbRsPCVKGRAwrgDcFo0OYxkRaybccYzqvdzPcQNq2ZMo4HsxxNwZvM0rgp9RYyHPmX9n3quNI9FZyD6Huan2ddsELbgezAD9GXXyUP08Sedo3e_Qw04pftbTUcJGwAt93heInugxXK7vG-JVB5miLQ"/>
+</div>
+<!-- Online Status Green Dot -->
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-white rounded-full"></span>
+</div>
+</div>
+</div>
+</header>
+<!-- ==================== MAIN LEARNING VIEWPORT ==================== -->
+<main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pl-72 pt-6 pb-28 lg:pb-12 flex justify-center">
+<!-- Centered Learning Column (Max 480px width focus) & Desktop Companion Widgets -->
+<div class="w-full max-w-4xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- CENTRAL GAMIFIED SPINE COLUMN (Duolingo Style Winding Path) -->
+<div class="lg:col-span-8 flex flex-col items-center w-full max-w-md mx-auto">
+<!-- Hero Greeting & Header Section -->
+<div class="w-full text-left mb-6">
+<div class="flex items-center justify-between">
+<h2 class="text-headline-lg font-headline-lg text-on-surface tracking-tight font-extrabold">
+              Merhaba, Mustafa! <span class="inline-block animate-wiggle">👋</span>
+</h2>
+<!-- Daily Goal Mini Pill -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-label-md font-label-md bg-surface-container border border-outline-variant/40 text-on-surface-variant font-semibold">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              Hedef: 3/5 Ders
+            </span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1 font-medium">
+            Bugün ne öğreneceksin? Akıcılık hedefine doğru harika gidiyorsun.
+          </p>
+</div>
+<!-- XP Progress Card (Luxurious Violet-to-Indigo Gradient) -->
+<div class="w-full rounded-2xl p-5 mb-10 text-white relative overflow-hidden shadow-xl bg-gradient-to-br from-violet-600 via-indigo-600 to-primary border border-violet-400/30">
+<!-- Glassmorphic lighting accents & ambient radial orbs -->
+<div class="absolute -right-8 -top-8 w-44 h-44 bg-violet-400/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="absolute -left-8 -bottom-8 w-44 h-44 bg-indigo-300/15 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-4">
+<!-- Header Row -->
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-label-md font-label-md font-semibold tracking-wide text-white">
+<span class="material-symbols-outlined text-sm" data-icon="military_tech" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+                Seviye 3: B1 Orta Düzey
+              </div>
+<span class="text-label-md font-label-md font-medium text-white/80">680 / 1,000 XP</span>
+</div>
+<!-- Progress Bar with Volume Glow Highlight -->
+<div class="flex flex-col gap-1.5">
+<div class="w-full h-3.5 bg-black/25 rounded-full p-0.5 overflow-hidden backdrop-blur-xs border border-white/10">
+<div class="h-full bg-gradient-to-r from-emerald-400 to-tertiary-fixed rounded-full relative shadow-sm" style="width: 68%;">
+<!-- Cylindrical top edge gloss highlight -->
+<div class="absolute top-0 inset-x-0 h-1 bg-white/40 rounded-full"></div>
+</div>
+</div>
+<div class="flex justify-between items-center text-label-sm font-label-sm text-white/80 mt-0.5">
+<span>Seviye 4 kilidini açmaya 320 XP kaldı</span>
+<span class="font-bold text-tertiary-fixed">68%</span>
+</div>
+</div>
+<!-- Card Bottom Micro Action -->
+<div class="pt-2 flex items-center justify-between border-t border-white/10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg text-tertiary-fixed" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-label-md font-label-md text-white/90">Bugünkü XP bonusu: +50 XP</span>
+</div>
+<button class="px-4 py-2 bg-white text-primary rounded-xl font-label-lg text-label-lg font-bold tactile-btn-secondary hover:bg-neutral-50 transition-all cursor-pointer">
+                Devam Et
+              </button>
+</div>
+</div>
+</div>
+<!-- ==================== DUOLINGO-STYLE WINDING LEARNING PATH ==================== -->
+<div class="w-full relative flex flex-col items-center py-4">
+<!-- Background Winding SVG Path Connector Line -->
+<svg class="absolute top-10 left-0 w-full h-[520px] pointer-events-none z-0" fill="none" preserveaspectratio="none" viewbox="0 0 400 520">
+<!-- Completed solid connector: Node 1 to Node 2 -->
+<path d="M 200 35 C 100 70, 90 120, 120 155" stroke="#059669" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"></path>
+<!-- Completed/Active solid connector: Node 2 to Node 3 -->
+<path d="M 120 155 C 160 195, 290 205, 270 270" stroke="#059669" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"></path>
+<!-- Pending dashed connector: Node 3 to Node 4 -->
+<path d="M 270 270 C 250 335, 120 345, 140 395" stroke="#D6D3D1" stroke-dasharray="8 8" stroke-linecap="round" stroke-width="6"></path>
+<!-- Pending dashed connector: Node 4 to Node 5 -->
+<path d="M 140 395 C 160 445, 230 460, 200 500" stroke="#D6D3D1" stroke-dasharray="8 8" stroke-linecap="round" stroke-width="6"></path>
+</svg>
+<!-- ---------------- NODE 1: GREEN (COMPLETED) ---------------- -->
+<div class="relative z-10 flex flex-col items-center mb-12">
+<button aria-label="1. Temel Tanışma - Tamamlandı" class="w-16 h-16 rounded-full bg-emerald-500 tactile-node-emerald flex items-center justify-center text-white cursor-pointer group hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-3xl font-bold" data-icon="check" style="font-variation-settings: 'FILL' 1;">check</span>
+</button>
+<div class="mt-3 text-center">
+<h3 class="text-label-lg font-label-lg font-bold text-on-surface">1. Temel Tanışma</h3>
+<span class="text-label-sm font-label-sm text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full font-semibold border border-emerald-200">Tamamlandı</span>
+</div>
+</div>
+<!-- ---------------- NODE 2: BLUE (COMPLETED) ---------------- -->
+<div class="relative z-10 flex flex-col items-center mb-12 -translate-x-20 sm:-translate-x-24">
+<button aria-label="2. Günlük Konuşma - Tamamlandı" class="w-16 h-16 rounded-full bg-blue-500 tactile-node-sapphire flex items-center justify-center text-white cursor-pointer group hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl font-bold" data-icon="forum" style="font-variation-settings: 'FILL' 1;">forum</span>
+</button>
+<div class="mt-3 text-center">
+<h3 class="text-label-lg font-label-lg font-bold text-on-surface">2. Günlük Konuşma</h3>
+<span class="text-label-sm font-label-sm text-blue-700 bg-blue-50 px-2 py-0.5 rounded-full font-semibold border border-blue-200">Tamamlandı</span>
+</div>
+</div>
+<!-- ---------------- NODE 3: PURPLE / VIOLET (ACTIVE LEARNING NODE) ---------------- -->
+<div class="relative z-20 flex flex-col items-center mb-14 translate-x-20 sm:translate-x-24">
+<!-- Pulsing outer ring effect -->
+<div class="absolute -top-3 w-24 h-24 rounded-full bg-secondary-container/20 animate-pulse-ring pointer-events-none"></div>
+<!-- Floating 'BAŞLA' tag / Active lesson tooltip -->
+<div class="animate-float mb-2 px-3.5 py-1.5 bg-primary text-white rounded-full text-label-md font-label-md font-extrabold shadow-md flex items-center gap-1.5 border-2 border-white">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed animate-ping"></span>
+<span>BAŞLA</span>
+<span class="material-symbols-outlined text-sm font-bold" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+<!-- Main 64px Core Button -->
+<button aria-label="3. Seyahat &amp; Yönler - Mevcut Seviye" class="w-20 h-20 rounded-full bg-gradient-to-tr from-primary to-secondary tactile-node-purple ring-4 ring-white flex items-center justify-center text-white cursor-pointer hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-4xl" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<div class="mt-3 text-center">
+<h3 class="text-label-lg font-label-lg font-extrabold text-primary">3. Seyahat &amp; Yönler</h3>
+<span class="text-label-sm font-label-sm text-primary bg-primary-fixed px-2.5 py-0.5 rounded-full font-bold">Mevcut Seviye</span>
+</div>
+</div>
+<!-- ---------------- NODE 4: COOL SLATE GRAY (LOCKED) ---------------- -->
+<div class="relative z-10 flex flex-col items-center mb-12 -translate-x-16 sm:-translate-x-20 opacity-85">
+<div class="w-14 h-14 rounded-full bg-stone-100 border-2 border-stone-300 tactile-node-locked flex items-center justify-center text-stone-400 cursor-not-allowed">
+<span class="material-symbols-outlined text-2xl" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<div class="mt-2 text-center">
+<h3 class="text-label-md font-label-md font-semibold text-stone-600">4. İş İngilizcesi</h3>
+<span class="text-label-sm font-label-sm text-stone-400 font-medium">Kilitli</span>
+</div>
+</div>
+<!-- ---------------- NODE 5: COOL SLATE GRAY (LOCKED) ---------------- -->
+<div class="relative z-10 flex flex-col items-center mb-6 opacity-75">
+<div class="w-14 h-14 rounded-full bg-stone-100 border-2 border-stone-300 tactile-node-locked flex items-center justify-center text-stone-400 cursor-not-allowed">
+<span class="material-symbols-outlined text-2xl" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<div class="mt-2 text-center">
+<h3 class="text-label-md font-label-md font-semibold text-stone-600">5. Akıcı Diyaloglar</h3>
+<span class="text-label-sm font-label-sm text-stone-400 font-medium">Kilitli</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ==================== DESKTOP RIGHT COMPANION SIDEBAR ==================== -->
+<div class="hidden lg:flex lg:col-span-4 flex-col gap-6 sticky top-24">
+<!-- Daily Challenge Bento Card -->
+<div class="p-5 bg-surface-container-lowest rounded-2xl border border-outline-variant/60 shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md font-bold text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base" data-icon="target">target</span>
+              Günün Görevi
+            </span>
+<span class="text-label-sm font-label-sm font-bold text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full">+40 XP</span>
+</div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface">15 Yeni Kelime Tekrarı</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">B1 Seyahat ünitesindeki kelime kartlarını tamamla ve serini katla.</p>
+<div class="w-full bg-surface-container rounded-full h-2 mt-1 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 45%;"></div>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium self-end">7 / 15 Tamamlandı</span>
+</div>
+<!-- Leaderboard Snapshot Card -->
+<div class="p-5 bg-surface-container-lowest rounded-2xl border border-outline-variant/60 shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h4 class="text-headline-sm font-headline-sm text-on-surface font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-500" data-icon="emoji_events" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+              Safir Ligi
+            </h4>
+<span class="text-label-sm font-label-sm text-on-surface-variant font-semibold">İlk 3 terfi eder</span>
+</div>
+<div class="flex flex-col gap-2.5">
+<!-- Rank 1 -->
+<div class="flex items-center justify-between p-2 rounded-xl hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<span class="w-5 font-bold text-amber-500 text-label-md font-label-md">1</span>
+<div class="w-8 h-8 rounded-full bg-amber-100 text-amber-800 font-bold flex items-center justify-center text-xs">EK</div>
+<span class="text-label-md font-label-md font-semibold text-on-surface">Ece Kaya</span>
+</div>
+<span class="text-label-md font-label-md font-bold text-on-surface-variant">1,890 XP</span>
+</div>
+<!-- Rank 2: User Mustafa (Highlighted) -->
+<div class="flex items-center justify-between p-2.5 bg-primary-fixed/40 border border-primary/20 rounded-xl">
+<div class="flex items-center gap-3">
+<span class="w-5 font-extrabold text-primary text-label-md font-label-md">2</span>
+<div class="w-8 h-8 rounded-full bg-primary text-white font-bold flex items-center justify-center text-xs ring-2 ring-primary/40">M</div>
+<div>
+<span class="text-label-md font-label-md font-bold text-primary block leading-none">Mustafa</span>
+<span class="text-[10px] text-primary/70 font-semibold">Sen</span>
+</div>
+</div>
+<span class="text-label-md font-label-md font-extrabold text-primary">1,420 XP</span>
+</div>
+<!-- Rank 3 -->
+<div class="flex items-center justify-between p-2 rounded-xl hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<span class="w-5 font-bold text-stone-500 text-label-md font-label-md">3</span>
+<div class="w-8 h-8 rounded-full bg-stone-200 text-stone-800 font-bold flex items-center justify-center text-xs">SY</div>
+<span class="text-label-md font-label-md font-semibold text-on-surface">Selim Yılmaz</span>
+</div>
+<span class="text-label-md font-label-md font-bold text-on-surface-variant">1,310 XP</span>
+</div>
+</div>
+</div>
+<!-- Pro Tip Card -->
+<div class="p-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl border border-amber-200 flex items-start gap-3">
+<span class="material-symbols-outlined text-amber-600 mt-0.5 text-xl" data-icon="lightbulb" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<div>
+<span class="text-label-md font-label-md font-bold text-amber-900 block">Kulaklık ile Pratik Yap</span>
+<p class="text-body-sm font-body-sm text-amber-800/90 mt-0.5">Dinleme testlerinde telaffuz doğruluğunu artırmak için kulaklık önerilir.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- ==================== MOBILE / TABLET BOTTOM FIXED NAVIGATION DOCK ==================== -->
+<nav class="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/95 backdrop-blur-lg shadow-[0_-4px_20px_rgba(0,0,0,0.06)] px-3 py-2">
+<div class="max-w-md mx-auto flex items-center justify-around">
+<!-- 1. Home (Active State) -->
+<a class="flex flex-col items-center py-1 px-3 rounded-xl text-primary font-bold transition-all relative" href="#">
+<div class="px-3.5 py-1 bg-primary-fixed rounded-full mb-0.5">
+<span class="material-symbols-outlined text-2xl" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+</div>
+<span class="text-label-sm font-label-sm">Ana Sayfa</span>
+</a>
+<!-- 2. Practice (Pratik) -->
+<a class="flex flex-col items-center py-1 px-3 text-on-surface-variant hover:text-on-surface font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl mb-1" data-icon="fitness_center">fitness_center</span>
+<span class="text-label-sm font-label-sm">Pratik</span>
+</a>
+<!-- 3. Vocabulary (Kelimeler) with Badge Dot -->
+<a class="flex flex-col items-center py-1 px-3 text-on-surface-variant hover:text-on-surface font-medium transition-colors relative" href="#">
+<div class="relative">
+<span class="material-symbols-outlined text-2xl mb-1" data-icon="menu_book">menu_book</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-secondary rounded-full ring-2 ring-white"></span>
+</div>
+<span class="text-label-sm font-label-sm">Kelimeler</span>
+</a>
+<!-- 4. Analytics (İstatistik) -->
+<a class="flex flex-col items-center py-1 px-3 text-on-surface-variant hover:text-on-surface font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl mb-1" data-icon="insights">insights</span>
+<span class="text-label-sm font-label-sm">İstatistik</span>
+</a>
+<!-- 5. Profile (Profil) -->
+<a class="flex flex-col items-center py-1 px-3 text-on-surface-variant hover:text-on-surface font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl mb-1" data-icon="person">person</span>
+<span class="text-label-sm font-label-sm">Profil</span>
+</a>
+</div>
+</nav>
+<!-- Lightweight Inline Interaction Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Micro-bounce sound placeholder or tactile haptic feedback simulation
+      const nodes = document.querySelectorAll('button');
+      nodes.forEach(node => {
+        node.addEventListener('click', function() {
+          if (navigator.vibrate) {
+            navigator.vibrate(10);
+          }
+        });
+      });
+    });
+  </script>
+</body></html>

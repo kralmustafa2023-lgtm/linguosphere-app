@@ -760,3 +760,66 @@
   font-family: var(--font-display); font-weight: 700;
 }
 .streak-fire { font-size: 20px; }
+
+/* ═════════════════════════════════════════════════════
+   STITCH LUMINARY TACTILE 3D SYSTEM
+   Tactile Depth, Physical Press & Dynamic Gamification
+   ═════════════════════════════════════════════════════ */
+
+.tactile-btn-primary {
+  box-shadow: 0 4px 0 #3730a3, 0 10px 20px -3px rgba(79, 70, 229, 0.35);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.tactile-btn-primary:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #3730a3, 0 4px 10px -2px rgba(79, 70, 229, 0.25);
+}
+
+.tactile-btn-secondary {
+  box-shadow: 0 3px 0 #e7e5e4, 0 6px 14px -3px rgba(0, 0, 0, 0.04);
+  transition: all 0.15s ease;
+}
+.tactile-btn-secondary:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #e7e5e4;
+}
+
+.tactile-node-emerald {
+  box-shadow: 0 6px 0 #047857, 0 12px 20px -4px rgba(5, 150, 105, 0.35);
+  transition: all 0.15s ease;
+}
+.tactile-node-emerald:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #047857;
+}
+
+.tactile-node-sapphire {
+  box-shadow: 0 6px 0 #1d4ed8, 0 12px 20px -4px rgba(37, 99, 235, 0.35);
+  transition: all 0.15s ease;
+}
+.tactile-node-sapphire:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #1d4ed8;
+}
+
+.tactile-node-purple {
+  box-shadow: 0 8px 0 #4c1d95, 0 16px 28px -4px rgba(124, 58, 237, 0.45);
+  transition: all 0.15s ease;
+}
+.tactile-node-purple:active {
+  transform: translateY(5px);
+  box-shadow: 0 3px 0 #4c1d95;
+}
+
+.tactile-node-locked {
+  box-shadow: 0 4px 0 #d6d3d1;
+}
+
+/* Bento Cards with Smooth Lift */
+.bento-card {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+}
+.bento-card:hover {
+  transform: translateY(-4px);
+}
+

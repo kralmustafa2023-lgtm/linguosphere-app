@@ -22,7 +22,7 @@ const DEFAULT_STATE = {
   customVocabulary: [],    // [ { id, en, tr, emoji, ex, exTR, dateAdded } ]
   dailyQuests: { date: null, quests: [], streakFreezeCount: 1 },
   errorCategoryStats: { tense: 0, article: 0, preposition: 0, wordOrder: 0, vocabulary: 0, spelling: 0 },
-  settings: { sound: true, speechRate: 0.85, theme: 'dark' }
+  settings: { sound: true, speechRate: 0.85, theme: 'light' }
 };
 
 export const Storage = {
@@ -330,7 +330,7 @@ export const Storage = {
 
   getTheme() {
     const state = this.load();
-    return state.settings?.theme || 'dark';
+    return state.settings?.theme || 'light';
   },
 
   setTheme(theme) {
