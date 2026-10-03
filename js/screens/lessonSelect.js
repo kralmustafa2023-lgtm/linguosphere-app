@@ -29,7 +29,7 @@ export const LessonSelectScreen = {
         <div class="container container-narrow">
 
           <!-- Sticky Elegant Header -->
-          <div class="header-bar hover-lift" style="position: sticky; top: 0; z-index: 100; background: var(--bg-glass-strong); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--bg-card-border); margin: 0 -16px 24px -16px; padding: 16px 20px;">
+          <div class="header-bar hover-lift" style="position: sticky; top: 0; z-index: 100; background: var(--bg-glass-strong); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--bg-card-border); margin: 0 0 24px 0; padding: 16px 8px; border-radius: 16px;">
              <div class="back-area hover-lift" id="backBtn" style="margin: 0; padding: 0; cursor: pointer;">
               ${backArrowSVG()}
               <span style="font-weight: 600; color: var(--text-primary);">Menü</span>

@@ -22,7 +22,7 @@ export function renderSidebar(currentScreen = 'home') {
 
   return `
     <!-- STITCH LUMINARY SIDEBAR (Hidden on Mobile, Docked on Desktop) -->
-    <aside class="hidden md:flex fixed left-0 top-0 h-full w-72 bg-white/95 backdrop-blur-xl z-50 flex-col justify-between p-space-lg shadow-sm border-r border-outline-variant">
+    <aside class="hidden md:flex fixed left-0 top-0 h-full w-72 bg-surface/95 dark:bg-surface-container-low/95 backdrop-blur-xl z-50 flex-col justify-between p-space-lg shadow-sm border-r border-outline-variant/60">
       <div class="flex flex-col gap-space-xl">
         <!-- Logo & Branding -->
         <div class="flex items-center justify-between cursor-pointer" onclick="window.navigate('home')">
@@ -101,7 +101,7 @@ export function renderSidebar(currentScreen = 'home') {
     </aside>
 
     <!-- MOBILE BOTTOM NAVIGATION (< 768px) -->
-    <nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-white/95 backdrop-blur-2xl z-50 flex items-center justify-around px-2 border-t border-outline-variant shadow-lg">
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-surface/95 dark:bg-surface-container-low/95 backdrop-blur-2xl z-50 flex items-center justify-around px-2 border-t border-outline-variant/60 shadow-lg">
       ${navItems.map(item => {
         const isActive = (currentScreen === item.id || (currentScreen === 'home' && item.id === 'home'));
         const activeColor = isActive ? 'text-primary font-extrabold scale-105' : 'text-on-surface-variant opacity-70 hover:opacity-100';
@@ -122,7 +122,7 @@ export function renderHeaderBar() {
   const state = Storage.load();
 
   return `
-    <header class="fixed top-0 left-0 md:left-72 right-0 h-16 bg-white/90 backdrop-blur-xl z-40 flex items-center justify-between px-4 md:px-space-xl border-b border-outline-variant shadow-xs">
+    <header class="fixed top-0 left-0 md:left-72 right-0 h-16 bg-surface/90 dark:bg-surface-container-low/90 backdrop-blur-xl z-40 flex items-center justify-between px-4 md:px-space-xl border-b border-outline-variant/60 shadow-xs">
       <div class="flex items-center gap-space-sm md:gap-space-md">
         <!-- Mobile Logo -->
         <div class="flex md:hidden items-center gap-2 cursor-pointer" onclick="window.navigate('home')">

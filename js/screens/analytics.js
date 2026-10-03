@@ -152,8 +152,8 @@ export const AnalyticsScreen = {
                 </div>
 
                 <!-- Radar SVG Visualization Container -->
-                <div class="relative w-full aspect-square max-w-[380px] mx-auto my-space-sm flex items-center justify-center">
-                  <svg class="w-full h-full overflow-visible" viewBox="0 0 400 400">
+                <div class="relative w-full aspect-square max-w-[380px] mx-auto my-space-sm flex items-center justify-center overflow-hidden">
+                  <svg class="w-full h-full overflow-hidden" viewBox="0 0 400 400">
                     <defs>
                       <radialGradient id="radarFill" cx="50%" cy="50%" r="50%">
                         <stop offset="0%" stop-color="#7c5dfa" stop-opacity="0.45"/>

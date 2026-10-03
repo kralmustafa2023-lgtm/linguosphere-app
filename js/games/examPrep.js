@@ -93,7 +93,7 @@ export const ExamPrepGame = {
           <div class="container container-narrow stagger">
             
             <!-- Sticky Header -->
-            <div class="header-bar hover-lift" style="position: sticky; top: 0; z-index: 100; background: var(--bg-glass-strong); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--bg-card-border); margin: 0 -16px 24px -16px; padding: 16px 20px;">
+            <div class="header-bar hover-lift" style="position: sticky; top: 0; z-index: 100; background: var(--bg-glass-strong); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--bg-card-border); margin: 0 0 24px 0; padding: 16px 8px; border-radius: 16px;">
               <button class="back-area hover-lift" id="exitSelectionBtn" style="background:none; border:none; cursor:pointer; font-weight: 600; display:flex; align-items:center; gap:6px; color:var(--text-primary);">
                 ${backArrowSVG()}
                 <span>Ana Menü</span>
@@ -181,7 +181,7 @@ export const ExamPrepGame = {
             <div class="container container-narrow stagger">
               
               <!-- Sticky Header -->
-              <div class="header-bar hover-lift" style="position: sticky; top: 0; z-index: 100; background: var(--bg-glass-strong); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--bg-card-border); margin: 0 -16px 24px -16px; padding: 16px 20px;">
+              <div class="header-bar hover-lift" style="position: sticky; top: 0; z-index: 100; background: var(--bg-glass-strong); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--bg-card-border); margin: 0 0 24px 0; padding: 16px 8px; border-radius: 16px;">
                 <button class="back-area hover-lift" id="exitExamBtn" style="background:none; border:none; cursor:pointer; font-weight: 600; display:flex; align-items:center; gap:6px; color:var(--text-primary);">
                   ${backArrowSVG()}
                   <span>Sınavlar</span>
