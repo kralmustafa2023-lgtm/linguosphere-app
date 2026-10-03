@@ -44,11 +44,11 @@ export const TypingGame = {
 
           <div class="game-body">
             <div class="game-question-area">
-              <div style="font-size:13px;color:var(--text-muted);margin-bottom:var(--space-sm)">\u0130ngilizce kar\u015F\u0131l\u0131\u011F\u0131n\u0131 yaz\u0131n</div>
-              <div style="font-size:48px;margin-bottom:var(--space-sm)">${word.emoji || '\uD83D\uDCA1'}</div>
-              <div class="game-question-text" style="color:var(--mode-typing)">${word.tr}</div>
+              <div style="font-size:14px;font-weight:700;color:#475569;margin-bottom:var(--space-sm)">İngilizce karşılığını yazın</div>
+              <div style="font-size:48px;margin-bottom:var(--space-sm)">${word.emoji || '💡'}</div>
+              <div class="game-question-text" style="color:#0f172a;font-weight:800;font-size:30px;">${word.tr}</div>
               ${word.ex ? `
-                <div class="typing-word-display">"${word.exTR}"</div>
+                <div class="typing-word-display" style="color:#334155;font-weight:600;font-size:15px;">"${word.exTR}"</div>
               ` : ''}
             </div>
 

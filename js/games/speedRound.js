@@ -80,8 +80,8 @@ export const SpeedGame = {
 
             <!-- Word -->
             <div class="game-question-area" style="margin-bottom:16px; padding:20px 24px;">
-              <div class="speed-word-display" style="margin:0; color:var(--text-primary);">${q.en}</div>
-              <div style="font-size:13px; color:var(--text-secondary); font-weight:600; margin-top:8px;">Türkçesi nedir?</div>
+              <div class="speed-word-display" style="margin:0; font-size:32px; font-weight:800; color:#0f172a;">${q.en}</div>
+              <div style="font-size:14px; color:#475569; font-weight:700; margin-top:8px;">Türkçesi nedir?</div>
             </div>
 
             <!-- Options -->

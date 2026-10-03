@@ -29,7 +29,7 @@ export const HomeScreen = {
         ${renderHeaderBar()}
 
         <main class="w-full pt-16 px-4 md:px-space-xl pb-24 md:pb-space-4xl bg-transparent relative min-h-screen">
-          <div class="flex flex-col w-full gap-space-xl">
+          <div class="flex flex-col w-full max-w-5xl mx-auto gap-space-xl">
             
             <!-- Content Top Bar: Micro Stats & Live Preferences -->
             <div class="flex flex-wrap items-center justify-between gap-space-md bg-surface-container-low/70 backdrop-blur-xl p-space-md rounded-2xl shadow-sm border border-border-glass">
@@ -275,7 +275,7 @@ export const HomeScreen = {
                 </div>
 
                 <!-- CHEST 1: Reward Chest -->
-                <div class="relative z-20 my-space-md ml-2 md:ml-24 group cursor-pointer" id="chest-1-btn">
+                <div class="relative z-20 my-space-md translate-x-0 md:translate-x-16 group cursor-pointer" id="chest-1-btn">
                   <div class="px-space-md py-space-xs rounded-full bg-surface-container-highest/90 backdrop-blur-xl shadow-xl flex items-center gap-space-xs transition-transform duration-200 group-hover:scale-110 border border-border-glass">
                     <span class="material-symbols-outlined text-tertiary text-[24px] animate-bounce" style="font-variation-settings: 'FILL' 1;">featured_seasonal_and_gifts</span>
                     <span class="font-label-sm text-label-sm text-tertiary font-bold">+150 XP Sandığı</span>
@@ -284,7 +284,7 @@ export const HomeScreen = {
                 </div>
 
                 <!-- NODE 2: CURRENT ACTIVE NODE (A2) -->
-                <div class="relative flex flex-col items-center z-20 group cursor-pointer my-space-3xl -ml-2 md:-ml-16" id="node-level-2">
+                <div class="relative flex flex-col items-center z-20 group cursor-pointer my-space-3xl translate-x-0 md:-translate-x-12" id="node-level-2">
                   <div class="absolute -inset-4 rounded-full bg-primary/20 animate-ping pointer-events-none"></div>
                   <div class="absolute -top-12 z-30 flex items-center gap-space-2xs px-space-md py-space-2xs rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold shadow-[0_0_16px_rgba(202,190,255,0.7)] animate-bounce">
                     <span class="material-symbols-outlined text-[16px]">play_arrow</span>
@@ -312,7 +312,7 @@ export const HomeScreen = {
                 </div>
 
                 <!-- CHEST 2 -->
-                <div class="relative z-20 my-space-md mr-2 md:-mr-24 opacity-80 group cursor-pointer" id="chest-2-btn">
+                <div class="relative z-20 my-space-md translate-x-0 md:-translate-x-16 opacity-80 group cursor-pointer" id="chest-2-btn">
                   <div class="px-space-md py-space-xs rounded-full bg-surface-container-high/80 backdrop-blur-xl shadow-md flex items-center gap-space-xs transition-transform group-hover:scale-105 border border-border-glass">
                     <span class="material-symbols-outlined text-outline text-[22px]">lock</span>
                     <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Gizli Rozet Sandığı</span>
@@ -320,7 +320,7 @@ export const HomeScreen = {
                 </div>
 
                 <!-- NODE 3: B1 -->
-                <div class="relative flex flex-col items-center z-20 group opacity-75 hover:opacity-100 transition-opacity my-space-3xl ml-2 md:ml-20" id="node-level-3">
+                <div class="relative flex flex-col items-center z-20 group opacity-75 hover:opacity-100 transition-opacity my-space-3xl translate-x-0 md:translate-x-12" id="node-level-3">
                   <div class="w-24 h-24 rounded-full bg-surface-container-high/80 p-2 shadow-md flex items-center justify-center">
                     <div class="w-full h-full rounded-full bg-surface-container flex flex-col items-center justify-center text-outline">
                       <span class="material-symbols-outlined text-[32px]">lock</span>
@@ -333,7 +333,7 @@ export const HomeScreen = {
                 </div>
 
                 <!-- NODE 4: B2 -->
-                <div class="relative flex flex-col items-center z-20 group opacity-60 hover:opacity-90 transition-opacity my-space-3xl -ml-2 md:-ml-16" id="node-level-4">
+                <div class="relative flex flex-col items-center z-20 group opacity-60 hover:opacity-90 transition-opacity my-space-3xl translate-x-0 md:-translate-x-12" id="node-level-4">
                   <div class="w-24 h-24 rounded-full bg-surface-container-high/80 p-2 shadow-md flex items-center justify-center">
                     <div class="w-full h-full rounded-full bg-surface-container flex flex-col items-center justify-center text-outline">
                       <span class="material-symbols-outlined text-[32px]">lock</span>

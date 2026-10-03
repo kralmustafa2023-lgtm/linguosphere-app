@@ -60,14 +60,14 @@ export const FillBlankGame = {
 
           <div class="game-body" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; max-width:620px; margin:0 auto; padding-top:var(--space-md);">
             <!-- High-Contrast Ultra-Readable Question Card -->
-            <div class="game-question-area" style="background:var(--bg-card-solid); border:2px solid var(--bg-card-border); border-radius:28px; padding:36px 28px; box-shadow:var(--shadow-card); text-align:center; width:100%; margin-bottom:28px;">
+            <div class="game-question-area" style="text-align:center; width:100%; margin-bottom:28px;">
               <div style="display:inline-block; margin-bottom:16px;">
-                <span style="font-size:12px; font-weight:800; background:rgba(16, 185, 129, 0.15); color:var(--color-success); padding:6px 16px; border-radius:20px; text-transform:uppercase; letter-spacing:0.06em; border:1px solid rgba(16, 185, 129, 0.3);">Boşluğu Doldurun</span>
+                <span style="font-size:12px; font-weight:800; background:rgba(16, 185, 129, 0.15); color:#059669; padding:6px 16px; border-radius:20px; text-transform:uppercase; letter-spacing:0.06em; border:1px solid rgba(16, 185, 129, 0.3);">Boşluğu Doldurun</span>
               </div>
-              <div class="game-question-text" style="font-size:28px !important; font-weight:800 !important; color:var(--text-primary) !important; line-height:1.6; margin-bottom:16px;">
+              <div class="game-question-text" style="font-size:28px !important; font-weight:800 !important; color:#0f172a !important; line-height:1.6; margin-bottom:16px;">
                 ${sentenceHTML}
               </div>
-              ${(q.hint || q.tr) ? `<div style="font-size:16px; font-weight:600; color:var(--text-secondary); background:var(--bg-surface); padding:10px 18px; border-radius:14px; display:inline-block; border:1px solid var(--bg-card-border); max-width:100%;">
+              ${(q.hint || q.tr) ? `<div style="font-size:16px; font-weight:700; color:#334155; background:#f1f5f9; padding:10px 18px; border-radius:14px; display:inline-block; border:1.5px solid #cbd5e1; max-width:100%;">
                 💡 ${q.hint || q.tr}
               </div>` : ''}
             </div>
@@ -76,7 +76,7 @@ export const FillBlankGame = {
             <div class="game-answer-area" style="width:100%;">
               <div class="quiz-options" style="display:grid; grid-template-columns:1fr 1fr; gap:14px; width:100%;">
                 ${options.map(opt => `
-                  <button class="quiz-option hover-lift" data-answer="${opt}" style="padding:18px 20px; font-size:17px; font-weight:700; text-align:center; background:var(--bg-card-solid); border:2px solid var(--bg-card-border); border-radius:18px; color:var(--text-primary); cursor:pointer; transition:all 0.2s;">
+                  <button class="quiz-option hover-lift" data-answer="${opt}" style="justify-content:center; text-align:center;">
                     ${opt}
                   </button>
                 `).join('')}

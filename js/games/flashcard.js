@@ -74,16 +74,16 @@ export const FlashcardGame = {
             <div class="flashcard-inner card-inner" id="cardInner" style="width:100%; height:100%; position:relative; transform-style:preserve-3d; transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);">
               
               <!-- Front (English) -->
-              <div class="flashcard-face" style="position:absolute; inset:0; backface-visibility:hidden; background:var(--bg-card-solid); border:1px solid rgba(0,0,0,0.08); border-radius:var(--radius-2xl); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:var(--space-xl); box-shadow:var(--shadow-card);">
-                <div style="font-size:48px; margin-bottom:12px;">${word.emoji || '📖'}</div>
-                <div style="font-size:42px; font-weight:700; color:var(--text-primary); text-align:center; font-family:var(--font-display); letter-spacing:-0.02em;">${word.en}</div>
-                <div style="font-size:12px; color:var(--text-tertiary); margin-top:16px; font-weight:600;">⚡ Çevirmek için dokunun</div>
+              <div class="flashcard-face" style="position:absolute; inset:0; backface-visibility:hidden; background:#ffffff; border:2px solid #cbd5e1; border-radius:var(--radius-2xl); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:var(--space-xl); box-shadow:0 10px 25px rgba(0,0,0,0.08);">
+                <div style="font-size:52px; margin-bottom:12px;">${word.emoji || '📖'}</div>
+                <div style="font-size:38px; font-weight:800; color:#0f172a; text-align:center; font-family:var(--font-display); letter-spacing:-0.02em;">${word.en}</div>
+                <div style="font-size:13px; color:#4f46e5; margin-top:16px; font-weight:700;">⚡ Çevirmek için dokunun</div>
               </div>
 
               <!-- Back (Turkish) -->
-              <div class="flashcard-face flashcard-back" style="position:absolute; inset:0; backface-visibility:hidden; background:linear-gradient(135deg, var(--bg-card-solid), var(--bg-surface)); border:1px solid rgba(0,0,0,0.08); border-radius:var(--radius-2xl); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:var(--space-xl); transform: rotateY(180deg); box-shadow:var(--shadow-card);">
-                <div style="font-size:36px; font-weight:700; color:var(--color-success); text-align:center; font-family:var(--font-display); margin-bottom:8px;">${word.tr}</div>
-                ${word.ex ? `<div style="font-size:13px; color:var(--text-secondary); text-align:center; font-style:italic;">"${word.ex}"</div>` : ''}
+              <div class="flashcard-face flashcard-back" style="position:absolute; inset:0; backface-visibility:hidden; background:#ffffff; border:2px solid #10b981; border-radius:var(--radius-2xl); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:var(--space-xl); transform: rotateY(180deg); box-shadow:0 10px 25px rgba(16, 185, 129, 0.15);">
+                <div style="font-size:36px; font-weight:800; color:#059669; text-align:center; font-family:var(--font-display); margin-bottom:12px;">${word.tr}</div>
+                ${word.ex ? `<div style="font-size:15px; color:#334155; text-align:center; font-weight:600; font-style:italic;">"${word.ex}"</div>` : ''}
               </div>
               
             </div>
@@ -91,10 +91,10 @@ export const FlashcardGame = {
 
            <!-- Minimalist Buttons -->
           <div id="controlsArea" style="opacity:0; transform:translateY(20px); transition:all 0.4s ease; display:flex; gap:var(--space-md); margin-top:40px; width:100%; max-width:320px; pointer-events:none;">
-             <button class="btn hover-lift" id="dunnoBtn" style="flex:1; background:rgba(239, 68, 68, 0.08); color:var(--color-error); border:1px solid rgba(239, 68, 68, 0.2); font-size:16px; font-weight:600; border-radius:var(--radius-xl); min-height:56px;">
+             <button class="btn hover-lift" id="dunnoBtn" style="flex:1; background:#fee2e2; color:#dc2626; border:2px solid #f87171; font-size:16px; font-weight:800; border-radius:var(--radius-xl); min-height:56px; cursor:pointer;">
                Bilemedim
              </button>
-             <button class="btn hover-lift" id="knewBtn" style="flex:1; background:var(--color-success); color:#fff; box-shadow:0 8px 24px rgba(16, 185, 129, 0.25); font-size:16px; border-radius:var(--radius-xl); font-weight:700; min-height:56px;">
+             <button class="btn hover-lift" id="knewBtn" style="flex:1; background:#059669; color:#fff; box-shadow:0 8px 24px rgba(5, 150, 105, 0.35); font-size:16px; border-radius:var(--radius-xl); font-weight:800; min-height:56px; cursor:pointer;">
                Bildim
              </button>
           </div>

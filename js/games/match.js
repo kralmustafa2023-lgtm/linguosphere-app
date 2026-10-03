@@ -52,21 +52,19 @@ export const MatchGame = {
 
             <div class="match-layout" style="margin:0 auto; width:100%; max-width:580px; display:grid; grid-template-columns:1fr 1fr; gap:16px;">
               <div class="match-column" style="display:flex; flex-direction:column; gap:12px;">
-                <div class="match-column-title" style="font-size:13px; font-weight:800; color:var(--text-secondary); text-align:center; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;">🇬🇧 English</div>
+                <div class="match-column-title" style="font-size:13px; font-weight:800; color:#334155; text-align:center; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;">🇬🇧 English</div>
                 ${enWords.map(w => `
                   <div class="match-item ${matched.has(w.id) ? 'matched' : ''} ${selectedEn === w.id ? 'selected' : ''}"
-                       data-type="en" data-id="${w.id}"
-                       style="color:var(--text-primary); font-weight:700; font-size:16px;">
+                       data-type="en" data-id="${w.id}">
                     ${w.text}
                   </div>
                 `).join('')}
               </div>
               <div class="match-column" style="display:flex; flex-direction:column; gap:12px;">
-                <div class="match-column-title" style="font-size:13px; font-weight:800; color:var(--text-secondary); text-align:center; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;">🇹🇷 Türkçe</div>
+                <div class="match-column-title" style="font-size:13px; font-weight:800; color:#334155; text-align:center; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;">🇹🇷 Türkçe</div>
                 ${trWords.map(w => `
                   <div class="match-item ${matched.has(w.id) ? 'matched' : ''} ${selectedTr === w.id ? 'selected' : ''}"
-                       data-type="tr" data-id="${w.id}"
-                       style="color:var(--text-primary); font-weight:700; font-size:16px;">
+                       data-type="tr" data-id="${w.id}">
                     ${w.text}
                   </div>
                 `).join('')}

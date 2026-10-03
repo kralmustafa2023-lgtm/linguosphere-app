@@ -2,15 +2,30 @@
    LAYOUT SYSTEM — Premium Light Theme
    ═══════════════════════════════════════ */
 
+/* Global Anti-Overflow & Horizontal Alignment Protection */
+html, body, #app {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+main, .screen, .game-container {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 /* Container */
 .container {
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
   position: relative;
+  box-sizing: border-box;
 }
-.container-narrow { max-width: 840px; }
-.container-wide   { max-width: 1140px; }
+.container-narrow { max-width: 840px; margin: 0 auto; }
+.container-wide   { max-width: 1140px; margin: 0 auto; }
 
 /* Screen wrapper */
 .screen {

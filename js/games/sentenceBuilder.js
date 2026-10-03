@@ -61,14 +61,14 @@ export const SentenceGame = {
 
             <div class="game-answer-area" style="width:100%;">
               <!-- Sentence Area -->
-              <div class="sentence-area" id="sentenceArea" style="min-height:70px; margin-bottom:var(--space-lg); background:var(--bg-card-solid); border:2px dashed var(--bg-card-border); border-radius:20px;">
-                <span style="color:var(--text-muted);font-size:15px;font-weight:600;" id="placeholder">Kelimelere tıklayarak cümleyi oluşturun...</span>
+              <div class="sentence-area" id="sentenceArea">
+                <span style="color:#64748b;font-size:15px;font-weight:700;" id="placeholder">Kelimelere tıklayarak cümleyi oluşturun...</span>
               </div>
 
               <!-- Word Chips -->
               <div class="sentence-chips" id="wordChips" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
                 ${shuffledWords.map((word, i) => `
-                  <div class="chip hover-lift" data-word="${word}" data-index="${i}" style="font-size:16px; font-weight:700; color:var(--text-primary); background:var(--bg-card-solid); border:1.5px solid var(--bg-card-border); padding:12px 20px; border-radius:16px; cursor:pointer;">${word}</div>
+                  <div class="chip hover-lift" data-word="${word}" data-index="${i}">${word}</div>
                 `).join('')}
               </div>
 
@@ -137,7 +137,7 @@ export const SentenceGame = {
       const placeholder = document.getElementById('placeholder');
 
       if (selectedWords.length === 0) {
-        area.innerHTML = `<span style="color:var(--text-muted);font-size:14px" id="placeholder">Kelimelere t\u0131klayarak c\u00FCmle kurun...</span>`;
+        area.innerHTML = `<span style="color:#64748b;font-size:15px;font-weight:700" id="placeholder">Kelimelere tıklayarak cümle kurun...</span>`;
       } else {
         area.innerHTML = selectedWords.map(w =>
           `<div class="chip selected" data-word="${w}">${w}</div>`
@@ -146,20 +146,21 @@ export const SentenceGame = {
     }
 
     function checkAnswer(s, correctWords) {
+      const area = document.getElementById('sentenceArea');
       const feedback = document.getElementById('feedback');
       const userSentence = selectedWords.join(' ').replace(/\s+([.,!?;:])/g, '$1').trim();
       const targetSentence = s.en.replace(/\s+([.,!?;:])/g, '$1').trim();
       const isCorrect = userSentence.toLowerCase() === targetSentence.toLowerCase() || selectedWords.join(' ').toLowerCase() === s.en.toLowerCase();
 
       if (isCorrect) {
-        area.classList.add('correct');
+        if (area) area.classList.add('correct');
         score += 15;
         correct++;
         playSound('correct');
         showScoreFloat('+15');
         feedback.innerHTML = `<span style="color:var(--color-success);font-weight:700;font-size:16px">\u2705 M\u00FCkemmel!</span>`;
       } else {
-        area.classList.add('wrong');
+        if (area) area.classList.add('wrong');
         playSound('wrong');
         feedback.innerHTML = `<span style="color:var(--color-error);font-weight:700;font-size:16px">\u274C Do\u011Frusu: ${s.en}</span>`;
       }

@@ -53,20 +53,17 @@ export const QuizGame = {
 
         <!-- Body -->
         <div class="game-body">
-          <div class="game-question-area" style="background:var(--bg-card);border:1px solid rgba(0,0,0,0.04);padding:var(--space-xl);border-radius:var(--radius-xl);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:var(--shadow-card);position:relative;overflow:hidden">
-            <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg, transparent, var(--color-info), transparent);opacity:0.3"></div>
-            <div style="font-size:36px;margin-bottom:12px;opacity:0.9;filter:drop-shadow(0 4px 12px rgba(95, 168, 255, 0.2))">❓</div>
-            <div class="game-question-text" style="font-size:26px;font-family:var(--font-display);letter-spacing:-0.02em;">${q.q}</div>
-            <div class="game-question-sub" style="font-style:italic;color:var(--text-tertiary)">Anlamı nedir?</div>
+          <div class="game-question-area">
+            <div style="font-size:36px;margin-bottom:12px;filter:drop-shadow(0 4px 12px rgba(95, 168, 255, 0.2))">❓</div>
+            <div class="game-question-text">${q.q}</div>
+            <div class="game-question-sub">Anlamı nedir?</div>
           </div>
 
           <div class="game-answer-area quiz-options stagger" style="margin-top:var(--space-md)">
             ${options.map((opt, i) => `
               <button class="quiz-option" data-answer="${opt}">
-                <div style="display:flex;align-items:center;">
-                  <span class="quiz-option-label" style="background:rgba(95, 168, 255, 0.1);color:var(--color-info)">${String.fromCharCode(65 + i)}</span>
-                  <span style="flex:1">${opt}</span>
-                </div>
+                <span class="quiz-option-label">${String.fromCharCode(65 + i)}</span>
+                <span style="flex:1;font-weight:700;font-size:16px;">${opt}</span>
               </button>
             `).join('')}
           </div>
